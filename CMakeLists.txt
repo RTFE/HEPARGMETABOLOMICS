@@ -5,4 +5,7 @@ project(ensenso)
 add_compile_options(-std=c++11)
 
 find_package(catkin REQUIRED COMPONENTS
-  camera_i
+  camera_info_manager
+  cmake_modules
+  cv_bridge
+  eigen_conversi
