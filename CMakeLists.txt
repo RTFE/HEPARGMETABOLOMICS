@@ -12,4 +12,10 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   message_generation
   pcl_conversions
-  pcl
+  pcl_ros
+  std_msgs
+  std_srvs
+  tf_conversions
+  image_transport
+)
+
