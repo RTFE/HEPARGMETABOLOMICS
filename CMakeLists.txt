@@ -8,4 +8,8 @@ find_package(catkin REQUIRED COMPONENTS
   camera_info_manager
   cmake_modules
   cv_bridge
-  eigen_conversi
+  eigen_conversions
+  geometry_msgs
+  message_generation
+  pcl_conversions
+  pcl
