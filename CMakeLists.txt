@@ -19,4 +19,7 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
 )
 
-find_package(Boost REQUIRED COMPONENTS system filesystem threa
+find_package(Boost REQUIRED COMPONENTS system filesystem thread)
+find_package(Eigen3 REQUIRED)
+find_package(PCL REQUIRED)
+set(CMAKE_MODULE_
