@@ -22,4 +22,5 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
 find_package(Eigen3 REQUIRED)
 find_package(PCL REQUIRED)
-set(CMAKE_MODULE_
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/opt/ensenso/cmake")
+find_package(Ensens
