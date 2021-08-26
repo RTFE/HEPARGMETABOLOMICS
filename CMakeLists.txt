@@ -25,4 +25,5 @@ find_package(PCL REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/opt/ensenso/cmake")
 find_package(Ensenso REQUIRED)
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(nxLib 
+pkg_check_modules(nxLib REQUIRED ensenso-nxlib)
+if((nxLib_VERSION VERSION_EQUAL "2.1
