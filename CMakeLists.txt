@@ -28,4 +28,6 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(nxLib REQUIRED ensenso-nxlib)
 if((nxLib_VERSION VERSION_EQUAL "2.1.7") OR (nxLib_VERSION VERSION_GREATER "2.1.7"))
   add_definitions(-DCUDA_IMPLEMENTED)
-  message("CUDA support enabled
+  message("CUDA support enabled.")
+else()
+  message(WARNING "CUDA not supported. Upgrade EnsensoSDK to version
