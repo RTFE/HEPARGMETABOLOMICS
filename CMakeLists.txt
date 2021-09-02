@@ -30,4 +30,7 @@ if((nxLib_VERSION VERSION_EQUAL "2.1.7") OR (nxLib_VERSION VERSION_GREATER "2.1.
   add_definitions(-DCUDA_IMPLEMENTED)
   message("CUDA support enabled.")
 else()
-  message(WARNING "CUDA not supported. Upgrade EnsensoSDK to version
+  message(WARNING "CUDA not supported. Upgrade EnsensoSDK to version >= 2.1.7 in order to use CUDA.")
+endif()
+
+catkin_pyt
