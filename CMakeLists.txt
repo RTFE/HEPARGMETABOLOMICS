@@ -33,4 +33,9 @@ else()
   message(WARNING "CUDA not supported. Upgrade EnsensoSDK to version >= 2.1.7 in order to use CUDA.")
 endif()
 
-catkin_pyt
+catkin_python_setup()
+
+
+add_message_files(
+  FILES
+  RawStereoPattern.ms
