@@ -38,4 +38,10 @@ catkin_python_setup()
 
 add_message_files(
   FILES
-  RawStereoPattern.ms
+  RawStereoPattern.msg
+)
+
+add_service_files(
+  FILES
+  CalibrateHandEye.srv
+ 
