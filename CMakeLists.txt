@@ -48,4 +48,7 @@ add_service_files(
   EstimatePatternPose.srv
 )
 
-gener
+generate_messages(
+  DEPENDENCIES
+    geometry_msgs
+    s
