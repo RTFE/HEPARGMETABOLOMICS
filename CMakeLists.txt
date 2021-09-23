@@ -51,4 +51,8 @@ add_service_files(
 generate_messages(
   DEPENDENCIES
     geometry_msgs
-    s
+    std_msgs
+)
+
+generate_dynamic_reconfigure_options(
+  cf
