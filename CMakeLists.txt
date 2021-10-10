@@ -80,4 +80,9 @@ catkin_package(
 include_directories(include)
 include_directories(${PCL_INCLUDE_DIRS})
 include_directories(${ENSENSO_INCLUDE_DIRS})
-include_directories(${catkin_INCLUDE_D
+include_directories(${catkin_INCLUDE_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+
+
+# Libraries
+add_libra
