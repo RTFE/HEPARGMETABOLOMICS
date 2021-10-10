@@ -64,4 +64,7 @@ catkin_package(
   LIBRARIES 
     ensenso_grabber
   CATKIN_DEPENDS 
-    
+    camera_info_manager
+    cv_bridge
+    eigen_conversions
+    mes
