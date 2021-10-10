@@ -78,4 +78,5 @@ catkin_package(
 
 # Order of the include dirs matters!
 include_directories(include)
-include_direc
+include_directories(${PCL_INCLUDE_DIRS})
+include_directories(${ENSENS
