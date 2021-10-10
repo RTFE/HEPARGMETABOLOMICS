@@ -55,4 +55,9 @@ generate_messages(
 )
 
 generate_dynamic_reconfigure_options(
-  cf
+  cfg/CameraParameters.cfg
+)
+
+catkin_package(
+  INCLUDE_DIRS 
+   
