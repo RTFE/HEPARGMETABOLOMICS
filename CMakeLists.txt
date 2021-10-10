@@ -67,4 +67,8 @@ catkin_package(
     camera_info_manager
     cv_bridge
     eigen_conversions
-    mes
+    message_runtime
+    geometry_msgs
+    std_msgs
+    std_srvs
+    p
