@@ -76,4 +76,6 @@ catkin_package(
     tf_conversions
 )
 
-# Order of t
+# Order of the include dirs matters!
+include_directories(include)
+include_direc
