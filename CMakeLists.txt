@@ -60,4 +60,8 @@ generate_dynamic_reconfigure_options(
 
 catkin_package(
   INCLUDE_DIRS 
-   
+    include
+  LIBRARIES 
+    ensenso_grabber
+  CATKIN_DEPENDS 
+    
