@@ -86,4 +86,4 @@ add_definitions(${PCL_DEFINITIONS})
 
 # Libraries
 add_library(ensenso_grabber src/ensenso_grabber.cpp)
-target_link_libra
+target_link_libraries(ensenso_grabber ${ENSENSO_LIBRARIES} ${PCL_LIBRARIE
