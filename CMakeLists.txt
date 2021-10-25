@@ -90,4 +90,4 @@ target_link_libraries(ensenso_grabber ${ENSENSO_LIBRARIES} ${PCL_LIBRARIES} ${ca
 
 add_executable(ensenso_driver src/ensenso_driver.cpp)
 add_dependencies(ensenso_driver ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(ensenso_driver ensenso_gra
+target_link_libraries(ensenso_driver ensenso_grabber ${PCL_LIBRARIES} ${catkin_LIBRARIES})
