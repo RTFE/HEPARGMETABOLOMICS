@@ -88,4 +88,5 @@ add_definitions(${PCL_DEFINITIONS})
 add_library(ensenso_grabber src/ensenso_grabber.cpp)
 target_link_libraries(ensenso_grabber ${ENSENSO_LIBRARIES} ${PCL_LIBRARIES} ${catkin_LIBRARIES})
 
-add_executable(ensenso_d
+add_executable(ensenso_driver src/ensenso_driver.cpp)
+add_dependencies(ensens
