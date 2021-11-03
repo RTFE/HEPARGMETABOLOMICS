@@ -81,3 +81,8 @@ In case this doesn't work, try a forced stop before restarting:
 
 ```{bash}
 sudo /etc/init.d/ueyeethdrc force-stop
+```
+
+### Camera IP
+
+You can change the camera IP using the `ueyesetip` command.
