@@ -5,4 +5,4 @@
       "keys": {
         "running-plugins": {
           "type": "repr", 
-          "
+          "repr": "{u'rqt_rviz/RViz': [1], u'rqt_reconfigure/Param': [1]
