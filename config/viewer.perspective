@@ -2,4 +2,7 @@
   "keys": {}, 
   "groups": {
     "pluginmanager": {
-      "keys": 
+      "keys": {
+        "running-plugins": {
+          "type": "repr", 
+          "
