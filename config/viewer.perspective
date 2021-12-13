@@ -7,4 +7,7 @@
           "type": "repr", 
           "repr": "{u'rqt_rviz/RViz': [1], u'rqt_reconfigure/Param': [1], u'rqt_image_view/ImageView': [1, 2]}"
         }
- 
+      }, 
+      "groups": {
+        "plugin__rqt_rviz__RViz__1": {
+    
