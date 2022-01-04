@@ -24,4 +24,7 @@
                 }, 
                 "dock_widget_title": {
                   "type": "repr", 
-                  "repr": "u
+                  "repr": "u'RViz[*]'"
+                }
+              }, 
+            
