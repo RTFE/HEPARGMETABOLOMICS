@@ -20,4 +20,7 @@
                 }, 
                 "parent": {
                   "type": "repr", 
-                  "repr": "None
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+   
