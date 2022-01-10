@@ -34,4 +34,6 @@
         "plugin__rqt_image_view__ImageView__2": {
           "keys": {}, 
           "groups": {
-            "do
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "
