@@ -42,4 +42,5 @@
                 }, 
                 "parent": {
                   "type": "repr", 
-  
+                  "repr": "None"
+                
