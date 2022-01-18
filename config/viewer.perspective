@@ -38,4 +38,6 @@
               "keys": {
                 "dockable": {
                   "type": "repr", 
-              
+                  "repr": "True"
+                }, 
+               
