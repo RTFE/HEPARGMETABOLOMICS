@@ -54,4 +54,6 @@
             "plugin": {
               "keys": {
                 "max_range": {
-             
+                  "type": "repr", 
+                  "repr": "10.0"
+    
