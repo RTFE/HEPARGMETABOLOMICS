@@ -58,4 +58,5 @@
                   "repr": "10.0"
                 }, 
                 "mouse_pub_topic": {
-       
+                  "type": "repr", 
+                  "repr": "u'/camer
