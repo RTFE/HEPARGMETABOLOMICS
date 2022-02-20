@@ -61,4 +61,5 @@
                   "type": "repr", 
                   "repr": "u'/camera/right/image_raw_mouse_left'"
                 }, 
-        
+                "zoom1": {
+                  "type": "rep
