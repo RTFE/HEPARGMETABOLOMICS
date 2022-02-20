@@ -59,4 +59,6 @@
                 }, 
                 "mouse_pub_topic": {
                   "type": "repr", 
-                  "repr": "u'/camer
+                  "repr": "u'/camera/right/image_raw_mouse_left'"
+                }, 
+        
