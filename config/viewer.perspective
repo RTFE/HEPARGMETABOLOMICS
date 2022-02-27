@@ -70,4 +70,5 @@
                   "repr": "False"
                 }, 
                 "topic": {
-       
+                  "type": "repr", 
+                  "repr
