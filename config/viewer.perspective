@@ -66,4 +66,6 @@
                   "repr": "False"
                 }, 
                 "dynamic_range": {
-                  "type": "re
+                  "type": "repr", 
+                  "repr": "False"
+    
