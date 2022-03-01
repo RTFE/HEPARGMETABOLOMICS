@@ -83,4 +83,6 @@
           }
         }, 
         "plugin__rqt_reconfigure__Param__1": {
-         
+          "keys": {}, 
+          "groups": {
+            "dock_widget__
