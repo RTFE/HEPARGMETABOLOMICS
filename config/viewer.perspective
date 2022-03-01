@@ -71,4 +71,6 @@
                 }, 
                 "topic": {
                   "type": "repr", 
-                  "repr
+                  "repr": "u'/camera/right/image_raw'"
+                }, 
+                "
