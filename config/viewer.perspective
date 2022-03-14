@@ -86,4 +86,6 @@
           "keys": {}, 
           "groups": {
             "dock_widget___plugincontainer_top_widget": {
-              "keys":
+              "keys": {
+                "dockable": {
+                  "type": "repr"
