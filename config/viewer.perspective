@@ -88,4 +88,6 @@
             "dock_widget___plugincontainer_top_widget": {
               "keys": {
                 "dockable": {
-                  "type": "repr"
+                  "type": "repr", 
+                  "repr": "True"
+           
