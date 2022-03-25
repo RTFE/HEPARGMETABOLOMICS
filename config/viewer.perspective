@@ -97,4 +97,7 @@
                 }, 
                 "dock_widget_title": {
                   "type": "repr", 
-                  "repr": "u'Dynam
+                  "repr": "u'Dynamic Reconfigure'"
+                }
+              }, 
+              
