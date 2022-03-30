@@ -105,4 +105,5 @@
             "plugin": {
               "keys": {
                 "splitter": {
-          
+                  "type": "repr(QByteArray.hex)", 
+                  "re
