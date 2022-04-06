@@ -106,4 +106,4 @@
               "keys": {
                 "splitter": {
                   "type": "repr(QByteArray.hex)", 
-                  "re
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00
