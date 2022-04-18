@@ -111,4 +111,5 @@
                 }, 
                 "_splitter": {
                   "type": "repr(QByteArray.hex)", 
-                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff0000000100000002000003ec000000000100000009010
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff0000000100000002000003ec000000000100000009010000000200')", 
+                  "pretty-print": "               
