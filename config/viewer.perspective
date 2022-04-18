@@ -110,4 +110,5 @@
                   "pretty-print": "         d     "
                 }, 
                 "_splitter": {
-                  "type": "repr(QByteArra
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArra
