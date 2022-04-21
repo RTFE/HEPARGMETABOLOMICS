@@ -125,4 +125,6 @@
             "dock_widget__ImageViewWidget": {
               "keys": {
                 "dockable": {
-        
+                  "type": "repr", 
+                  "repr": "True"
+  
