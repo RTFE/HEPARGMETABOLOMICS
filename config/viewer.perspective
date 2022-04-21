@@ -123,3 +123,6 @@
           "keys": {}, 
           "groups": {
             "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+        
