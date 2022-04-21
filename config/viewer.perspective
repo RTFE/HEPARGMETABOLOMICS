@@ -131,4 +131,6 @@
                 "parent": {
                   "type": "repr", 
                   "repr": "None"
-     
+                }, 
+                "dock_widget_title": {
+        
