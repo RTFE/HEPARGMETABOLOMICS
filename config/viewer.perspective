@@ -129,4 +129,6 @@
                   "repr": "True"
                 }, 
                 "parent": {
-                  "typ
+                  "type": "repr", 
+                  "repr": "None"
+     
