@@ -121,4 +121,5 @@
         }, 
         "plugin__rqt_image_view__ImageView__1": {
           "keys": {}, 
-  
+          "groups": {
+            "dock_widget__ImageViewWidget": {
