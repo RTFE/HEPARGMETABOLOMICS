@@ -115,4 +115,8 @@
                   "pretty-print": "               "
                 }
               }, 
-              "groups":
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt
