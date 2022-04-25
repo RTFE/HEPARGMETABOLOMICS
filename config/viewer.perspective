@@ -140,4 +140,6 @@
               "groups": {}
             }, 
             "plugin": {
-       
+              "keys": {
+                "max_range": {
+                
