@@ -137,4 +137,7 @@
                   "repr": "u'Image View'"
                 }
               }, 
-    
+              "groups": {}
+            }, 
+            "plugin": {
+       
