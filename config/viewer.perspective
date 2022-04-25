@@ -144,4 +144,6 @@
                 "max_range": {
                   "type": "repr", 
                   "repr": "10.0"
-     
+                }, 
+                "mouse_pub_topic": {
+         
