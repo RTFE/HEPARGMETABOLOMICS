@@ -151,4 +151,6 @@
                 }, 
                 "zoom1": {
                   "type": "repr", 
+                  "repr": "False"
+                }, 
             
