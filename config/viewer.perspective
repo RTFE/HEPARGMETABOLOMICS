@@ -153,4 +153,5 @@
                   "type": "repr", 
                   "repr": "False"
                 }, 
-            
+                "dynamic_range": {
+                  "type": "re
