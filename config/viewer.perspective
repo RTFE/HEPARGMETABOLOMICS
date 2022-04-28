@@ -162,4 +162,5 @@
                   "repr": "u'/camera/left/image_raw'"
                 }, 
                 "publish_click_location": {
-            
+                  "type": "repr", 
+                  "repr": "False"
