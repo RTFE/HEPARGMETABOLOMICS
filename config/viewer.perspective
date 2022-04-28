@@ -157,4 +157,6 @@
                   "type": "repr", 
                   "repr": "False"
                 }, 
-  
+                "topic": {
+                  "type": "repr", 
+        
