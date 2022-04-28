@@ -172,4 +172,7 @@
         }
       }
     }, 
-    "mainwindow": 
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteA
