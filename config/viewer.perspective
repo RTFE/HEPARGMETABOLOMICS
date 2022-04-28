@@ -159,4 +159,5 @@
                 }, 
                 "topic": {
                   "type": "repr", 
-        
+                  "repr": "u'/camera/left/image_raw'"
+    
