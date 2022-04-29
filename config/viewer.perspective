@@ -176,4 +176,4 @@
       "keys": {
         "geometry": {
           "type": "repr(QByteArray.hex)", 
-          "repr(QByteArray.hex)": "Qt
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb0002000000000037000000180000077f0000043
