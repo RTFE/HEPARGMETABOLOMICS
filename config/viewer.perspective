@@ -175,4 +175,5 @@
     "mainwindow": {
       "keys": {
         "geometry": {
-          "type": "repr(QByteA
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "Qt
