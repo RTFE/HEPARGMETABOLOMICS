@@ -180,4 +180,5 @@
           "pretty-print": "     7     7 7     7     "
         }, 
         "state": {
-          "type": "repr(QB
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCo
