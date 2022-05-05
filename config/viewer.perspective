@@ -188,4 +188,5 @@
       "groups": {
         "toolbar_areas": {
           "keys": {
-            "Minimi
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr"
