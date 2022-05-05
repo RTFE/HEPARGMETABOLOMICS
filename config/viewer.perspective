@@ -189,4 +189,7 @@
         "toolbar_areas": {
           "keys": {
             "MinimizedDockWidgetsToolbar": {
-              "type": "repr"
+              "type": "repr", 
+              "repr": "8"
+            }
+         
