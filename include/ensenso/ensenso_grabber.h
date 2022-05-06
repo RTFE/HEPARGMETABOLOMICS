@@ -1,0 +1,5 @@
+
+#ifndef __ENSENSO_ENSENSO_GRABBER__
+#define __ENSENSO_ENSENSO_GRABBER__
+
+// PCL
