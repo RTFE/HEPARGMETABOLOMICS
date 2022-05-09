@@ -203,3 +203,63 @@ public:
     bool openMonoDevice (std::string serial);
 
     /** @brief Open TCP port to enable access via the
+     * [nxTreeEdit](http://www.ensenso.de/manual/software_components.htm) program.
+     * @param[in] port The port number
+     * @return True if successful, false otherwise */
+    bool openTcpPort (const int port = 24000);
+
+    /** @brief Restores the default capture configuration parameters.
+     * @return True if successful, false otherwise */
+    bool restoreDefaultConfiguration () const;
+
+    /** @brief Enables CUDA support.
+     * @note Needs Ensenso SDK version >= 2.1.7
+     * @param[in] enable When set to true some commands will use CUDA to improve Perfomance
+     * @return True if successful, false otherwise */
+    bool setEnableCUDA (const bool enable=true) const;
+
+    /** @brief Controls, whether the grabber will try finding the pattern in the scene.
+     * @param[in] enable When set to true the grabber will  try finding the pattern in the scene.
+     * @return True if successful, false otherwise */
+    bool setFindPattern (const bool enable=true);
+
+    /** @brief Controls, whether the grabber will use an external ensenso rgb camera.
+     * @param[in] enable When set to true the grabber will use an external ensenso rgb camera.
+     * @return True if successful, false otherwise */
+    bool setUseRGB (const bool enable=true);
+
+    /** @brief Controls whether the sensor black level should be adjusted automatically by the image sensor.
+     * @param[in] enable When set to true the image sensor black level will be adjusted automatically.
+     * @return True if successful, false otherwise */
+    bool setAutoBlackLevel (const bool enable=true) const;
+
+    /** @brief Controls whether the exposure should be adjusted after each image capture.
+     * @param[in] enable When set to true the Exposure will be adjusted after each Capture command involving this camera.
+     * @return True if successful, false otherwise */
+    bool setAutoExposure (const bool enable=true) const;
+
+    /** @brief Controls whether the gain should be adjusted after each image capture.
+     * @param[in] enable When set to true the Gain will be adjusted after each Capture command involving this camera.
+     * @return True if successful, false otherwise */
+    bool setAutoGain (const bool enable=true) const;
+
+    /** @brief Adjusts the camera's binning factor.
+     * Binning reduces the image resolution by an integer factor directly on the sensor, and thus greatly reduces
+     * the image transfer times. Changing this node's value directly reduces the resolution of all binary image
+     * nodes accordingly.
+     * @param[in] binning A positive integer specifying the binning factor.
+     * @return True if successful, false otherwise
+     * @note Changing the binning factor cancels any running capture operation and clears all images for the
+     * corresponding camera. */
+    bool setBinning (const int binning=1) const;
+
+    /** @brief The current black level offset. When AutoBlackLevel is false this value specifies the sensor black level
+     * directly, otherwise the offset is applied on top of the automatically estimated sensor black level.
+     * @param[in] offset A number between 0.0 and 1.0. Values closer to zero will yield darker images, values closer to one
+     * will increase the image brightness at the expense of noise in dark image regions.
+     * @return True if successful, false otherwise */
+    bool setBlackLevelOffset (const float offset=1.0) const;
+
+    /** @brief The current image exposure time.
+     * @param[in] exposure Specifies the camera's exposure time in milliseconds.
+     * @return True if successful, false otherwise
