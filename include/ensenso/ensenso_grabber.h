@@ -146,3 +146,60 @@ public:
     /** @brief Get meta information for a monocular camera.
      * @param[in] cam A string containing the camera (Left or Right)
      * @param[out] cam_info meta information for a camera.
+     * @return True if successful, false otherwise
+     * @note See: [sensor_msgs/CameraInfo](http://docs.ros.org/api/sensor_msgs/html/msg/CameraInfo.html)
+     */
+    bool getCameraInfo(std::string cam, sensor_msgs::CameraInfo &cam_info) const;
+
+    /** @brief Get transformation between stereo frame and rgb frame.
+
+     * @return True if successful, false otherwise
+     */
+    bool getTFLeftToRGB(Transform& tf) const;
+
+    /** @brief Get the raw stereo pattern information and the pattern pose. Before using it enable the
+     * storeCalibrationPattern.
+     * @param[out] grid_size The number of points on the patterns grid as two element vector.
+     * @param[out] grid_spacing Distance of two neighboring grid points along this pattern's x or y axis.
+     * @param[out] left_points the raw image positions of the pattern dots in the first camera.
+     * @param[out] right_points the raw image dot positions in the second camera.
+     * @param[out] pose the calibration pattern pose.
+     * @return True if successful, false otherwise */
+    bool getLastCalibrationPattern (std::vector<int> &grid_size, double &grid_spacing,
+                                    std::vector<Eigen::Vector2d> &left_points,
+                                    std::vector<Eigen::Vector2d> &right_points,
+                                    Eigen::Affine3d &pose) const;
+
+    /** @brief Obtain the number of frames per second (FPS) */
+    float getFramesPerSecond () const;
+
+    /** @brief Gets the number of collected patterns with successful observations in two cameras.
+     * @returns The number of pattern in the camera buffer */
+    int getPatternCount () const;
+
+    /** @brief Capture a single point cloud and store it
+     * @param[out] cloud The cloud to be filled
+     * @return True if successful, false otherwise
+     * @warning A device must be opened and not running */
+    bool grabSingleCloud (pcl::PointCloud<pcl::PointXYZ> &cloud);
+
+    /** @brief Check if the data acquisition is still running
+     * @return True if running, false otherwise */
+    bool isRunning () const;
+
+    /** @brief Check if a TCP port is opened
+     * @return True if open, false otherwise */
+    bool isTcpPortOpen () const;
+
+    /** @brief Opens an Ensenso device
+     * @param[in] serial The camera serial
+     * @return True if successful, false otherwise */
+    bool openDevice (std::string serial);
+
+
+        /** @brief Opens an Ensenso mono device
+     * @param[in] serial The camera serial
+     * @return True if successful, false otherwise */
+    bool openMonoDevice (std::string serial);
+
+    /** @brief Open TCP port to enable access via the
