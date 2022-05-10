@@ -263,3 +263,70 @@ public:
     /** @brief The current image exposure time.
      * @param[in] exposure Specifies the camera's exposure time in milliseconds.
      * @return True if successful, false otherwise
+     * @note Have a look at the exposure limits of the LED flash by looking at the illumination topic for your camera
+     * model and the MaxFlashTime node.*/
+    bool setExposure (const float exposure=1.0) const;
+
+    /** @brief The number of image pairs to capture. When FlexView is set to false the camera will operate in normal
+     * one-shot stereo mode.
+     * If FlexView is enabled the Capture command will automatically capture the indicated number of image pairs and
+     * shift the projectors pattern between each exposure. All image pairs will then be used to compute depth data in
+     * ComputeDisparityMap. Using more than one
+     * image pair will increase the effective X, Y and Z resolution.
+     * @param[in] enable Specify false to disable the FlexView function.
+     * @param[in] imagepairs A value in the range 2..8 specifying the number of image pairs used for depth computation.
+     * @return True if successful, false otherwise
+     * @note This parameter is only present if your camera supports FlexView (all N35 camera models).
+     * @note FlexView is currently only supported in software triggered operation.
+     * @note Depth computation from more than one image pair will only yield accurate depth data on scene parts which
+     * remained static in all image pairs.*/
+    bool setFlexView (const bool enable=false, const int imagepairs=2) const;
+
+    /** @brief Enables the diffuse front light during exposure. This should only be used when calibrating or tracking
+     * a calibration pattern.
+     * Please also note the illumination limitations.
+     * @param[in] enable When set to true the camera's front LED will be switched on for the duration of the
+     * image exposure.
+     * @return True if successful, false otherwise */
+    bool setFrontLight (const bool enable=false) const;
+
+    /** @brief The current analog gain factor. See also MaxGain.
+     * @param[in] gain A value in the range 1..MaxGain specifying the camera's analog gain factor.
+     * E.g. setting a value of 2.0
+     * will double the brightness values.
+     * @return True if successful, false otherwise */
+    bool setGain (const float gain=1.0) const;
+
+    /** @brief Enables the cameras analog gain boost function.
+     * @param[in] enable When set to true an additional analog gain boost on the camera will be enabled.
+     * @return True if successful, false otherwise */
+    bool setGainBoost (const bool enable=false) const;
+
+    /** @brief Sets the grid spacing of the calibration pattern
+     * @param[in] grid_spacing distance of two neighboring grid points along the pattern's x or y axis.
+     * @return True if successful, false otherwise */
+    bool setGridSpacing (const double grid_spacing) const;
+
+    /** @brief Enables the camera's internal analog gamma correction. This boosts dark pixels while compressing
+     * higher brightness values.
+     * @param[in] enable When set to true the cameras analog gamma correction will be enabled.
+     * @return True if successful, false otherwise */
+    bool setHardwareGamma (const bool enable=true) const;
+
+    /** @brief Enables the camera's high dynamic range function with a fixed, piece-wise linear response curve.
+     * @param[in] enable When set to true the HDR function of the camera will be enabled.
+     * @return True if successful, false otherwise
+     * @note The response curve set by the HDR feature can currently not be modified. */
+    bool setHdr (const bool enable=false) const;
+
+    /** @brief The minimum disparity in pixels where correspondences in the stereo image pair are being searched.
+     * The resolution reductions by Scaling and Binning are automatically accounted for. The actual value used
+     * in the matching process is output in ScaledMinimumDisparity.
+     * @param[in] disparity An integer specifying the minimum disparity in pixels where the stereo matching algorithm
+     * searches for correspondences between the two images.
+     * @return True if successful, false otherwise */
+    bool setMinimumDisparity (const int disparity=-64) const;
+
+    /** @brief The number of disparities in pixels where correspondences in the stereo image pair are being searched,
+     * starting at MinDisparity. The resolution reductions by Scaling and Binning are automatically accounted for.
+     * The actual value used in the matching process is output in ScaledNumberOfDisparities.
