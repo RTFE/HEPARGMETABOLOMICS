@@ -543,3 +543,65 @@ protected:
 
     /** @brief Boost images rgb signal */
     boost::signals2::signal<sig_cb_ensenso_images_rgb>* images_rgb_signal_;
+
+    /** @brief Boost depth image signal */
+    boost::signals2::signal<sig_cb_ensenso_image_depth>* image_depth_signal_;
+
+    /** @brief References to the camera tree */
+    NxLibItem camera_;
+
+    NxLibItem monocam_;
+
+    /** @brief Reference to the NxLib tree root */
+    boost::shared_ptr<const NxLibItem> root_;
+
+    /** @brief Whether the grabber uses RGB or not */
+    bool use_rgb_;
+
+    /** @brief Whether the grabber tries to find the pattern or not */
+    bool find_pattern_;
+
+
+    /** @brief Whether an Ensenso device is opened or not */
+    bool device_open_;
+
+    /** @brief Whether an Ensenso device is opened or not */
+    bool mono_device_open_;
+
+    /** @brief Whether an TCP port is opened or not */
+    bool tcp_open_;
+
+    /** @brief Last pose of the detected pattern during \ref processGrabbing() */
+    Eigen::Affine3d last_pattern_pose_;
+
+    /** @brief Last raw stereo info of the detected pattern during \ref processGrabbing() */
+    std::string last_stereo_pattern_;
+
+    /** @brief Whether to read the pattern pose at \ref processGrabbing() or not */
+    bool store_calibration_pattern_;
+
+    /** @brief Mutual exclusion for reading pattern pose */
+    mutable boost::mutex pattern_mutex_;
+
+    /** @brief Whether an Ensenso device is running or not */
+    bool running_;
+
+    /** @brief Near plane Parameter for the RenderPointMap command */
+    int near_plane_;
+
+    /** @brief Far plane Parameter for the RenderPointMap command */
+    int far_plane_;
+
+    /** @brief Camera frames per second (FPS) */
+    float fps_;
+
+    /** @brief timestamp of the current frame */
+    double timestamp_;
+
+    /** @brief translation from left camera to RGB frame */
+    Transform tf_left_to_rgb_;
+
+    /** @brief Mutual exclusion for FPS computation */
+    mutable boost::mutex fps_mutex_;
+
+    /** @brief Convert an Ensenso time stamp into a PCL/ROS time stamp
