@@ -663,3 +663,5 @@ protected:
 
 };
 }  // namespace pcl
+
+#endif // __PCL_IO_ENSENSO_GRABBER__
