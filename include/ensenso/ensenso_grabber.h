@@ -605,3 +605,61 @@ protected:
     mutable boost::mutex fps_mutex_;
 
     /** @brief Convert an Ensenso time stamp into a PCL/ROS time stamp
+     * @param[in] ensenso_stamp
+     * @return PCL stamp
+     * The Ensenso API returns the time elapsed from January 1st, 1601 (UTC); on Linux OS the
+     * reference time is January 1st, 1970 (UTC).
+     * See [time-stamp page](http://www.ensenso.de/manual/index.html?json_types.htm) for more info about
+     * the time stamp conversion. */
+    pcl::uint64_t static getPCLStamp (const double ensenso_stamp);
+
+    /** @brief Get OpenCV image type corresponding to the parameters given
+     * @param channels number of channels in the image
+     * @param bpe bytes per element
+     * @param isFlt is float
+     * @return the OpenCV type as a string */
+    std::string static getOpenCVType (const int channels, const int bpe, const bool isFlt);
+
+    /** @brief Converts a JSON string into an Eigen::Affine3d
+     * @param[in] json The input JSON transformation
+     * @param[out] matrix An Eigen matrix containing the resulting transformation
+     * @return True if successful, false otherwise
+     */
+    bool jsonToMatrix (const std::string json, Eigen::Affine3d &matrix) const;
+
+    /** @brief Converts an Eigen::Affine3d into a JSON string transformation (4x4)
+     * @param[in] matrix An Eigen matrix
+     * @param[out] json The output JSON transformation
+     * @param[in] pretty_format JSON formatting style
+     * @return True if successful, false otherwise
+     */
+    bool matrixToJson (const Eigen::Affine3d &matrix, std::string &json, const bool pretty_format=true) const;
+
+    /** @brief Continuously asks for images and or point clouds data from the device and publishes them if available.
+     * PCL time stamps are filled for both the images and clouds grabbed (see @ref getPCLStamp)
+     * @note The cloud time stamp is the RAW image time stamp */
+    void processGrabbing ();
+
+    /**
+    *   @brief triggers all available cameras
+    */
+    void triggerCameras();
+
+    /** @brief Retrieve Image from NxLib
+    * @param[out] acquired image
+    * @param[in] NxLib Node from which image should be acquired
+    */
+    void getImage(const NxLibItem& image_node, pcl::PCLGenImage<pcl::uint8_t>& image_out);
+
+    /** @brief Retrieve RGB depth data from NxLib
+    * @param[out] acquired point cloud and depth image
+    */
+    void getDepthDataRGB(pcl::PointCloud<pcl::PointXYZRGBA>::Ptr& cloud, const pcl::PCLGenImage<float>::Ptr& depthimage);
+
+    /** @brief Retrieve depth data from NxLib
+    * @param[out] acquired point cloud and depth image
+    */
+    void getDepthData(const pcl::PointCloud<pcl::PointXYZ>::Ptr& cloud, const pcl::PCLGenImage<float>::Ptr& depthimage);
+
+};
+}  // namespace pcl
