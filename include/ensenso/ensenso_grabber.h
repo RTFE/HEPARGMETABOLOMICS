@@ -392,3 +392,83 @@ public:
      * @return True if successful, false otherwise
      * @note Triggering on the rising edge is currently not supported by the N10 cameras due
      * to hardware limitations. */
+    bool setTriggerMode (const std::string mode="Software") const;
+
+    /** @brief The delay between trigger of the stereo camera (and projector) and the RGB camera.
+     * @note This can be used to avoid the projector pattern being visible in RGB.
+     * @param[in] delay Trigger delay in ms.
+     * @return True if successful, false otherwise */
+    bool setRGBTriggerDelay (const float delay=10) const;
+
+    /** @brief Configures the use of OpenGL
+     * @note OpenGL is used for example in the RenderPointMap command for RGB registration
+     * @param[in] enable to use OpenGL
+     * @return True if successful, false otherwise */
+    bool setUseOpenGL (const bool enable) const;
+
+    /** @brief Reduces the camera's capture AOI to the region necessary for the currently set stereo matching AOI.
+     * This will reduce the image transfer time, especially when setting smaller AOIs for the stereo matching.
+     * @param[in] enable When set to true the camera's capture AOI will be reduced.
+     * @return True if successful, false otherwise
+     * @note On N20, N30 and N35 cameras the AOI will only reduce the number of lines transferred in the raw images.
+     * Each line will still contain valid pixels for the full sensor width.
+     * @note This will also slightly improve transfer times when the stereo matching AOI is set to full size, because
+     * it crops image portions that will be thrown away during image rectification.
+     * @note Beware that you cannot enlarge the stereo matching AOI when you captured an image with
+     * UseDisparityMapAreaOfInterest set to true, because the camera images contain no data outside the previously
+     * specified AOI. You need to capture another image after enlarging the stereo matching AOI in order to get valid
+     * depth data in the enlarged regions.*/
+    bool setUseDisparityMapAreaOfInterest (const bool enable=false) const;
+
+    /** @brief The penalty for changes of +/- 1 disparity along an optimization path.
+     * Setting a larger value for DepthChangeCost will result in smoother surfaces, but some details might get lost
+     * when setting this value too large.
+     * @param[in] changecost A positive integer specifying the cost of disparity changes in the disparity map.
+     * @note his value must be smaller than DepthStepCost. Default Value 5 */
+    bool setDepthChangeCost(const int changecost) const;
+
+    /** @brief The penalty for steps (changes of more than one disparity) along an optimization path.
+     * Setting a larger value for DepthStepCost will yield better detection of planar surfaces in low contrast areas,
+     * but too large values will lead to a loss of geometry details and precise object boundaries.
+     * @param[in] stepcost A positive integer, strictly larger than DepthChangeCost, specifying the cost of disparity
+     * steps (discontinuities) in the disparity map.
+     * @note This value must be larger than DepthChangeCost. Default Value 30
+     * @return True if successful, false otherwise */
+    bool setDepthStepCost(const int stepcost) const;
+
+    /** @brief The disparity map is checked for occluded pixels. This is usually called 'left-right consistency check'.
+     * A pixel is only accepted if it is a mutually best match with the assigned right image pixel. Due to subpixel
+     * interpolation and half-occluded pixels, it is reasonable to allow small deviations from 'exact mutual' matches.
+     * This threshold sets the allowed range of mismatch in pixels.
+     * @param[in] shadowingthreshold An integer specifying the threshold in disparities by which a pixel might be occluded
+     * by another pixel to still be accepted as valid. Negative values disable the occlusion detection and will leave
+     * wrongly associated regions in occluded image areas.
+     * @return True if successful, false otherwise
+     * @note Setting a negative value (e.g. -1) for this parameter will disable filtering of shadowed areas.
+     * This will leave arbitrary depth values in shadowed areas. Default Value 1 */
+    bool setShadowingThreshold(const int shadowingthreshold) const;
+
+    /** @brief Filters the pixels depending on the uniqueness of the found correspondence. The value indicates the
+     * percentage, by which the cost of the next best correspondence must be larger (compared to the best correspondence),
+     * such that the pixel is accepted.
+     * @param[in] ratio An integer specifying the uniqueness margin in percent.
+     * @note  Setting this parameter to 0 disables the uniqueness filter.
+     * @return True if successful, false otherwise */
+    bool setUniquenessRatio(const int ratio) const;
+
+    /** @brief Specifies the size of the median filter as radius in pixels, excluding the center pixel. The filter is
+     * applied to the disparity map. Median filtering will reduce noise inside surfaces while maintaining sharp edges,
+     * but object corners will be rounded.
+     * @param[in] radius An integer specifying half the median filter window size in pixels, excluding the center pixel.
+     * Allowed values are 0 to 2.
+     * @note Setting the filter radius to 0 will disable median filtering.
+     * @return True if successful, false otherwise */
+    bool setMedianFilterRadius(const int radius) const;
+
+    /** @brief Defines how the image is divided into regions for speckle filtering. Whenever two neighboring pixel
+     * disparities differ by more than ComponentThreshold disparities, the two pixels are considered as belonging
+     * to separate regions. Consequently, each resulting region will not have discontinuities larger or equal to
+     * ComponentThreshold in it's disparity map area.
+     * @param[in] threshold An integer specifying the disparity step size, where surfaces should be cut into
+     * separate speckle regions.
+     * @note  The smaller this threshold is set, the smaller the resulting disparity regions will be. Thus setting
