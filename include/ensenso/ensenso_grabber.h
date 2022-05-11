@@ -472,3 +472,74 @@ public:
      * @param[in] threshold An integer specifying the disparity step size, where surfaces should be cut into
      * separate speckle regions.
      * @note  The smaller this threshold is set, the smaller the resulting disparity regions will be. Thus setting
+     * a smaller ComponentThreshold will result in more regions being filtered out, because some regions fall apart
+     * and their sizes drop below RegionSize.
+     * @return True if successful, false otherwise */
+    bool setSpeckleComponentThreshold(const int threshold) const;
+
+    /** @brief The size in pixels of a disparity map region below which the region will be removed from the disparity
+     * map. The computation of the regions is controlled by ComponentThreshold.
+     * @param[in] threshold An integer specifying the size in pixels below which a region will be removed from the
+     * disparity map.
+     * @note  Setting this parameter to 0 disables the speckle filter.
+     * @return True if successful, false otherwise */
+    bool setSpeckleRegionSize(const int threshold) const;
+
+    /** @brief Defines which missing regions will be filled by setting a threshold on the maximum spread of the
+     * disparities on the region boundary. Setting this value reasonably small will ensure that only missing patches
+     * inside planar faces will be filled whereas gaps at depth discontinuities are kept unfilled.
+     * @param[in] maximumspread An integer specifying the maximum spread of the disparities at the fill region border.
+     * @return True if successful, false otherwise*/
+    bool setFillBorderSpread(const int maximumspread) const;
+
+    /** @brief Defines an upper limit on the region size in pixels, up to which a region is accepted for filling.
+     * The region must also satisfy the BorderSpread condition to be filled.
+     * @param[in] regionsize An integer specifying region size in pixels, up to which a missing region is being filled.
+     * @note Setting this parameter to 0 disables the hole filling filter.
+     * @return True if successful, false otherwise */
+    bool setFillRegionSize(const int regionsize) const;
+
+    /** @brief The distance along a camera's z direction below which two neighboring points will be connected to a surface triangle.
+     * @param[in] threshold A threshold in millimeters below which neighboring pixels will be connected to a small surface patch.
+     * @return True if successful, false otherwise */
+    bool setSurfaceConnectivity(const int threshold) const;
+
+    /** @brief Specifies the minimum distance to the ViewPose below which surface elements will be excluded from the depth map.
+     * @note This can be used to exclude the working plane from the depth view.
+     * @param[in] near The clipping plane distance from the camera pose in viewing direction.
+     * @return True if successful, false otherwise */
+    bool setNearPlane(const int near);
+
+    /** @brief Specifies the maximum distance to the ViewPose below which surface elements will be excluded from the depth map.
+     * @note This can be used to exclude the working plane from the depth view.
+     * @param[in] far The clipping plane distance from the camera pose in viewing direction.
+     * @return True if successful, false otherwise */
+    bool setFarPlane(const int far);
+
+
+    /** @brief Start the point cloud and or image acquisition
+     * @note Opens device "0" if no device is open */
+    void start ();
+
+    /** @brief Stop the data acquisition */
+    void stop ();
+
+    /** @brief Enables collecting the calibration pattern continuous during processGrabbing()
+     * @param[in] enable When set to true the calibration pattern raw and pose will be collected. */
+    void storeCalibrationPattern (const bool enable);
+
+protected:
+    /** @brief Grabber thread */
+    boost::thread grabber_thread_;
+
+    /** @brief Boost point cloud signal */
+    boost::signals2::signal<sig_cb_ensenso_point_cloud>* point_cloud_signal_;
+
+    /** @brief Boost point cloud signal with RGB */
+    boost::signals2::signal<sig_cb_ensenso_point_cloud_rgb>* point_cloud_rgb_signal_;
+
+    /** @brief Boost images signal */
+    boost::signals2::signal<sig_cb_ensenso_images>* images_signal_;
+
+    /** @brief Boost images rgb signal */
+    boost::signals2::signal<sig_cb_ensenso_images_rgb>* images_rgb_signal_;
