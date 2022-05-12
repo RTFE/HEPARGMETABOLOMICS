@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
 <launch>
   
-  <arg name="serial" default
+  <arg name="serial" default="150534" />
+  <arg name="rqt" default="True" />
+  <arg na
