@@ -6,4 +6,7 @@
   <arg name="rviz" default="False" />
   
   <!-- Logging -->
-  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find ensenso)/config/rosconsole.conf"
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find ensenso)/config/rosconsole.conf"/>
+  
+  <!-- Ensenso driver -->
+  <node name="ensenso_driver" pkg="ensenso" type="ensens
