@@ -6,4 +6,4 @@
   <arg name="rviz" default="False" />
   
   <!-- Logging -->
-  <env name="ROSCON
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find ensenso)/config/rosconsole.conf"
