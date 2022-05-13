@@ -3,4 +3,7 @@
   
   <arg name="serial" default="150534" />
   <arg name="rqt" default="True" />
-  <arg na
+  <arg name="rviz" default="False" />
+  
+  <!-- Logging -->
+  <env name="ROSCON
