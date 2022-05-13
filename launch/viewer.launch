@@ -11,4 +11,5 @@
   <!-- Ensenso driver -->
   <node name="ensenso_driver" pkg="ensenso" type="ensenso_driver" ns="camera" output="screen"> 
     <!-- Static parameters -->
-    
+    <param name="stream_calib_pattern"  type="bool"   value="False" />
+  
