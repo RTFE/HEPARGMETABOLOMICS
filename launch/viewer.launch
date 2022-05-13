@@ -9,4 +9,6 @@
   <env name="ROSCONSOLE_CONFIG_FILE" value="$(find ensenso)/config/rosconsole.conf"/>
   
   <!-- Ensenso driver -->
-  <node name="ensenso_driver" pkg="ensenso" type="ensens
+  <node name="ensenso_driver" pkg="ensenso" type="ensenso_driver" ns="camera" output="screen"> 
+    <!-- Static parameters -->
+    
