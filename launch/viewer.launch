@@ -15,4 +15,5 @@
     <param name="serial"                type="string" value="$(arg serial)" />
     <param name="camera_frame_id"       type="string" value="camera_optical_frame" />
     <!-- Capture parameters -->
-    <param name=
+    <param name="AutoBlackLevel"    type="bool"   value="true" />
+    <param name="Au
