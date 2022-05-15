@@ -13,4 +13,6 @@
     <!-- Static parameters -->
     <param name="stream_calib_pattern"  type="bool"   value="False" />
     <param name="serial"                type="string" value="$(arg serial)" />
-    <param name="camera_frame_id"       type="string" value
+    <param name="camera_frame_id"       type="string" value="camera_optical_frame" />
+    <!-- Capture parameters -->
+    <param name=
