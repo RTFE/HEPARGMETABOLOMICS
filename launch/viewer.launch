@@ -19,4 +19,4 @@
     <param name="AutoExposure"      type="bool"   value="true" />
     <param name="AutoGain"          type="bool"   value="true" />
     <param name="Binning"           type="int"    value="1" />
-  
+    <param name="BlackLevelOffset"  type="double" value="0.55" /
