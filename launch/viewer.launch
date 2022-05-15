@@ -23,4 +23,4 @@
     <param name="DisparityMapAOI"   type="bool"   value="false" />
     <param name="Exposure"          type="double" value="1.5" />
     <param name="FlexView"          type="bool"   value="false" />
-    <par
+    <param name="FlexViewImages"    type="int"    value="2
