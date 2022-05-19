@@ -27,4 +27,5 @@
     <param name="FrontLight"        type="bool"   value="false" />
     <param name="Gain"              type="double" value="1.0" />
     <param name="GainBoost"         type="bool"   value="false" />
-    <param name="HardwareGamma"   
+    <param name="HardwareGamma"     type="bool"   value="true" />
+    <param name="Hdr"     
