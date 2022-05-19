@@ -24,4 +24,5 @@
     <param name="Exposure"          type="double" value="1.5" />
     <param name="FlexView"          type="bool"   value="false" />
     <param name="FlexViewImages"    type="int"    value="2" />
-    <param name="FrontLight"        type="bool"   value="false
+    <param name="FrontLight"        type="bool"   value="false" />
+    <param name="Gain"              type="doub
