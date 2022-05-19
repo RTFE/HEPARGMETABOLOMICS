@@ -25,4 +25,5 @@
     <param name="FlexView"          type="bool"   value="false" />
     <param name="FlexViewImages"    type="int"    value="2" />
     <param name="FrontLight"        type="bool"   value="false" />
-    <param name="Gain"              type="doub
+    <param name="Gain"              type="double" value="1.0" />
+    <param name="GainBoost"        
