@@ -36,4 +36,4 @@
     <!-- Stereo parameters -->
     <param name="MinimumDisparity"      type="int"    value="-64" />
     <param name="NumberOfDisparities"   type="int"    value="128" />
-    <param name="OptimizationProfile"
+    <param name="OptimizationProfile"   type="int"    value="2" />  <!-- Aligned: 0, Diagonal: 1, AlignedAndDia
