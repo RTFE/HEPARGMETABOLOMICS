@@ -35,4 +35,5 @@
     <param name="TriggerMode"       type="int"    value="0" />      <!-- Software: 0, FallingEdge: 1, RisingEdge: 2 -->
     <!-- Stereo parameters -->
     <param name="MinimumDisparity"      type="int"    value="-64" />
-    <param name="NumberOfDisparities"   type="int"
+    <param name="NumberOfDisparities"   type="int"    value="128" />
+    <param name="OptimizationProfile"
