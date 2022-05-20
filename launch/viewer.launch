@@ -31,4 +31,5 @@
     <param name="Hdr"               type="bool"   value="false" />
     <param name="PixelClock"        type="int"    value="24" />
     <param name="Projector"         type="bool"   value="true" />
-    <param na
+    <param name="TargetBrightness"  type="int"    value="80" />
+    <param name
