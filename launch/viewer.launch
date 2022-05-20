@@ -30,4 +30,5 @@
     <param name="HardwareGamma"     type="bool"   value="true" />
     <param name="Hdr"               type="bool"   value="false" />
     <param name="PixelClock"        type="int"    value="24" />
-    <param nam
+    <param name="Projector"         type="bool"   value="true" />
+    <param na
