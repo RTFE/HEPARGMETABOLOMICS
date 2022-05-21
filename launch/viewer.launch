@@ -42,4 +42,5 @@
     <param name="DepthStepCost"         type="int"    value="30" />
     <param name="ShadowingThreshold"    type="int"    value="1" />
     <!-- Postprocessing parameters -->
-    <param name="U
+    <param name="UniquenessRatio"           type="int" value="10" />
+    <param name=
