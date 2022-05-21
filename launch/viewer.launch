@@ -46,4 +46,5 @@
     <param name="MedianFilterRadius"        type="int" value="1" />
     <param name="SpeckleComponentThreshold" type="int" value="3" />
     <param name="SpeckleRegionSize"         type="int" value="150" />
-    <param name="FillBorderSpread"          type="int" value=
+    <param name="FillBorderSpread"          type="int" value="3" />
+    <param name="FillRegionSize"            t
