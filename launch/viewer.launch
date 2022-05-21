@@ -39,4 +39,4 @@
     <param name="OptimizationProfile"   type="int"    value="2" />  <!-- Aligned: 0, Diagonal: 1, AlignedAndDiagonal: 2 -->
     <param name="Scaling"               type="double" value="1.0" />
     <param name="DepthChangeCost"       type="int"    value="5" />
-  
+    <param name="DepthStepCost"         type="int"    value="
