@@ -48,4 +48,5 @@
     <param name="SpeckleRegionSize"         type="int" value="150" />
     <param name="FillBorderSpread"          type="int" value="3" />
     <param name="FillRegionSize"            type="int" value="150" />
-    <!-- Streaming parameters -->
+    <!-- Streaming parameters -->    
+    <param name="Cloud"   type="bool"   value="true" 
