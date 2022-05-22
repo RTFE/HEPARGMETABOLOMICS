@@ -57,4 +57,5 @@
     <node name="rqt_gui_node" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find ensenso)/config/viewer.perspective" />
   </group>
   
-  <group if
+  <group if="$(arg rviz)">
+    <node name="rviz_node" pkg="rviz" ty
