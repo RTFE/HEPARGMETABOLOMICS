@@ -54,4 +54,4 @@
   </node>
   
   <group if="$(arg rqt)">
-    <node name="rqt_gui_node" pkg="rqt_gui"
+    <node name="rqt_gui_node" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find ense
