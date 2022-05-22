@@ -53,3 +53,5 @@
     <param name="Images"  type="bool"   value="true" />
   </node>
   
+  <group if="$(arg rqt)">
+    <node name="rqt_gui_node" pkg="rqt_gui"
