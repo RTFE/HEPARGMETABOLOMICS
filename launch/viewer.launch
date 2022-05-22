@@ -47,4 +47,5 @@
     <param name="SpeckleComponentThreshold" type="int" value="3" />
     <param name="SpeckleRegionSize"         type="int" value="150" />
     <param name="FillBorderSpread"          type="int" value="3" />
-    <param name="FillRegionSize"            t
+    <param name="FillRegionSize"            type="int" value="150" />
+    <!-- Streaming parameters -->
