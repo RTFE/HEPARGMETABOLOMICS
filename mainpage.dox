@@ -2,4 +2,6 @@
 \mainpage
 \htmlinclude manifest.html
 
-\b ensenso is a package acts as a ROS driver for the ensenso 3D ca
+\b ensenso is a package acts as a ROS driver for the ensenso 3D cameras.
+
+*/
