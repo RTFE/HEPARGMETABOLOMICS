@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>ensenso</name>
-  <version>0.1
+  <version>0.1.0</version>
+  <description>The ensenso package</description>
+
+  
