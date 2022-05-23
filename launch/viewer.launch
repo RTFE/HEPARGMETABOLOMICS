@@ -61,4 +61,4 @@
     <node name="rviz_node" pkg="rviz" type="rviz" args="-d $(find ensenso)/config/viewer.rviz" />
   </group>
 
-</launc
+</launch>
