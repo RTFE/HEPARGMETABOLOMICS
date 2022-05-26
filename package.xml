@@ -12,4 +12,5 @@
   <url type="repository">https://github.com/crigroup/ensenso</url>
   
   <buildtool_depend>catkin</buildtool_depend>
-  
+  <build_depend>camera_info_manager</build_depend>
+  <build_depend>c
