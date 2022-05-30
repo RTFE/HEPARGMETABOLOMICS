@@ -20,4 +20,5 @@
   <build_depend>geometry_msgs</build_depend>
   <build_depend>image_transport</build_depend>
   <build_depend>pcl_conversions</build_depend>
-  <build_depe
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>sensor_ms
