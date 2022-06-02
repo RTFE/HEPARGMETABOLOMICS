@@ -35,4 +35,6 @@
   <run_depend>image_transport</run_depend>
   <run_depend>pcl_conversions</run_depend>
   <run_depend>pcl_ros</run_depend>
-  <run_depend>rqt_image_view</run_de
+  <run_depend>rqt_image_view</run_depend>
+  <run_depend>rqt_reconfigure</run_depend>
+ 
