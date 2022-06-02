@@ -32,4 +32,5 @@
   <run_depend>image_view</run_depend>
   <run_depend>eigen_conversions</run_depend>
   <run_depend>geometry_msgs</run_depend>
-  <run_depend>image_transport</run_d
+  <run_depend>image_transport</run_depend>
+  <run_depend>pcl_conversions</run_depend>
