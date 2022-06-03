@@ -37,4 +37,5 @@
   <run_depend>pcl_ros</run_depend>
   <run_depend>rqt_image_view</run_depend>
   <run_depend>rqt_reconfigure</run_depend>
- 
+  <run_depend>rqt_rviz</run_depend>
+  <run_depend>rviz</
