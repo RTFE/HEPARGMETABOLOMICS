@@ -39,4 +39,6 @@
   <run_depend>rqt_reconfigure</run_depend>
   <run_depend>rqt_rviz</run_depend>
   <run_depend>rviz</run_depend>
-  <run_depend>sensor_msgs</run_depe
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>std_srvs</ru
