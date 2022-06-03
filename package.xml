@@ -38,4 +38,5 @@
   <run_depend>rqt_image_view</run_depend>
   <run_depend>rqt_reconfigure</run_depend>
   <run_depend>rqt_rviz</run_depend>
-  <run_depend>rviz</
+  <run_depend>rviz</run_depend>
+  <run_depend>sensor_msgs</run_depe
