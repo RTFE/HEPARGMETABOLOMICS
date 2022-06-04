@@ -1,2 +1,6 @@
 - builder: epydoc
   config: epydoc.config
+- builder: doxygen
+  name: C++ API
+  output_dir: cpp
+  file_pa
