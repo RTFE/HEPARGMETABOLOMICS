@@ -3,4 +3,5 @@
 - builder: doxygen
   name: C++ API
   output_dir: cpp
-  file_pa
+  file_patterns: '*.c *.cpp *.h *.cc *.hh *.dox'
+  homepage: https://g
