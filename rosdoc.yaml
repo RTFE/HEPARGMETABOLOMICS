@@ -4,4 +4,4 @@
   name: C++ API
   output_dir: cpp
   file_patterns: '*.c *.cpp *.h *.cc *.hh *.dox'
-  homepage: https://g
+  homepage: https://github.com/crigroup/ensenso
