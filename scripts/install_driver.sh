@@ -17,4 +17,4 @@
 
 # Description
 # Downloading proprietary deb files from https://www.ensenso.com/support/sdk-download, and install them.
-# Lots of logics in this file are specific to 
+# Lots of logics in this file are specific to Docker. When used on a local host, you will need s
