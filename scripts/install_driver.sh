@@ -19,4 +19,5 @@
 # Downloading proprietary deb files from https://www.ensenso.com/support/sdk-download, and install them.
 # Lots of logics in this file are specific to Docker. When used on a local host, you will need sudo, but won't need some tweeks.
 
-# Update the URL when n
+# Update the URL when newer versions available.
+URL_CODEMETER=https://download.en
