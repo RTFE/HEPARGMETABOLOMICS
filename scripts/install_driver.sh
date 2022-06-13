@@ -16,4 +16,4 @@
 # limitations under the License.
 
 # Description
-# Downloading proprietary deb files
+# Downloading proprietary deb files from https://www.ensenso.com/support/sdk-download, and install them
