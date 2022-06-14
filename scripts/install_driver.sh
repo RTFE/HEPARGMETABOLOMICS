@@ -20,4 +20,5 @@
 # Lots of logics in this file are specific to Docker. When used on a local host, you will need sudo, but won't need some tweeks.
 
 # Update the URL when newer versions available.
-URL_CODEMETER=https://download.ensenso.com/s/ensensosdk/download?files=codemeter_6.40.240
+URL_CODEMETER=https://download.ensenso.com/s/ensensosdk/download?files=codemeter_6.40.2402.501_amd64.deb
+URL_ENSENSO=https://download.ensenso.com/s/ens
