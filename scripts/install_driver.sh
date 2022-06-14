@@ -24,4 +24,7 @@ URL_CODEMETER=https://download.ensenso.com/s/ensensosdk/download?files=codemeter
 URL_ENSENSO=https://download.ensenso.com/s/ensensosdk/download?files=ensenso-sdk-2.2.65-x64.deb
 
 PATH_DEB_CODEMETER=/tmp/codemeter.deb
-PATH_DEB_ENSENSO=/tmp/ens
+PATH_DEB_ENSENSO=/tmp/ensenso.deb
+
+# Downlad and install codemeter
+wget -O $PATH_DEB_C
