@@ -27,4 +27,5 @@ PATH_DEB_CODEMETER=/tmp/codemeter.deb
 PATH_DEB_ENSENSO=/tmp/ensenso.deb
 
 # Downlad and install codemeter
-wget -O $PATH_DEB_C
+wget -O $PATH_DEB_CODEMETER $URL_CODEMETER
+dpkg -i $PATH_DEB_CODEMETER
