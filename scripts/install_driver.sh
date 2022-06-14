@@ -23,4 +23,5 @@
 URL_CODEMETER=https://download.ensenso.com/s/ensensosdk/download?files=codemeter_6.40.2402.501_amd64.deb
 URL_ENSENSO=https://download.ensenso.com/s/ensensosdk/download?files=ensenso-sdk-2.2.65-x64.deb
 
-PATH_DEB_
+PATH_DEB_CODEMETER=/tmp/codemeter.deb
+PATH_DEB_ENSENSO=/tmp/ens
