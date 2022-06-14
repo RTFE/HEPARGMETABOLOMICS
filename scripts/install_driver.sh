@@ -29,3 +29,7 @@ PATH_DEB_ENSENSO=/tmp/ensenso.deb
 # Downlad and install codemeter
 wget -O $PATH_DEB_CODEMETER $URL_CODEMETER
 dpkg -i $PATH_DEB_CODEMETER
+apt-get install -f -y
+
+# Downlad and install ensenso-sdk
+wge
