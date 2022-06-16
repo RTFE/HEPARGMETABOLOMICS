@@ -32,4 +32,5 @@ dpkg -i $PATH_DEB_CODEMETER
 apt-get install -f -y
 
 # Downlad and install ensenso-sdk
-wge
+wget -O $PATH_DEB_ENSENSO $URL_ENSENSO
+dpkg -i $PATH_DEB_EN
