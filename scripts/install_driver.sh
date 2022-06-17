@@ -33,4 +33,5 @@ apt-get install -f -y
 
 # Downlad and install ensenso-sdk
 wget -O $PATH_DEB_ENSENSO $URL_ENSENSO
-dpkg -i $PATH_DEB_EN
+dpkg -i $PATH_DEB_ENSENSO
+apt-get install -f -y
