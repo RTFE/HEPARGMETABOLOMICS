@@ -11,4 +11,6 @@ def callback_rgb(data, time, bag):
     bag.write('/ensenso/depth/points', data, t=data.header.stamp)
 
 def rgb_listener(bag):
-    counter 
+    counter = 0
+    while(True):
+        raw_input("press enter to conti
