@@ -13,4 +13,6 @@ def callback_rgb(data, time, bag):
 def rgb_listener(bag):
     counter = 0
     while(True):
-        raw_input("press enter to conti
+        raw_input("press enter to continue...")
+        counter += 1
+        time = rospy.Time(coun
