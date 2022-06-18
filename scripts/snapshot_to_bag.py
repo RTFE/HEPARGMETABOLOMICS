@@ -7,4 +7,5 @@ from rosbag.bag import Bag
 
 def callback_rgb(data, time, bag):
     print 'received PointCloud2!'
-    data.header.stamp = time + rospy.Duration.from_sec(1505388514)   # shift time stamp to the 
+    data.header.stamp = time + rospy.Duration.from_sec(1505388514)   # shift time stamp to the year 2017 (for kalibr)
+    bag.write('/ensenso/depth/poin
