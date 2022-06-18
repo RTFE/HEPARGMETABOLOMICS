@@ -2,4 +2,8 @@
 import rospy
 from sensor_msgs.msg import PointCloud2
 from genpy.rostime import Time
-from rosbag.bag 
+from rosbag.bag import Bag
+
+
+def callback_rgb(data, time, bag):
+    print 'r
