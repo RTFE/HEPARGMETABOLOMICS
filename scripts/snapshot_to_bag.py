@@ -6,4 +6,5 @@ from rosbag.bag import Bag
 
 
 def callback_rgb(data, time, bag):
-    print 'r
+    print 'received PointCloud2!'
+    data.header.stamp = time + rospy.Duration.f
