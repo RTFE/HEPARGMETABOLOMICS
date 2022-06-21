@@ -16,4 +16,5 @@ def rgb_listener(bag):
         raw_input("press enter to continue...")
         counter += 1
         time = rospy.Time(counter)
-        msg_rgb = rospy.wait_for_message('/ensenso/d
+        msg_rgb = rospy.wait_for_message('/ensenso/depth/points', PointCloud2)
+        callback_rgb(msg_rgb, time,bag)
