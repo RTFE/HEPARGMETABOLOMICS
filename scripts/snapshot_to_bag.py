@@ -15,4 +15,5 @@ def rgb_listener(bag):
     while(True):
         raw_input("press enter to continue...")
         counter += 1
-        time = rospy.Time(coun
+        time = rospy.Time(counter)
+        msg_rgb = rospy.wait_for_message('/ensenso/d
