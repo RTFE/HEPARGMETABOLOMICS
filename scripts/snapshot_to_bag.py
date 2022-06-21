@@ -20,4 +20,6 @@ def rgb_listener(bag):
         callback_rgb(msg_rgb, time,bag)
 
 if __name__ == '__main__':
-    rospy.init_node('rgb_listener', a
+    rospy.init_node('rgb_listener', anonymous=True)
+    try:
+        bag = Bag('images_for_cali
