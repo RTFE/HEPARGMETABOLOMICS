@@ -18,3 +18,6 @@ def rgb_listener(bag):
         time = rospy.Time(counter)
         msg_rgb = rospy.wait_for_message('/ensenso/depth/points', PointCloud2)
         callback_rgb(msg_rgb, time,bag)
+
+if __name__ == '__main__':
+    rospy.init_node('rgb_listener', a
