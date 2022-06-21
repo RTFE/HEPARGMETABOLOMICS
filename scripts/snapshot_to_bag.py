@@ -22,4 +22,5 @@ def rgb_listener(bag):
 if __name__ == '__main__':
     rospy.init_node('rgb_listener', anonymous=True)
     try:
-        bag = Bag('images_for_cali
+        bag = Bag('images_for_calibration.bag', 'w', allow_unindexed=True)
+        rgb_listene
