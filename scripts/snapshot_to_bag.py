@@ -23,4 +23,6 @@ if __name__ == '__main__':
     rospy.init_node('rgb_listener', anonymous=True)
     try:
         bag = Bag('images_for_calibration.bag', 'w', allow_unindexed=True)
-        rgb_listene
+        rgb_listener(bag)
+    finally:
+        bag.close()
