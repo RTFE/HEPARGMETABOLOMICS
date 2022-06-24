@@ -11,4 +11,4 @@ from cv_bridge import CvBridge, CvBridgeError
 try:
   import pcl
 except ImportError:
-  raise Exception('pcl pytho
+  raise Exception('pcl python biddings not found: https://github.com/strawlab/python-pcl')
