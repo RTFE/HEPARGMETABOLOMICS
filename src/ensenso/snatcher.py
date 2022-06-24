@@ -17,4 +17,5 @@ from sensor_msgs.msg import CameraInfo, Image, PointCloud2
 
 
 class EnsensoDriverReconfigure():
-  def 
+  def __init__(self, namespace='/', timeout=30):
+    ns = criros.utils.s
