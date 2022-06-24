@@ -6,4 +6,7 @@ import criros
 import numpy as np
 import dynamic_reconfigure.client
 # OpenCV and PCL
-import
+import cv2
+from cv_bridge import CvBridge, CvBridgeError
+try:
+  impor
