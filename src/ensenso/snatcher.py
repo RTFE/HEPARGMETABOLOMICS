@@ -13,4 +13,8 @@ try:
 except ImportError:
   raise Exception('pcl python biddings not found: https://github.com/strawlab/python-pcl')
 # Messages
-from sensor_msgs.msg import Camera
+from sensor_msgs.msg import CameraInfo, Image, PointCloud2
+
+
+class EnsensoDriverReconfigure():
+  def 
