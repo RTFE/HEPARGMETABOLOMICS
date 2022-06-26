@@ -21,4 +21,6 @@ class EnsensoDriverReconfigure():
     ns = criros.utils.solve_namespace(namespace)
     self.dynclient = dynamic_reconfigure.client.Client(ns+'ensenso_driver', timeout=timeout, config_callback=self.cb_dynresponse)
 
-  def cb_dynresponse(sel
+  def cb_dynresponse(self, config):
+    """
+    TODO: Check that the configuration succe
