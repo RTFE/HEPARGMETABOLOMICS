@@ -31,4 +31,6 @@ class EnsensoDriverReconfigure():
     return self.dynclient.get_configuration(timeout=timeout)
 
   def update_configuration(self, config):
-    
+    return self.dynclient.update_configuration(config)
+
+  def enable_l
