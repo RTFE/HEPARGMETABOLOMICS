@@ -35,4 +35,5 @@ class EnsensoDriverReconfigure():
 
   def enable_lights(self, projector=False, frontlight=False):
     """
-    Switches o
+    Switches on/off the projector and/or the frontlight
+    @type  proj
