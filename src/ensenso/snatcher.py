@@ -19,4 +19,6 @@ from sensor_msgs.msg import CameraInfo, Image, PointCloud2
 class EnsensoDriverReconfigure():
   def __init__(self, namespace='/', timeout=30):
     ns = criros.utils.solve_namespace(namespace)
-    self.dynclient = dynamic_reconfigure.client.Client(ns+'ensenso_driver', timeout=timeout
+    self.dynclient = dynamic_reconfigure.client.Client(ns+'ensenso_driver', timeout=timeout, config_callback=self.cb_dynresponse)
+
+  def cb_dynresponse(sel
