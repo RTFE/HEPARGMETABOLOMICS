@@ -33,4 +33,6 @@ class EnsensoDriverReconfigure():
   def update_configuration(self, config):
     return self.dynclient.update_configuration(config)
 
-  def enable_l
+  def enable_lights(self, projector=False, frontlight=False):
+    """
+    Switches o
