@@ -23,4 +23,9 @@ class EnsensoDriverReconfigure():
 
   def cb_dynresponse(self, config):
     """
-    TODO: Check that the configuration succe
+    TODO: Check that the configuration succeeded.
+    """
+    pass
+
+  def get_configuration(self, timeout=None):
+ 
