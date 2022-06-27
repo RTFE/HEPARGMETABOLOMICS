@@ -41,4 +41,7 @@ class EnsensoDriverReconfigure():
     @type  frontlight: bool
     @param frontlight: Switch on/off the frontlight
     """
-    self.dynclient.update_configuration({'Projector':projector, 'FrontLight':frontlight}
+    self.dynclient.update_configuration({'Projector':projector, 'FrontLight':frontlight})
+
+  def enable_streaming(self, cloud=False, images=False):
+    
