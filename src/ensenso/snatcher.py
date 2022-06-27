@@ -39,4 +39,6 @@ class EnsensoDriverReconfigure():
     @type  projector: bool
     @param projector: Switch on/off the projector
     @type  frontlight: bool
-    @param frontlight: 
+    @param frontlight: Switch on/off the frontlight
+    """
+    self.dynclient.update_con
