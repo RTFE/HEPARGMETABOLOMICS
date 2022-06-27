@@ -45,4 +45,6 @@ class EnsensoDriverReconfigure():
 
   def enable_streaming(self, cloud=False, images=False):
     """
-    Enable/disable the streaming of the point cloud 
+    Enable/disable the streaming of the point cloud and/or the images
+    @type  cloud: bool
+    @param clo
