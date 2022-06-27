@@ -41,4 +41,4 @@ class EnsensoDriverReconfigure():
     @type  frontlight: bool
     @param frontlight: Switch on/off the frontlight
     """
-    self.dynclient.update_con
+    self.dynclient.update_configuration({'Projector':projector, 'FrontLight':frontlight}
