@@ -37,4 +37,6 @@ class EnsensoDriverReconfigure():
     """
     Switches on/off the projector and/or the frontlight
     @type  projector: bool
-    @param projector: Switch on/off the
+    @param projector: Switch on/off the projector
+    @type  frontlight: bool
+    @param frontlight: 
