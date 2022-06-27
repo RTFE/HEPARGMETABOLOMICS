@@ -48,4 +48,5 @@ class EnsensoDriverReconfigure():
     Enable/disable the streaming of the point cloud and/or the images
     @type  cloud: bool
     @param cloud: Enable/disable the streaming of the point cloud
-  
+    @type  images: bool
+    @param images: Enable/d
