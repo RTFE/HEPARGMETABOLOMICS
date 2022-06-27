@@ -44,4 +44,5 @@ class EnsensoDriverReconfigure():
     self.dynclient.update_configuration({'Projector':projector, 'FrontLight':frontlight})
 
   def enable_streaming(self, cloud=False, images=False):
-    
+    """
+    Enable/disable the streaming of the point cloud 
