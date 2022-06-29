@@ -54,4 +54,6 @@ class EnsensoDriverReconfigure():
     self.dynclient.update_configuration({'Cloud':cloud, 'Images':images})
 
 
-class Snatch
+class Snatcher(object):
+  """
+  Class to 'snatch' images and cloud from the 
