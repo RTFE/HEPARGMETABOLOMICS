@@ -51,4 +51,7 @@ class EnsensoDriverReconfigure():
     @type  images: bool
     @param images: Enable/disable the streaming of the images
     """
-    self.dynclient.upda
+    self.dynclient.update_configuration({'Cloud':cloud, 'Images':images})
+
+
+class Snatch
