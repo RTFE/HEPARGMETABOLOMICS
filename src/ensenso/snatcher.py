@@ -56,4 +56,5 @@ class EnsensoDriverReconfigure():
 
 class Snatcher(object):
   """
-  Class to 'snatch' images and cloud from the 
+  Class to 'snatch' images and cloud from the ensenso camera. It subscribes to the camera
+  topics and connects to 
