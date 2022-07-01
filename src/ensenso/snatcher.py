@@ -58,3 +58,6 @@ class Snatcher(object):
   """
   Class to 'snatch' images and cloud from the ensenso camera. It subscribes to the camera
   topics and connects to the dynamic reconfiguration server to start/stop streaming and
+  to switch on/off the projector and frontlight.
+  """
+  def __in
