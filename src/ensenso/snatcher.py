@@ -60,4 +60,6 @@ class Snatcher(object):
   topics and connects to the dynamic reconfiguration server to start/stop streaming and
   to switch on/off the projector and frontlight.
   """
-  def __in
+  def __init__(self, use_cv_types=True):
+    """
+    Snatcher constr
