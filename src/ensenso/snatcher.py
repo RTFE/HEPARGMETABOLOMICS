@@ -62,4 +62,5 @@ class Snatcher(object):
   """
   def __init__(self, use_cv_types=True):
     """
-    Snatcher constr
+    Snatcher constructor. It subscribes to the following topics:
+   
