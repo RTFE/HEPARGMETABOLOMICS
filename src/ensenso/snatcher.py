@@ -64,4 +64,5 @@ class Snatcher(object):
     """
     Snatcher constructor. It subscribes to the following topics:
       - Raw images: C{left/image_raw} and C{left/image_raw} of type C{sensor_msgs/Image}
-      - Rectified images: C{left/
+      - Rectified images: C{left/image_rect} and C{left/image_rect} of type C{sensor_msgs/Image}
+   
