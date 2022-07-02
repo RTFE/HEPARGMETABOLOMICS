@@ -63,4 +63,5 @@ class Snatcher(object):
   def __init__(self, use_cv_types=True):
     """
     Snatcher constructor. It subscribes to the following topics:
-      - Raw images: C{left/image_raw} and C{left/image_raw} of 
+      - Raw images: C{left/image_raw} and C{left/image_raw} of type C{sensor_msgs/Image}
+      - Rectified images: C{left/
