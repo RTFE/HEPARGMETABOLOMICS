@@ -68,3 +68,4 @@ class Snatcher(object):
       - Point cloud: C{depth/points} of type C{sensor_msgs/PointCloud2}
     @type  use_cv_types: bool
     @param use_cv_types: If true will convert image messages to valid OpenCV type.
+    @note: If your B{topics are different} use ros remap
