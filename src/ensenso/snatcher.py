@@ -67,4 +67,4 @@ class Snatcher(object):
       - Rectified images: C{left/image_rect} and C{left/image_rect} of type C{sensor_msgs/Image}
       - Point cloud: C{depth/points} of type C{sensor_msgs/PointCloud2}
     @type  use_cv_types: bool
-    @param use_cv_types
+    @param use_cv_types: If true will convert image messages to valid OpenCV type.
