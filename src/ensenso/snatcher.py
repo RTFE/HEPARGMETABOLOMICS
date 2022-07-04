@@ -65,4 +65,6 @@ class Snatcher(object):
     Snatcher constructor. It subscribes to the following topics:
       - Raw images: C{left/image_raw} and C{left/image_raw} of type C{sensor_msgs/Image}
       - Rectified images: C{left/image_rect} and C{left/image_rect} of type C{sensor_msgs/Image}
-      - Point cloud: C{depth/points} of type C{sensor_msgs/PointCl
+      - Point cloud: C{depth/points} of type C{sensor_msgs/PointCloud2}
+    @type  use_cv_types: bool
+    @param use_cv_types
