@@ -71,4 +71,5 @@ class Snatcher(object):
     @note: If your B{topics are different} use ros remapping.
     """
     self.initialized = False
- 
+    # Config stuff
+    self.use_cv_types = use_cv_
