@@ -72,4 +72,7 @@ class Snatcher(object):
     """
     self.initialized = False
     # Config stuff
-    self.use_cv_types = use_cv_
+    self.use_cv_types = use_cv_types
+    self.bridge = CvBridge()
+    self.cv_type = 'mono8'
+ 
