@@ -75,4 +75,5 @@ class Snatcher(object):
     self.use_cv_types = use_cv_types
     self.bridge = CvBridge()
     self.cv_type = 'mono8'
- 
+    # Setup publishers and subscribers
+    self.reset_snaps
