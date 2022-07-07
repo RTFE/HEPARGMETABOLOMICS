@@ -80,4 +80,5 @@ class Snatcher(object):
     self.info_left = None
     self.info_right = None
     topics = []
-    topics.append(['left/camera_info', CameraInfo, sel
+    topics.append(['left/camera_info', CameraInfo, self.cb_info_left])
+    topics.append(['right/camera_i
