@@ -78,4 +78,6 @@ class Snatcher(object):
     # Setup publishers and subscribers
     self.reset_snapshots()
     self.info_left = None
-    self.info_right = Non
+    self.info_right = None
+    topics = []
+    topics.append(['left/camera_info', CameraInfo, sel
