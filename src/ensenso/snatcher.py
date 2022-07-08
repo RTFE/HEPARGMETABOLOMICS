@@ -89,4 +89,4 @@ class Snatcher(object):
     topics.append(['depth/points', PointCloud2, self.cb_point_cloud])
     self.subscribers = dict()
     for name,ttype,callback in topics:
-      self.
+      self.subscribers[name] = rospy.Subscriber(name, ttype
