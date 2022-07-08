@@ -90,4 +90,6 @@ class Snatcher(object):
     self.subscribers = dict()
     for name,ttype,callback in topics:
       self.subscribers[name] = rospy.Subscriber(name, ttype, callback,
-                                                                
+                                                                  queue_size=1)
+    # Camera configuration client
+    self.d
