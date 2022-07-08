@@ -87,4 +87,6 @@ class Snatcher(object):
     topics.append(['left/image_rect', Image, self.cb_rect_left])
     topics.append(['right/image_rect', Image, self.cb_rect_right])
     topics.append(['depth/points', PointCloud2, self.cb_point_cloud])
-    self.subscri
+    self.subscribers = dict()
+    for name,ttype,callback in topics:
+      self.
