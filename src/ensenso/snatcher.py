@@ -85,4 +85,5 @@ class Snatcher(object):
     topics.append(['left/image_raw', Image, self.cb_raw_left])
     topics.append(['right/image_raw', Image, self.cb_raw_right])
     topics.append(['left/image_rect', Image, self.cb_rect_left])
-    topics.append(['right/image_rect', 
+    topics.append(['right/image_rect', Image, self.cb_rect_right])
+    topics.append(['dep
