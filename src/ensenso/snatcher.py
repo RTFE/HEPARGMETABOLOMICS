@@ -92,4 +92,6 @@ class Snatcher(object):
       self.subscribers[name] = rospy.Subscriber(name, ttype, callback,
                                                                   queue_size=1)
     # Camera configuration client
-    self.dynclient = EnsensoDriverReconfigure(namespace=rospy.get_namesp
+    self.dynclient = EnsensoDriverReconfigure(namespace=rospy.get_namespace())
+    rospy.on_shutdown(self.cb_shutdown)
+    self.initialized = T
