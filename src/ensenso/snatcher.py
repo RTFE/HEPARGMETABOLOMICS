@@ -98,4 +98,8 @@ class Snatcher(object):
 
   def cb_dynresponse(self, config):
     """
-    TODO: Chec
+    TODO: Check that the configuration succeeded.
+    """
+    pass
+
+  def cb_info
