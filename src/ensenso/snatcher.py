@@ -94,4 +94,8 @@ class Snatcher(object):
     # Camera configuration client
     self.dynclient = EnsensoDriverReconfigure(namespace=rospy.get_namespace())
     rospy.on_shutdown(self.cb_shutdown)
-    self.initialized = T
+    self.initialized = True
+
+  def cb_dynresponse(self, config):
+    """
+    TODO: Chec
