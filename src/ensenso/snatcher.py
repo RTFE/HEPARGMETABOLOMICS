@@ -106,4 +106,6 @@ class Snatcher(object):
     self.info_left = copy.deepcopy(msg)
     self.subscribers['left/camera_info'].unregister()
 
-  def cb_info_right(
+  def cb_info_right(self, msg):
+    self.info_right = copy.deepcopy(msg)
+    self.subscri
