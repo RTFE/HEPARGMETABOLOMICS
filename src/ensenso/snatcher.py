@@ -108,4 +108,6 @@ class Snatcher(object):
 
   def cb_info_right(self, msg):
     self.info_right = copy.deepcopy(msg)
-    self.subscri
+    self.subscribers['right/camera_info'].unregister()
+
+  def cb_point_
