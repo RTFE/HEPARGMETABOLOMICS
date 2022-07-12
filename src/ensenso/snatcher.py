@@ -110,4 +110,6 @@ class Snatcher(object):
     self.info_right = copy.deepcopy(msg)
     self.subscribers['right/camera_info'].unregister()
 
-  def cb_point_
+  def cb_point_cloud(self, msg):
+    """
+    Callback executed every time a point c
