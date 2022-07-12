@@ -102,4 +102,6 @@ class Snatcher(object):
     """
     pass
 
-  def cb_info
+  def cb_info_left(self, msg):
+    self.info_left = copy.deepcopy(msg)
+    self.s
