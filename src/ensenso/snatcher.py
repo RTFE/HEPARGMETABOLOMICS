@@ -112,4 +112,6 @@ class Snatcher(object):
 
   def cb_point_cloud(self, msg):
     """
-    Callback executed every time a point c
+    Callback executed every time a point cloud is received
+    @type  msg: sensor_msgs/PointCloud2
+    
