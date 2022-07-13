@@ -117,4 +117,8 @@ class Snatcher(object):
     @param msg: The C{PointCloud2} message.
     """
     self.point_cloud = msg
-    self.headers['point_cloud'] = copy.deepcopy(msg.
+    self.headers['point_cloud'] = copy.deepcopy(msg.header)
+
+  def cb_raw_left(self, msg):
+    """
+    Callba
