@@ -114,4 +114,6 @@ class Snatcher(object):
     """
     Callback executed every time a point cloud is received
     @type  msg: sensor_msgs/PointCloud2
-    
+    @param msg: The C{PointCloud2} message.
+    """
+    self.point_
