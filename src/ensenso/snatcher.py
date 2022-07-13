@@ -116,4 +116,5 @@ class Snatcher(object):
     @type  msg: sensor_msgs/PointCloud2
     @param msg: The C{PointCloud2} message.
     """
-    self.point_
+    self.point_cloud = msg
+    self.headers['point_cloud'] = copy.deepcopy(msg.
