@@ -122,4 +122,6 @@ class Snatcher(object):
   def cb_raw_left(self, msg):
     """
     Callback executed every time a left raw image is received
-    @type  msg
+    @type  msg: sensor_msgs/Image
+    @param msg: The C{Image} message.
+    ""
