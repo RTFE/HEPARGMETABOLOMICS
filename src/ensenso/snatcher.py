@@ -124,4 +124,6 @@ class Snatcher(object):
     Callback executed every time a left raw image is received
     @type  msg: sensor_msgs/Image
     @param msg: The C{Image} message.
-    ""
+    """
+    self.headers['raw_left'] = copy.deepcopy(msg.header)
+    if s
