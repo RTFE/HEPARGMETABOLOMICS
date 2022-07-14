@@ -126,4 +126,6 @@ class Snatcher(object):
     @param msg: The C{Image} message.
     """
     self.headers['raw_left'] = copy.deepcopy(msg.header)
-    if s
+    if self.use_cv_types:
+      try:
+        self.raw_left = s
