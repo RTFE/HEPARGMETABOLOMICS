@@ -130,4 +130,5 @@ class Snatcher(object):
       try:
         self.raw_left = self.bridge.imgmsg_to_cv2(msg, self.cv_type)
       except:
-    
+        rospy.logdebug('Failed to process raw_left image')
+        self.ra
