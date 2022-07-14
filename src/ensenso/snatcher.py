@@ -128,4 +128,6 @@ class Snatcher(object):
     self.headers['raw_left'] = copy.deepcopy(msg.header)
     if self.use_cv_types:
       try:
-        self.raw_left = s
+        self.raw_left = self.bridge.imgmsg_to_cv2(msg, self.cv_type)
+      except:
+    
