@@ -121,4 +121,5 @@ class Snatcher(object):
 
   def cb_raw_left(self, msg):
     """
-    Callba
+    Callback executed every time a left raw image is received
+    @type  msg
