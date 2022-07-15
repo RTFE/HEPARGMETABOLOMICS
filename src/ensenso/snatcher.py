@@ -135,4 +135,6 @@ class Snatcher(object):
     else:
       self.raw_left = msg
 
-  def cb_raw_right(sel
+  def cb_raw_right(self, msg):
+    """
+    Callback executed every time a right ra
