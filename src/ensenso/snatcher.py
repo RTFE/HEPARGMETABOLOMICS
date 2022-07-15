@@ -139,4 +139,6 @@ class Snatcher(object):
     """
     Callback executed every time a right raw image is received
     @type  msg: sensor_msgs/Image
-    @par
+    @param msg: The C{Image} message.
+    """
+    self.headers['raw_right
