@@ -144,4 +144,6 @@ class Snatcher(object):
     self.headers['raw_right'] = copy.deepcopy(msg.header)
     if self.use_cv_types:
       try:
-        self.raw_right = self.bridge.imgmsg_to_cv2(msg, self
+        self.raw_right = self.bridge.imgmsg_to_cv2(msg, self.cv_type)
+      except:
+        rospy.logdebug('Failed to p
