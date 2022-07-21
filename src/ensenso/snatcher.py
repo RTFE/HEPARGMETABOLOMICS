@@ -155,4 +155,6 @@ class Snatcher(object):
     """
     Callback executed every time a left rectified image is received
     @type  msg: sensor_msgs/Image
-    @par
+    @param msg: The C{Image} message.
+    """
+    self.headers['r
