@@ -153,4 +153,6 @@ class Snatcher(object):
 
   def cb_rect_left(self, msg):
     """
-    Callback executed every time a left rectified imag
+    Callback executed every time a left rectified image is received
+    @type  msg: sensor_msgs/Image
+    @par
