@@ -164,4 +164,7 @@ class Snatcher(object):
       except:
         rospy.logdebug('Failed to process rect_left image')
         self.rect_left = None
-   
+    else:
+      self.rect_left = msg
+
+  def cb_rect_right(self, msg):
