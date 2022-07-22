@@ -169,4 +169,6 @@ class Snatcher(object):
 
   def cb_rect_right(self, msg):
     """
-    Callback executed every time a ri
+    Callback executed every time a right raw image is received
+    @type  msg: sensor_msgs/Image
+    @p
