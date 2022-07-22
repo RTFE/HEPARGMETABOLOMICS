@@ -168,3 +168,5 @@ class Snatcher(object):
       self.rect_left = msg
 
   def cb_rect_right(self, msg):
+    """
+    Callback executed every time a ri
