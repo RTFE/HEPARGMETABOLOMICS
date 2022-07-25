@@ -173,4 +173,5 @@ class Snatcher(object):
     @type  msg: sensor_msgs/Image
     @param msg: The C{Image} message.
     """
-    self.headers['
+    self.headers['rect_right'] = copy.deepcopy(msg.header)
+    if self.use_cv_t
