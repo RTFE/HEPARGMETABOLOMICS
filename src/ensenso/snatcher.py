@@ -174,4 +174,6 @@ class Snatcher(object):
     @param msg: The C{Image} message.
     """
     self.headers['rect_right'] = copy.deepcopy(msg.header)
-    if self.use_cv_t
+    if self.use_cv_types:
+      try:
+        self.rect_right = self.bridge.imgmsg_to_cv2(m
