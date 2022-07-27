@@ -184,3 +184,7 @@ class Snatcher(object):
       self.rect_right = msg
 
   def cb_shutdown(self):
+    for sub in self.subscribers.values():
+      sub.unregister()
+
+  def 
