@@ -180,4 +180,7 @@ class Snatcher(object):
       except:
         rospy.logdebug('Failed to process rect_right image')
         self.rect_right = None
-  
+    else:
+      self.rect_right = msg
+
+  def cb_shutdown(self):
