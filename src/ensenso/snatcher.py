@@ -187,4 +187,5 @@ class Snatcher(object):
     for sub in self.subscribers.values():
       sub.unregister()
 
-  def 
+  def enable_lights(self, projector=False, frontlight=False):
+ 
