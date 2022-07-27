@@ -188,4 +188,6 @@ class Snatcher(object):
       sub.unregister()
 
   def enable_lights(self, projector=False, frontlight=False):
- 
+    """
+    Switches on/off the projector and/or the frontlight
+    @
