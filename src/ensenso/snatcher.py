@@ -178,4 +178,6 @@ class Snatcher(object):
       try:
         self.rect_right = self.bridge.imgmsg_to_cv2(msg, self.cv_type)
       except:
-        rospy.logdebug('
+        rospy.logdebug('Failed to process rect_right image')
+        self.rect_right = None
+  
