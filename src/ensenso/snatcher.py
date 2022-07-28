@@ -190,4 +190,5 @@ class Snatcher(object):
   def enable_lights(self, projector=False, frontlight=False):
     """
     Switches on/off the projector and/or the frontlight
-    @
+    @type  projector: bool
+    @param projector: Switch on/off t
