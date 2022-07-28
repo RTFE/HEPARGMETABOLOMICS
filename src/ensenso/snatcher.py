@@ -191,4 +191,6 @@ class Snatcher(object):
     """
     Switches on/off the projector and/or the frontlight
     @type  projector: bool
-    @param projector: Switch on/off t
+    @param projector: Switch on/off the projector
+    @type  frontlight: bool
+    @param frontli
