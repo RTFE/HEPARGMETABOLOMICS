@@ -193,4 +193,6 @@ class Snatcher(object):
     @type  projector: bool
     @param projector: Switch on/off the projector
     @type  frontlight: bool
-    @param frontli
+    @param frontlight: Switch on/off the frontlight
+    """
+    self.dynclient.up
