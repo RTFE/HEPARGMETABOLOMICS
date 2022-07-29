@@ -195,4 +195,5 @@ class Snatcher(object):
     @type  frontlight: bool
     @param frontlight: Switch on/off the frontlight
     """
-    self.dynclient.up
+    self.dynclient.update_configuration({'Projector':projector,
+                    
