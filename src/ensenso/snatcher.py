@@ -198,4 +198,6 @@ class Snatcher(object):
     self.dynclient.update_configuration({'Projector':projector,
                                                       'FrontLight':frontlight})
 
-  def enable_
+  def enable_streaming(self, cloud=False, images=False):
+    """
+    
