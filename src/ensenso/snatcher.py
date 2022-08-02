@@ -196,4 +196,6 @@ class Snatcher(object):
     @param frontlight: Switch on/off the frontlight
     """
     self.dynclient.update_configuration({'Projector':projector,
-                    
+                                                      'FrontLight':frontlight})
+
+  def enable_
