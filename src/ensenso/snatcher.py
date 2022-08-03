@@ -204,4 +204,4 @@ class Snatcher(object):
     @type  cloud: bool
     @param cloud: Enable/disable the streaming of the point cloud
     @type  images: bool
-    @
+    @param images: Enable/disable the streaming of the imag
