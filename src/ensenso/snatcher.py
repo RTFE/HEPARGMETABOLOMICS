@@ -206,4 +206,8 @@ class Snatcher(object):
     @type  images: bool
     @param images: Enable/disable the streaming of the images
     """
-    self.dynclient.update_configuration({'Clo
+    self.dynclient.update_configuration({'Cloud':cloud, 'Images':images})
+
+  def execute(self):
+    """
+    Vir
