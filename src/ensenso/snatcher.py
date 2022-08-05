@@ -210,4 +210,5 @@ class Snatcher(object):
 
   def execute(self):
     """
-    Vir
+    Virtual method where to put the overloaded code.
+ 
