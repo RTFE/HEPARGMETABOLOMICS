@@ -211,4 +211,5 @@ class Snatcher(object):
   def execute(self):
     """
     Virtual method where to put the overloaded code.
- 
+    """
+    raise Exception('Unimplemented method. Please overl
