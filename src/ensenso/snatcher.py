@@ -229,4 +229,7 @@ class Snatcher(object):
     """
     Checks if we snatched the rectified images
 
-   
+    Returns
+    -------
+    result: bool
+      True if successf
