@@ -220,4 +220,7 @@ class Snatcher(object):
     @rtype: bool
     @return: True if successful, false otherwise
     """
-    return (self.point
+    return (self.point_cloud is not None)
+
+  def has_camera_info(self):
+    re
