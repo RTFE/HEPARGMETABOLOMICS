@@ -216,4 +216,6 @@ class Snatcher(object):
 
   def has_cloud(self):
     """
-    Checks if we
+    Checks if we snatched a point cloud
+    @rtype: bool
+    @retu
