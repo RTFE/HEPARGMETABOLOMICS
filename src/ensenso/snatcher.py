@@ -232,4 +232,6 @@ class Snatcher(object):
     Returns
     -------
     result: bool
-      True if successf
+      True if successful, false otherwise
+    """
+    return (self.rect_left is 
