@@ -227,4 +227,6 @@ class Snatcher(object):
 
   def has_rectified_images(self):
     """
-    Check
+    Checks if we snatched the rectified images
+
+   
