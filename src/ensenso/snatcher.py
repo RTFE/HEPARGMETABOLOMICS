@@ -218,4 +218,6 @@ class Snatcher(object):
     """
     Checks if we snatched a point cloud
     @rtype: bool
-    @retu
+    @return: True if successful, false otherwise
+    """
+    return (self.point
