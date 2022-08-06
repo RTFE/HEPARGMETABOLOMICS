@@ -212,4 +212,8 @@ class Snatcher(object):
     """
     Virtual method where to put the overloaded code.
     """
-    raise Exception('Unimplemented method. Please overl
+    raise Exception('Unimplemented method. Please overload it.')
+
+  def has_cloud(self):
+    """
+    Checks if we
