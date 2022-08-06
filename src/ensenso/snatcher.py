@@ -223,4 +223,4 @@ class Snatcher(object):
     return (self.point_cloud is not None)
 
   def has_camera_info(self):
-    re
+    return ((self.info_left is not None) and (self.info_rig
