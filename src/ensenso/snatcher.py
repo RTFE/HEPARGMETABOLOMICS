@@ -234,4 +234,6 @@ class Snatcher(object):
     result: bool
       True if successful, false otherwise
     """
-    return (self.rect_left is 
+    return (self.rect_left is not None) and (self.rect_right is not None)
+
+  def has_images(
