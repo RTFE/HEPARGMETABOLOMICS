@@ -236,4 +236,7 @@ class Snatcher(object):
     """
     return (self.rect_left is not None) and (self.rect_right is not None)
 
-  def has_images(
+  def has_images(self):
+    """
+    Checks if we snatched the raw and rect images
+    @rtype:
