@@ -239,4 +239,6 @@ class Snatcher(object):
   def has_images(self):
     """
     Checks if we snatched the raw and rect images
-    @rtype:
+    @rtype: bool
+    @return: True if successful, false otherwise
+    ""
