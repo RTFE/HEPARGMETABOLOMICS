@@ -242,4 +242,5 @@ class Snatcher(object):
     @rtype: bool
     @return: True if successful, false otherwise
     """
-    has_raw = (self.raw_left is not None) and (self.
+    has_raw = (self.raw_left is not None) and (self.raw_right is not None)
+    return (has_raw and self.has_rectified_images()
