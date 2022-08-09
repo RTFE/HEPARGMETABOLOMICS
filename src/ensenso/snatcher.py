@@ -247,4 +247,6 @@ class Snatcher(object):
 
   def has_images_and_cloud(self):
     """
-    Checks if we s
+    Checks if we snatched the point cloud, the raw and rect images
+    @rtype: bool
+    @
