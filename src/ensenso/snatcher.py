@@ -241,4 +241,5 @@ class Snatcher(object):
     Checks if we snatched the raw and rect images
     @rtype: bool
     @return: True if successful, false otherwise
-    ""
+    """
+    has_raw = (self.raw_left is not None) and (self.
