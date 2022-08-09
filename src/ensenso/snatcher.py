@@ -249,4 +249,4 @@ class Snatcher(object):
     """
     Checks if we snatched the point cloud, the raw and rect images
     @rtype: bool
-    @
+    @return: True if successful, false otherw
