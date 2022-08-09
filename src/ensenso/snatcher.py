@@ -243,4 +243,8 @@ class Snatcher(object):
     @return: True if successful, false otherwise
     """
     has_raw = (self.raw_left is not None) and (self.raw_right is not None)
-    return (has_raw and self.has_rectified_images()
+    return (has_raw and self.has_rectified_images())
+
+  def has_images_and_cloud(self):
+    """
+    Checks if we s
