@@ -249,4 +249,6 @@ class Snatcher(object):
     """
     Checks if we snatched the point cloud, the raw and rect images
     @rtype: bool
-    @return: True if successful, false otherw
+    @return: True if successful, false otherwise
+    """
+    return ( self.has_cloud() and self.has_images() )
