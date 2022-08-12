@@ -252,3 +252,7 @@ class Snatcher(object):
     @return: True if successful, false otherwise
     """
     return ( self.has_cloud() and self.has_images() )
+
+  def reset_snapshots(self):
+    """
+    Resets the snatched i
