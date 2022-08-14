@@ -272,4 +272,6 @@ class Snatcher(object):
     """
     Wait until we have snatched the information encoded in C{success_fn}
     @rtype: bool
-    @return: Tr
+    @return: True if successful, false otherwise
+    """
+    exposure_time = max(0.
