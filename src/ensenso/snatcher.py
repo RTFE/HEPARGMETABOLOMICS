@@ -255,4 +255,7 @@ class Snatcher(object):
 
   def reset_snapshots(self):
     """
-    Resets the snatched i
+    Resets the snatched information
+    """
+    self.headers = dict()
+    se
