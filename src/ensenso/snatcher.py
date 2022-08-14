@@ -268,4 +268,6 @@ class Snatcher(object):
     self.enable_lights(projector=False, frontlight=False)
     self.enable_streaming(cloud=False, images=False)
 
-  def take_snapshot(self, exposure_time, success_fn
+  def take_snapshot(self, exposure_time, success_fn, check_interval=1/30.):
+    """
+    Wait until we have snatched the in
