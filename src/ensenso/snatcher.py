@@ -265,4 +265,5 @@ class Snatcher(object):
     self.rect_right = None
 
   def stop_streaming(self):
-    self.enable_lights(projector=False, fr
+    self.enable_lights(projector=False, frontlight=False)
+    self.enable_streaming(cloud=False, images=
