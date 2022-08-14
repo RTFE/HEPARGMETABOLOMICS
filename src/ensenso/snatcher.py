@@ -270,4 +270,6 @@ class Snatcher(object):
 
   def take_snapshot(self, exposure_time, success_fn, check_interval=1/30.):
     """
-    Wait until we have snatched the in
+    Wait until we have snatched the information encoded in C{success_fn}
+    @rtype: bool
+    @return: Tr
