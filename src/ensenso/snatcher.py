@@ -266,4 +266,6 @@ class Snatcher(object):
 
   def stop_streaming(self):
     self.enable_lights(projector=False, frontlight=False)
-    self.enable_streaming(cloud=False, images=
+    self.enable_streaming(cloud=False, images=False)
+
+  def take_snapshot(self, exposure_time, success_fn
