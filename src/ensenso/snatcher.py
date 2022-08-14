@@ -264,4 +264,5 @@ class Snatcher(object):
     self.rect_left = None
     self.rect_right = None
 
-  def stop_st
+  def stop_streaming(self):
+    self.enable_lights(projector=False, fr
