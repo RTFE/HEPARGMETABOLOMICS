@@ -258,4 +258,6 @@ class Snatcher(object):
     Resets the snatched information
     """
     self.headers = dict()
-    se
+    self.point_cloud = None
+    self.raw_left = None
+    self.raw_right = 
