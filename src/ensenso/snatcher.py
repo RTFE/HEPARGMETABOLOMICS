@@ -260,4 +260,8 @@ class Snatcher(object):
     self.headers = dict()
     self.point_cloud = None
     self.raw_left = None
-    self.raw_right = 
+    self.raw_right = None
+    self.rect_left = None
+    self.rect_right = None
+
+  def stop_st
