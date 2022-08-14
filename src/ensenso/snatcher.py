@@ -274,4 +274,6 @@ class Snatcher(object):
     @rtype: bool
     @return: True if successful, false otherwise
     """
-    exposure_time = max(0.
+    exposure_time = max(0.001, exposure_time)
+    rospy.sleep(exposure_time)
+    self
