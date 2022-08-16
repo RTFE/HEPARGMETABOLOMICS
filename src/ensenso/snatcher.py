@@ -276,4 +276,5 @@ class Snatcher(object):
     """
     exposure_time = max(0.001, exposure_time)
     rospy.sleep(exposure_time)
-    self
+    self.reset_snapshots()
+    while not success_fn():
