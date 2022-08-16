@@ -6,4 +6,6 @@
 #include <sensor_msgs/Image.h>
 #include <cv_bridge/cv_bridge.h>
 #include <pcl_ros/point_cloud.h>
-// Conver
+// Conversions
+#include <eigen_conversions/eigen_msg.h>
+// Ensenso grabbe
