@@ -8,4 +8,7 @@
 #include <pcl_ros/point_cloud.h>
 // Conversions
 #include <eigen_conversions/eigen_msg.h>
-// Ensenso grabbe
+// Ensenso grabber
+#include <ensenso/ensenso_grabber.h>
+// Image transport
+#include
