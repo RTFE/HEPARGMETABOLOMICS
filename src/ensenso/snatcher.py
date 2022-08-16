@@ -279,4 +279,6 @@ class Snatcher(object):
     self.reset_snapshots()
     while not success_fn():
       rospy.sleep(check_interval)
-      if rospy.is_shutdown(
+      if rospy.is_shutdown():
+        return False
+    return True
