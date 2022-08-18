@@ -18,4 +18,6 @@
 #include <dynamic_reconfigure/server.h>
 #include <ensenso/CameraParametersConfig.h>
 // Messages
-#include <ensenso/
+#include <ensenso/RawStereoPattern.h>
+#include <geometry_msgs/PoseStamped.h>
+#include
