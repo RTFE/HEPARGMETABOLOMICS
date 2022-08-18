@@ -16,4 +16,6 @@
 #include <sensor_msgs/image_encodings.h>
 // Dynamic reconfigure
 #include <dynamic_reconfigure/server.h>
-#includ
+#include <ensenso/CameraParametersConfig.h>
+// Messages
+#include <ensenso/
