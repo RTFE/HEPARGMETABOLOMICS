@@ -14,4 +14,6 @@
 #include <image_transport/image_transport.h>
 #include <sensor_msgs/CameraInfo.h>
 #include <sensor_msgs/image_encodings.h>
-// 
+// Dynamic reconfigure
+#include <dynamic_reconfigure/server.h>
+#includ
