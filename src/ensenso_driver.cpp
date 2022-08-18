@@ -21,4 +21,7 @@
 #include <ensenso/RawStereoPattern.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <sensor_msgs/PointCloud2.h>
-#include <std_msgs/S
+#include <std_msgs/String.h>
+// Services
+#include <ensenso/CalibrateHandEye.h>
+#include <en
