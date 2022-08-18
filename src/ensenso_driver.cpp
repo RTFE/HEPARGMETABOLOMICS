@@ -25,4 +25,8 @@
 // Services
 #include <ensenso/CalibrateHandEye.h>
 #include <ensenso/CollectPattern.h>
-#include <ensenso/EstimatePatt
+#include <ensenso/EstimatePatternPose.h>
+// boost
+#include <boost/thread/thread.hpp>
+
+// Typede
