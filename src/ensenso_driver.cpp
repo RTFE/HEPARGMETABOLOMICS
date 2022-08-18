@@ -29,4 +29,5 @@
 // boost
 #include <boost/thread/thread.hpp>
 
-// Typede
+// Typedefs
+typedef std::pair<pcl::PCLGenImage<pcl::uint8_t>, pcl::PCLGenImag
