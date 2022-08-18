@@ -12,4 +12,6 @@
 #include <ensenso/ensenso_grabber.h>
 // Image transport
 #include <image_transport/image_transport.h>
-#include <sensor_msg
+#include <sensor_msgs/CameraInfo.h>
+#include <sensor_msgs/image_encodings.h>
+// 
