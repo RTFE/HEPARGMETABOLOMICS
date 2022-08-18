@@ -20,4 +20,5 @@
 // Messages
 #include <ensenso/RawStereoPattern.h>
 #include <geometry_msgs/PoseStamped.h>
-#include
+#include <sensor_msgs/PointCloud2.h>
+#include <std_msgs/S
