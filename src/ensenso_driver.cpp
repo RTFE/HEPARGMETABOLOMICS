@@ -11,4 +11,5 @@
 // Ensenso grabber
 #include <ensenso/ensenso_grabber.h>
 // Image transport
-#include
+#include <image_transport/image_transport.h>
+#include <sensor_msg
