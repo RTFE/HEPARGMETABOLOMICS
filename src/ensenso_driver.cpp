@@ -24,4 +24,5 @@
 #include <std_msgs/String.h>
 // Services
 #include <ensenso/CalibrateHandEye.h>
-#include <en
+#include <ensenso/CollectPattern.h>
+#include <ensenso/EstimatePatt
