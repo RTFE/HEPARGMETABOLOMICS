@@ -31,4 +31,5 @@
 
 // Typedefs
 typedef std::pair<pcl::PCLGenImage<pcl::uint8_t>, pcl::PCLGenImage<pcl::uint8_t> > PairOfImages;
-typedef pcl::PointXYZRGBA PointX
+typedef pcl::PointXYZRGBA PointXYZRGBA;
+typedef pcl::PointCloud<PointXYZRGBA> PointCloudXYZRGBA;
