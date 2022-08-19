@@ -30,4 +30,5 @@
 #include <boost/thread/thread.hpp>
 
 // Typedefs
-typedef std::pair<pcl::PCLGenImage<pcl::uint8_t>, pcl::PCLGenImag
+typedef std::pair<pcl::PCLGenImage<pcl::uint8_t>, pcl::PCLGenImage<pcl::uint8_t> > PairOfImages;
+typedef pcl::PointXYZRGBA PointX
