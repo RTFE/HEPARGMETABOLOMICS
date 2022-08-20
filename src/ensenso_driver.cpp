@@ -37,4 +37,8 @@ typedef pcl::PointXYZ PointXYZ;
 typedef pcl::PointCloud<PointXYZ> PointCloudXYZ;
 
 
-cl
+class EnsensoDriver
+{
+  private:
+    // ROS
+    ros::NodeHandle 
