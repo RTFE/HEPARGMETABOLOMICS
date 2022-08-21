@@ -42,4 +42,5 @@ class EnsensoDriver
   private:
     // ROS
     ros::NodeHandle                   nh_, nh_private_;
-    ros::ServiceServer      
+    ros::ServiceServer                pattern_srv_;
+    ros::ServiceServer        
