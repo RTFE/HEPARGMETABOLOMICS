@@ -45,4 +45,6 @@ class EnsensoDriver
     ros::ServiceServer                pattern_srv_;
     ros::ServiceServer                collect_srv_;
     ros::ServiceServer                calibrate_srv_;
-    dynamic_reconfigure::Server<ensenso::Ca
+    dynamic_reconfigure::Server<ensenso::CameraParametersConfig> reconfigure_server_;
+    // Images
+    ima
