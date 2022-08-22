@@ -47,4 +47,5 @@ class EnsensoDriver
     ros::ServiceServer                calibrate_srv_;
     dynamic_reconfigure::Server<ensenso::CameraParametersConfig> reconfigure_server_;
     // Images
-    ima
+    image_transport::ImageTransport   it_;
+    image_transport::Ca
