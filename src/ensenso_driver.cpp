@@ -57,4 +57,5 @@ class EnsensoDriver
     image_transport::Publisher        r_rectified_pub_;
 
     // Publishers
-    ros::Publisher                    
+    ros::Publisher                    cloud_pub_;
+    ros::Publisher                    patter
