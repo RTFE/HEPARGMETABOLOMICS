@@ -49,4 +49,5 @@ class EnsensoDriver
     // Images
     image_transport::ImageTransport   it_;
     image_transport::CameraPublisher  rgb_raw_pub_;
-    image_transport::CameraPublisher  l_ra
+    image_transport::CameraPublisher  l_raw_pub_;
+    image_transport::CameraPublisher  r_raw_pub_;
