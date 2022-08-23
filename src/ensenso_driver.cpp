@@ -48,4 +48,5 @@ class EnsensoDriver
     dynamic_reconfigure::Server<ensenso::CameraParametersConfig> reconfigure_server_;
     // Images
     image_transport::ImageTransport   it_;
-    image_transport::Ca
+    image_transport::CameraPublisher  rgb_raw_pub_;
+    image_transport::CameraPublisher  l_ra
