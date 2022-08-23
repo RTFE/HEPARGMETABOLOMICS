@@ -56,4 +56,5 @@ class EnsensoDriver
     image_transport::Publisher        l_rectified_pub_;
     image_transport::Publisher        r_rectified_pub_;
 
-    //
+    // Publishers
+    ros::Publisher                    
