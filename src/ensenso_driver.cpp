@@ -58,4 +58,5 @@ class EnsensoDriver
 
     // Publishers
     ros::Publisher                    cloud_pub_;
-    ros::Publisher                    patter
+    ros::Publisher                    pattern_pose_pub_;
+    ros::Publisher                    patte
