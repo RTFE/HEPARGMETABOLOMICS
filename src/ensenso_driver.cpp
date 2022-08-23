@@ -52,4 +52,5 @@ class EnsensoDriver
     image_transport::CameraPublisher  l_raw_pub_;
     image_transport::CameraPublisher  r_raw_pub_;
     image_transport::CameraPublisher  depth_pub_;
-    image_transport::Publisher        rgb_rectified_p
+    image_transport::Publisher        rgb_rectified_pub_;
+    image_transport::Publisher        l_recti
