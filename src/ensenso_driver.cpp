@@ -59,4 +59,6 @@ class EnsensoDriver
     // Publishers
     ros::Publisher                    cloud_pub_;
     ros::Publisher                    pattern_pose_pub_;
-    ros::Publisher                    patte
+    ros::Publisher                    pattern_raw_pub_;
+    // Streaming configuration
+    bool            
