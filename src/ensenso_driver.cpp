@@ -61,4 +61,5 @@ class EnsensoDriver
     ros::Publisher                    pattern_pose_pub_;
     ros::Publisher                    pattern_raw_pub_;
     // Streaming configuration
-    bool            
+    bool                              rgb_available_;
+    bool                        
