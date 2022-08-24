@@ -63,4 +63,5 @@ class EnsensoDriver
     // Streaming configuration
     bool                              rgb_available_;
     bool                              enable_cloud_;
-    bool                            
+    bool                              enable_images_;
+    bool                              en
