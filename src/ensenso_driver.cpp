@@ -64,4 +64,5 @@ class EnsensoDriver
     bool                              rgb_available_;
     bool                              enable_cloud_;
     bool                              enable_images_;
-    bool                              en
+    bool                              enable_depth_;
+    bool                              is_stream
