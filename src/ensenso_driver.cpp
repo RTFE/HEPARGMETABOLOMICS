@@ -69,4 +69,5 @@ class EnsensoDriver
     bool                              is_streaming_depth_;
     bool                              is_streaming_images_;
     bool                              find_pattern_;
-    bool  
+    bool                              stream_calib_pattern_;
+    int         
