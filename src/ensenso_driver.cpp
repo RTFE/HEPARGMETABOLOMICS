@@ -70,4 +70,6 @@ class EnsensoDriver
     bool                              is_streaming_images_;
     bool                              find_pattern_;
     bool                              stream_calib_pattern_;
-    int         
+    int                               trigger_mode_;
+    // TF
+    std::string       
