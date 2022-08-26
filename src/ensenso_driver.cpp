@@ -73,4 +73,5 @@ class EnsensoDriver
     int                               trigger_mode_;
     // TF
     std::string                       camera_frame_id_;
-    std::string           
+    std::string                       rgb_camera_frame_id_;
+    tf2_ros::TransformBr
