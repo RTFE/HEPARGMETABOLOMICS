@@ -72,4 +72,5 @@ class EnsensoDriver
     bool                              stream_calib_pattern_;
     int                               trigger_mode_;
     // TF
-    std::string       
+    std::string                       camera_frame_id_;
+    std::string           
