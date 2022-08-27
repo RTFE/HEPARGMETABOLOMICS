@@ -88,4 +88,6 @@ class EnsensoDriver
       enable_cloud_(false),
       enable_images_(false),
       enable_depth_(false),
-      is_stre
+      is_streaming_images_(false),
+      is_streaming_cloud_(false),
+      is
