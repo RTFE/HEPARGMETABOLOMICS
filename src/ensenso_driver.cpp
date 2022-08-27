@@ -75,4 +75,6 @@ class EnsensoDriver
     std::string                       camera_frame_id_;
     std::string                       rgb_camera_frame_id_;
     tf2_ros::TransformBroadcaster     tf_br_;
-    ros::Timer                   
+    ros::Timer                        tf_publisher_;
+    // Ensenso grabber
+    boost::signals2::co
