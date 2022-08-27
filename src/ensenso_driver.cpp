@@ -86,4 +86,6 @@ class EnsensoDriver
      EnsensoDriver():
       rgb_available_(false),
       enable_cloud_(false),
-      enab
+      enable_images_(false),
+      enable_depth_(false),
+      is_stre
