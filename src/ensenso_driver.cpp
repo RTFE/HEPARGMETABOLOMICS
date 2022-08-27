@@ -77,4 +77,5 @@ class EnsensoDriver
     tf2_ros::TransformBroadcaster     tf_br_;
     ros::Timer                        tf_publisher_;
     // Ensenso grabber
-    boost::signals2::co
+    boost::signals2::connection       cloud_connection_;
+    boost::signals2::conn
