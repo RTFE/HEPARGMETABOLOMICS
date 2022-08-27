@@ -84,4 +84,6 @@ class EnsensoDriver
 
   public:
      EnsensoDriver():
-      r
+      rgb_available_(false),
+      enable_cloud_(false),
+      enab
