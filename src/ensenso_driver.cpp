@@ -90,4 +90,6 @@ class EnsensoDriver
       enable_depth_(false),
       is_streaming_images_(false),
       is_streaming_cloud_(false),
-      is
+      is_streaming_depth_(false),
+      stream_calib_pattern_(false),
+      find_patte
