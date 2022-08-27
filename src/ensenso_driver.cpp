@@ -80,4 +80,8 @@ class EnsensoDriver
     boost::signals2::connection       cloud_connection_;
     boost::signals2::connection       image_connection_;
     boost::signals2::connection       depth_connection_;
-    pcl::EnsensoGrabber::Ptr     
+    pcl::EnsensoGrabber::Ptr          ensenso_ptr_;
+
+  public:
+     EnsensoDriver():
+      r
