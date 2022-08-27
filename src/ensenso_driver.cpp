@@ -78,4 +78,5 @@ class EnsensoDriver
     ros::Timer                        tf_publisher_;
     // Ensenso grabber
     boost::signals2::connection       cloud_connection_;
-    boost::signals2::conn
+    boost::signals2::connection       image_connection_;
+    boost::signals2::connection
