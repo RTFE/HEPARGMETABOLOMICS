@@ -99,4 +99,5 @@ class EnsensoDriver
     {
       // Read parameters
       std::string serial, monoserial;
-      nh_private_.param(
+      nh_private_.param(std::string("serial"), serial, std::string("150534"));
+      if
