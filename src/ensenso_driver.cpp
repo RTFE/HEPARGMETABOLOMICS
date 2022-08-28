@@ -94,4 +94,8 @@ class EnsensoDriver
       stream_calib_pattern_(false),
       find_pattern_(true),
       trigger_mode_(-1),
-      nh_pr
+      nh_private_("~"),
+      it_(nh_)
+    {
+      // Read parameters
+ 
