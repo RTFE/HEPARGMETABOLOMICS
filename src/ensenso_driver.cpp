@@ -101,4 +101,5 @@ class EnsensoDriver
       std::string serial, monoserial;
       nh_private_.param(std::string("serial"), serial, std::string("150534"));
       if (!nh_private_.hasParam("serial"))
-        ROS_WARN_STREAM("P
+        ROS_WARN_STREAM("Parameter [~serial] not found, using default: " << serial);
+    
