@@ -92,4 +92,6 @@ class EnsensoDriver
       is_streaming_cloud_(false),
       is_streaming_depth_(false),
       stream_calib_pattern_(false),
-      find_patte
+      find_pattern_(true),
+      trigger_mode_(-1),
+      nh_pr
