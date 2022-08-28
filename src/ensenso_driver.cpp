@@ -98,4 +98,5 @@ class EnsensoDriver
       it_(nh_)
     {
       // Read parameters
- 
+      std::string serial, monoserial;
+      nh_private_.param(
