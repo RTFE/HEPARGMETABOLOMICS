@@ -106,4 +106,5 @@ class EnsensoDriver
       if (!nh_private_.hasParam("monoserial"))
         ROS_WARN_STREAM("Parameter [~monoserial] not found, using default: " << monoserial);
       nh_private_.param("camera_frame_id", camera_frame_id_, std::string("ensenso_optical_frame"));
-      if (!nh_private_.hasParam("c
+      if (!nh_private_.hasParam("camera_frame_id"))
+        ROS_WARN_STREAM("Parameter [~came
