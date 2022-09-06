@@ -110,4 +110,4 @@ class EnsensoDriver
         ROS_WARN_STREAM("Parameter [~camera_frame_id] not found, using default: " << camera_frame_id_);
       nh_private_.param("rgb_camera_frame_id", rgb_camera_frame_id_, std::string("ensenso_rgb_optical_frame"));
       if (!nh_private_.hasParam("rgb_camera_frame_id"))
-        ROS_WARN_STREAM("
+        ROS_WARN_STREAM("Parameter [~rgb_camera_frame_id] not found, using default: 
