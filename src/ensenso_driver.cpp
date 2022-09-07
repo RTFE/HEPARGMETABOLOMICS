@@ -112,4 +112,5 @@ class EnsensoDriver
       if (!nh_private_.hasParam("rgb_camera_frame_id"))
         ROS_WARN_STREAM("Parameter [~rgb_camera_frame_id] not found, using default: " << rgb_camera_frame_id_);
       nh_private_.param("stream_calib_pattern", stream_calib_pattern_, false);
-      if (!nh_priv
+      if (!nh_private_.hasParam("stream_calib_pattern"))
+        ROS_WARN_S
