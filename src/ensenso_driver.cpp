@@ -122,4 +122,6 @@ class EnsensoDriver
       ros::SubscriberStatusCallback depth_rssc = boost::bind(&EnsensoDriver::depthSubscribeCallback, this);
 
       l_raw_pub_ = it_.advertiseCamera("left/image_raw", 1, image_issc, image_issc, image_rssc, image_rssc);
-      r_raw_pub_ = it_.advertiseCamera("right/image_raw", 1, image_issc, image_issc, i
+      r_raw_pub_ = it_.advertiseCamera("right/image_raw", 1, image_issc, image_issc, image_rssc, image_rssc);
+
+      l_rectified_pub_ = it_.ad
