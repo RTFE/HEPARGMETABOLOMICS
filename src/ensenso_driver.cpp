@@ -119,4 +119,4 @@ class EnsensoDriver
       image_transport::SubscriberStatusCallback image_issc = boost::bind(&EnsensoDriver::imagesSubscribeCallback, this);
       ros::SubscriberStatusCallback image_rssc = boost::bind(&EnsensoDriver::imagesSubscribeCallback, this);
       image_transport::SubscriberStatusCallback depth_issc = boost::bind(&EnsensoDriver::depthSubscribeCallback, this);
-      ros::Su
+      ros::SubscriberStatusCallback depth_rssc = boost::bind(&Ensen
