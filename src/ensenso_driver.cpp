@@ -126,3 +126,5 @@ class EnsensoDriver
 
       l_rectified_pub_ = it_.advertise("left/image_rect", 1, image_issc, image_issc);
       r_rectified_pub_ = it_.advertise("right/image_rect", 1, image_issc, image_issc);
+
+      depth_pub_ = it_.advertiseCamera("depth/image_rect", 1, depth_is
