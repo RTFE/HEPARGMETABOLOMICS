@@ -129,4 +129,4 @@ class EnsensoDriver
 
       depth_pub_ = it_.advertiseCamera("depth/image_rect", 1, depth_issc, depth_issc, depth_rssc, depth_rssc);
 
-      cloud_pub_ = nh_.
+      cloud_pub_ = nh_.advertise<sensor_msgs::PointCloud2 >("depth/points", 1, clou
