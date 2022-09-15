@@ -132,4 +132,5 @@ class EnsensoDriver
       cloud_pub_ = nh_.advertise<sensor_msgs::PointCloud2 >("depth/points", 1, cloud_rssc, cloud_rssc);
 
       // Initialize Ensenso
-      ense
+      ensenso_ptr_.reset(new pcl::EnsensoGrabber);
+      ensenso_ptr_->openDe
