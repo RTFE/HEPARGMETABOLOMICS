@@ -136,4 +136,6 @@ class EnsensoDriver
       ensenso_ptr_->openDevice(serial);
       try
       {
-        if (ensenso_
+        if (ensenso_ptr_->openMonoDevice(monoserial))
+        {
+          rgb_available_
