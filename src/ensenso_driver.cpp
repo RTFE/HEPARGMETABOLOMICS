@@ -138,4 +138,6 @@ class EnsensoDriver
       {
         if (ensenso_ptr_->openMonoDevice(monoserial))
         {
-          rgb_available_
+          rgb_available_ = true;
+          ROS_INFO("Found RGB camera");
+    
