@@ -133,4 +133,7 @@ class EnsensoDriver
 
       // Initialize Ensenso
       ensenso_ptr_.reset(new pcl::EnsensoGrabber);
-      ensenso_ptr_->openDe
+      ensenso_ptr_->openDevice(serial);
+      try
+      {
+        if (ensenso_
