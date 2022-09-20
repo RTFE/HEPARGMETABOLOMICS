@@ -142,4 +142,4 @@ class EnsensoDriver
           ROS_INFO("Found RGB camera");
           image_transport::SubscriberStatusCallback image_issc = boost::bind(&EnsensoDriver::imagesSubscribeCallback, this);
           ros::SubscriberStatusCallback image_rssc = boost::bind(&EnsensoDriver::imagesSubscribeCallback, this);
-          rgb_raw_pub_ = it_.advertiseCame
+          rgb_raw_pub_ = it_.advertiseCamera("rgb/image_raw", 1, image_issc, image_issc, ima
