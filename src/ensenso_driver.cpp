@@ -150,4 +150,5 @@ class EnsensoDriver
       }
       catch (pcl::IOException e)
       {
- 
+        rgb_available_ = false;
+        ROS_INFO("No RGB camera found");
