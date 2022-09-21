@@ -145,4 +145,9 @@ class EnsensoDriver
           rgb_raw_pub_ = it_.advertiseCamera("rgb/image_raw", 1, image_issc, image_issc, image_rssc, image_rssc);
           rgb_rectified_pub_ = it_.advertise("rgb/image_rect_color", 1, image_issc, image_issc);
           tf_publisher_ = nh_.createTimer(ros::Duration(0.5), boost::bind(&EnsensoDriver::publishTF, this));
-          ensenso_ptr_->setUse
+          ensenso_ptr_->setUseRGB(true);
+        }
+      }
+      catch (pcl::IOException e)
+      {
+ 
