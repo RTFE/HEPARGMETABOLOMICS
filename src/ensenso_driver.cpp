@@ -152,3 +152,7 @@ class EnsensoDriver
       {
         rgb_available_ = false;
         ROS_INFO("No RGB camera found");
+      }
+
+      ensenso_ptr_->openTcpPort();
+      ensenso_ptr_-
