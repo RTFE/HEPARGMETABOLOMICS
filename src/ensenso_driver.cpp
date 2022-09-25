@@ -166,4 +166,7 @@ class EnsensoDriver
       ROS_INFO("Finished [ensenso_driver] initialization");
     }
 
-    ~EnsensoDriver
+    ~EnsensoDriver()
+    {
+      cloud_connection_.disconnect();
+      image_con
