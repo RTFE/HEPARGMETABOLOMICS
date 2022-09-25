@@ -158,4 +158,5 @@ class EnsensoDriver
       ensenso_ptr_->storeCalibrationPattern(stream_calib_pattern_);
       // Start dynamic reconfigure server
       dynamic_reconfigure::Server<ensenso::CameraParametersConfig>::CallbackType f;
-      f = boost::bind(&Ense
+      f = boost::bind(&EnsensoDriver::cameraParametersCallback, this, _1, _2);
+      reconfigure
