@@ -156,4 +156,5 @@ class EnsensoDriver
 
       ensenso_ptr_->openTcpPort();
       ensenso_ptr_->storeCalibrationPattern(stream_calib_pattern_);
-      // Start dynamic rec
+      // Start dynamic reconfigure server
+      dynamic_reconfigure::Server<ensenso::CameraPara
