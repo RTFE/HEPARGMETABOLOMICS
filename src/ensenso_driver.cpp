@@ -163,4 +163,7 @@ class EnsensoDriver
       // Start the camera.
       ensenso_ptr_->start();
       // Advertise services
-      ROS_INFO("Finished [ensen
+      ROS_INFO("Finished [ensenso_driver] initialization");
+    }
+
+    ~EnsensoDriver
