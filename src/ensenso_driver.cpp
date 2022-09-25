@@ -159,4 +159,6 @@ class EnsensoDriver
       // Start dynamic reconfigure server
       dynamic_reconfigure::Server<ensenso::CameraParametersConfig>::CallbackType f;
       f = boost::bind(&EnsensoDriver::cameraParametersCallback, this, _1, _2);
-      reconfigure
+      reconfigure_server_.setCallback(f);
+      // Start the camera.
+      ensenso_ptr_->start();
