@@ -162,3 +162,5 @@ class EnsensoDriver
       reconfigure_server_.setCallback(f);
       // Start the camera.
       ensenso_ptr_->start();
+      // Advertise services
+      ROS_INFO("Finished [ensen
