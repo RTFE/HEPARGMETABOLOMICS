@@ -171,4 +171,5 @@ class EnsensoDriver
       cloud_connection_.disconnect();
       image_connection_.disconnect();
       depth_connection_.disconnect();
-     
+      ensenso_ptr_->closeDevices();
+      ensenso_ptr
