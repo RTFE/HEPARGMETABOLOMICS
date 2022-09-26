@@ -169,4 +169,6 @@ class EnsensoDriver
     ~EnsensoDriver()
     {
       cloud_connection_.disconnect();
-      image_con
+      image_connection_.disconnect();
+      depth_connection_.disconnect();
+     
