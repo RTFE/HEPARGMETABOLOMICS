@@ -175,4 +175,6 @@ class EnsensoDriver
       ensenso_ptr_->closeTcpPort();
     }
 
-    bool calibrateHandEyeCB(ensenso::CalibrateHandEye::Request& req, ensenso::CalibrateHan
+    bool calibrateHandEyeCB(ensenso::CalibrateHandEye::Request& req, ensenso::CalibrateHandEye::Response &res)
+    {
+      bool was_running = ensenso_p
