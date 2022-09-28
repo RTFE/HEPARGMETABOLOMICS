@@ -186,4 +186,7 @@ class EnsensoDriver
         ROS_WARN("The number of robot_poses differs from the pattern count in the camera buffer");
         if (was_running)
           ensenso_ptr_->start();
-       
+        return true;
+      }
+      // Convert poses to Eigen::Affine3d
+      
