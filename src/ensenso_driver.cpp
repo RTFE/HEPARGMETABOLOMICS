@@ -179,4 +179,5 @@ class EnsensoDriver
     {
       bool was_running = ensenso_ptr_->isRunning();
       if (was_running)
-        ensenso
+        ensenso_ptr_->stop();
+      // Check consistency between robot and pa
