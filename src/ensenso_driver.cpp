@@ -183,4 +183,4 @@ class EnsensoDriver
       // Check consistency between robot and pattern poses
       if ( req.robot_poses.poses.size() != ensenso_ptr_->getPatternCount() )
       {
-        ROS_WARN("The number of robo
+        ROS_WARN("The number of robot_poses differs from the pattern count in the camera buffer
