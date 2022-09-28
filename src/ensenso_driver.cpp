@@ -177,4 +177,6 @@ class EnsensoDriver
 
     bool calibrateHandEyeCB(ensenso::CalibrateHandEye::Request& req, ensenso::CalibrateHandEye::Response &res)
     {
-      bool was_running = ensenso_p
+      bool was_running = ensenso_ptr_->isRunning();
+      if (was_running)
+        ensenso
