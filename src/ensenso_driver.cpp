@@ -181,4 +181,6 @@ class EnsensoDriver
       if (was_running)
         ensenso_ptr_->stop();
       // Check consistency between robot and pattern poses
-      if ( req.robot_poses.poses.size() != ensenso_ptr_
+      if ( req.robot_poses.poses.size() != ensenso_ptr_->getPatternCount() )
+      {
+        ROS_WARN("The number of robo
