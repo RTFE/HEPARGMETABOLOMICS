@@ -180,4 +180,5 @@ class EnsensoDriver
       bool was_running = ensenso_ptr_->isRunning();
       if (was_running)
         ensenso_ptr_->stop();
-      // Check consistency between robot and pa
+      // Check consistency between robot and pattern poses
+      if ( req.robot_poses.poses.size() != ensenso_ptr_
