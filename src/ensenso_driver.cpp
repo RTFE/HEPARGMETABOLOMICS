@@ -189,4 +189,4 @@ class EnsensoDriver
         return true;
       }
       // Convert poses to Eigen::Affine3d
-      
+      std::vector<Eigen::Affine3d, Eigen::aligned_allocator<Eigen::
