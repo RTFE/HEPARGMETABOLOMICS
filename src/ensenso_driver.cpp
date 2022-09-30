@@ -194,4 +194,6 @@ class EnsensoDriver
         Eigen::Affine3d pose;
         tf::poseMsgToEigen(req.robot_poses.poses[i], pose);
         robot_eigen_list.push_back(pose);
-      
+      }
+      // Calibrate
+      Eigen::Affine3d camera_seed, patter
