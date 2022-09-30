@@ -192,4 +192,6 @@ class EnsensoDriver
       std::vector<Eigen::Affine3d, Eigen::aligned_allocator<Eigen::Affine3d> > robot_eigen_list;
       for (size_t i = 0; i < req.robot_poses.poses.size(); i++) {
         Eigen::Affine3d pose;
-        tf::poseMsgToEigen(req.robot_poses.poses[i], 
+        tf::poseMsgToEigen(req.robot_poses.poses[i], pose);
+        robot_eigen_list.push_back(pose);
+      
