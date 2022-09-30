@@ -189,4 +189,5 @@ class EnsensoDriver
         return true;
       }
       // Convert poses to Eigen::Affine3d
-      std::vector<Eigen::Affine3d, Eigen::aligned_allocator<Eigen::
+      std::vector<Eigen::Affine3d, Eigen::aligned_allocator<Eigen::Affine3d> > robot_eigen_list;
+      for (size_t i = 0; i < req.robo
