@@ -196,4 +196,4 @@ class EnsensoDriver
         robot_eigen_list.push_back(pose);
       }
       // Calibrate
-      Eigen::Affine3d camera_seed, patter
+      Eigen::Affine3d camera_seed, pattern_seed, estimated_camera_pose, estimated_pattern_pose
