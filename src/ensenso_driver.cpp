@@ -199,4 +199,5 @@ class EnsensoDriver
       Eigen::Affine3d camera_seed, pattern_seed, estimated_camera_pose, estimated_pattern_pose;
       tf::poseMsgToEigen(req.camera_seed, camera_seed);
       tf::poseMsgToEigen(req.pattern_seed, pattern_seed);
-      ROS_INFO("calibrateHandEye: It may take up to 5 minutes...")
+      ROS_INFO("calibrateHandEye: It may take up to 5 minutes...");
+      res.success = ensenso_ptr_->calibrateHan
