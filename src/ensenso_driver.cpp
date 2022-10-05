@@ -200,4 +200,5 @@ class EnsensoDriver
       tf::poseMsgToEigen(req.camera_seed, camera_seed);
       tf::poseMsgToEigen(req.pattern_seed, pattern_seed);
       ROS_INFO("calibrateHandEye: It may take up to 5 minutes...");
-      res.success = ensenso_ptr_->calibrateHan
+      res.success = ensenso_ptr_->calibrateHandEye(robot_eigen_list, camera_seed, pattern_seed,
+        
