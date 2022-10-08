@@ -205,4 +205,5 @@ class EnsensoDriver
                       res.reprojection_error);
       if (res.success)
       {
-        RO
+        ROS_INFO("Calibration computation finished");
+        tf
