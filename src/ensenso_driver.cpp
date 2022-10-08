@@ -209,4 +209,6 @@ class EnsensoDriver
         tf::poseEigenToMsg(estimated_camera_pose, res.estimated_camera_pose);
         tf::poseEigenToMsg(estimated_pattern_pose, res.estimated_pattern_pose);
       }
-      if 
+      if (was_running)
+        ensenso_ptr_->start();
+      return 
