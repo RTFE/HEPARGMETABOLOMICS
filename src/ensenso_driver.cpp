@@ -211,4 +211,7 @@ class EnsensoDriver
       }
       if (was_running)
         ensenso_ptr_->start();
-      return 
+      return true;
+    }
+
+    void cameraParametersCallback(ensenso::CameraParametersConfig 
