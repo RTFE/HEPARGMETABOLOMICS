@@ -202,4 +202,7 @@ class EnsensoDriver
       ROS_INFO("calibrateHandEye: It may take up to 5 minutes...");
       res.success = ensenso_ptr_->calibrateHandEye(robot_eigen_list, camera_seed, pattern_seed,
                       req.setup, estimated_camera_pose, estimated_pattern_pose, res.iterations,
-             
+                      res.reprojection_error);
+      if (res.success)
+      {
+        RO
