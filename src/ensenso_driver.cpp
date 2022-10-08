@@ -214,4 +214,6 @@ class EnsensoDriver
       return true;
     }
 
-    void cameraParametersCallback(ensenso::CameraParametersConfig 
+    void cameraParametersCallback(ensenso::CameraParametersConfig &config, uint32_t level)
+    {
+      // Proces
