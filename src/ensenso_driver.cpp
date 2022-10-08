@@ -207,4 +207,6 @@ class EnsensoDriver
       {
         ROS_INFO("Calibration computation finished");
         tf::poseEigenToMsg(estimated_camera_pose, res.estimated_camera_pose);
-        tf::poseEigenToMsg(estimated_pattern_po
+        tf::poseEigenToMsg(estimated_pattern_pose, res.estimated_pattern_pose);
+      }
+      if 
