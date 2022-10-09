@@ -220,4 +220,6 @@ class EnsensoDriver
       std::string trigger_mode, profile;
       switch (config.TriggerMode)
       {
-        
+        case 0:
+          trigger_mode = "Software";
+         
