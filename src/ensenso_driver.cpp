@@ -217,4 +217,7 @@ class EnsensoDriver
     void cameraParametersCallback(ensenso::CameraParametersConfig &config, uint32_t level)
     {
       // Process enumerators
-      std::string trigger_mode, p
+      std::string trigger_mode, profile;
+      switch (config.TriggerMode)
+      {
+        
