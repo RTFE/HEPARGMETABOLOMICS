@@ -225,4 +225,8 @@ class EnsensoDriver
           break;
         case 1:
           trigger_mode = "FallingEdge";
-          brea
+          break;
+        case 2:
+          trigger_mode = "RisingEdge";
+          break;
+   
