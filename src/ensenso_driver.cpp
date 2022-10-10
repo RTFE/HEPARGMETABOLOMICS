@@ -222,4 +222,7 @@ class EnsensoDriver
       {
         case 0:
           trigger_mode = "Software";
-         
+          break;
+        case 1:
+          trigger_mode = "FallingEdge";
+          brea
