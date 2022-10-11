@@ -232,4 +232,7 @@ class EnsensoDriver
         default:
           trigger_mode = "Software";
       }
-     
+      switch (config.OptimizationProfile)
+      {
+        case 0:
+    
