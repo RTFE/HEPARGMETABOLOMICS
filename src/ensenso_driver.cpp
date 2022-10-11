@@ -240,4 +240,6 @@ class EnsensoDriver
         case 1:
           profile = "Diagonal";
           break;
-   
+        case 2:
+          profile = "AlignedAndDiagonal";
+          
