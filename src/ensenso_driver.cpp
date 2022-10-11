@@ -235,4 +235,7 @@ class EnsensoDriver
       switch (config.OptimizationProfile)
       {
         case 0:
-    
+          profile = "Aligned";
+          break;
+        case 1:
+  
