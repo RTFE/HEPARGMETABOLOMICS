@@ -244,4 +244,7 @@ class EnsensoDriver
           profile = "AlignedAndDiagonal";
           break;
         default:
-          profile = "AlignedA
+          profile = "AlignedAndDiagonal";
+      }
+      ROS_DEBUG("---");
+   
