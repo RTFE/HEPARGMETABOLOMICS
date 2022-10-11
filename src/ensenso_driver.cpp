@@ -229,4 +229,7 @@ class EnsensoDriver
         case 2:
           trigger_mode = "RisingEdge";
           break;
-   
+        default:
+          trigger_mode = "Software";
+      }
+     
