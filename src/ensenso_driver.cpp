@@ -251,4 +251,5 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("AutoBlackLevel: "   << std::boolalpha << config.AutoBlackLevel);
       ROS_DEBUG_STREAM("AutoExposure: "     << std::boolalpha << config.AutoExposure);
       ROS_DEBUG_STREAM("AutoGain: "         << std::boolalpha << config.AutoGain);
-      R
+      ROS_DEBUG_STREAM("Binning: "          << config.Binning);
+  
