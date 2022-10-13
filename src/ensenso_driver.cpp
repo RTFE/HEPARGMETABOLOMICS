@@ -249,4 +249,5 @@ class EnsensoDriver
       ROS_DEBUG("---");
       ROS_DEBUG("Capture Parameters");
       ROS_DEBUG_STREAM("AutoBlackLevel: "   << std::boolalpha << config.AutoBlackLevel);
-      ROS_DEBUG_STREAM("AutoExposure: "     << std:
+      ROS_DEBUG_STREAM("AutoExposure: "     << std::boolalpha << config.AutoExposure);
+      ROS_DEBUG_STREA
