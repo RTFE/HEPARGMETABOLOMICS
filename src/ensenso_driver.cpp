@@ -254,4 +254,5 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("Binning: "          << config.Binning);
       ROS_DEBUG_STREAM("BlackLevelOffset: " << config.BlackLevelOffset);
       ROS_DEBUG_STREAM("Exposure: "         << config.Exposure);
-      ROS_DEBUG_STREAM("FlexView: "         <
+      ROS_DEBUG_STREAM("FlexView: "         << std::boolalpha << config.FlexView);
+      ROS_DEBUG_STREAM("FlexViewImag
