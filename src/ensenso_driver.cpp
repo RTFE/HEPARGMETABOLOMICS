@@ -256,4 +256,4 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("Exposure: "         << config.Exposure);
       ROS_DEBUG_STREAM("FlexView: "         << std::boolalpha << config.FlexView);
       ROS_DEBUG_STREAM("FlexViewImages: "   << config.FlexViewImages);
-      ROS_DEBUG
+      ROS_DEBUG_STREAM("FrontLight: "       << std::boolalpha << config.Fr
