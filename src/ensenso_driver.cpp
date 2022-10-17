@@ -255,4 +255,5 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("BlackLevelOffset: " << config.BlackLevelOffset);
       ROS_DEBUG_STREAM("Exposure: "         << config.Exposure);
       ROS_DEBUG_STREAM("FlexView: "         << std::boolalpha << config.FlexView);
-      ROS_DEBUG_STREAM("FlexViewImag
+      ROS_DEBUG_STREAM("FlexViewImages: "   << config.FlexViewImages);
+      ROS_DEBUG
