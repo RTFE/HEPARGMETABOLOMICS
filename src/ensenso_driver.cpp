@@ -259,4 +259,4 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("FrontLight: "       << std::boolalpha << config.FrontLight);
       ROS_DEBUG_STREAM("Gain: "             << config.Gain);
       ROS_DEBUG_STREAM("GainBoost: "        << std::boolalpha << config.GainBoost);
-      ROS_DEB
+      ROS_DEBUG_STREAM("HardwareGamma: "    << std::boolalpha << config.HardwareGa
