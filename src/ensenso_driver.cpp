@@ -262,4 +262,5 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("HardwareGamma: "    << std::boolalpha << config.HardwareGamma);
       ROS_DEBUG_STREAM("Hdr: "              << std::boolalpha << config.Hdr);
       ROS_DEBUG_STREAM("PixelClock: "       << config.PixelClock);
-      ROS_DEBUG_STREAM("P
+      ROS_DEBUG_STREAM("Projector: "        << std::boolalpha << config.Projector);
+      
