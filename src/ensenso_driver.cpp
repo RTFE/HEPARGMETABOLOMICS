@@ -264,4 +264,5 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("PixelClock: "       << config.PixelClock);
       ROS_DEBUG_STREAM("Projector: "        << std::boolalpha << config.Projector);
       ROS_DEBUG_STREAM("TargetBrightness: " << config.TargetBrightness);
-      ROS_DEBUG_STREAM("TriggerMode: "      << trigger_mo
+      ROS_DEBUG_STREAM("TriggerMode: "      << trigger_mode);
+      ROS_DEBUG_STREAM("RGBTriggerDelay: "      << co
