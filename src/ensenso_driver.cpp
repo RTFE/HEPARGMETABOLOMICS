@@ -267,4 +267,5 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("TriggerMode: "      << trigger_mode);
       ROS_DEBUG_STREAM("RGBTriggerDelay: "      << config.RGBTriggerDelay);
       ROS_DEBUG_STREAM("DisparityMapAOI: "  << std::boolalpha << config.DisparityMapAOI);
-      ROS_DEBUG("Stere
+      ROS_DEBUG("Stereo Matching Parameters");
+      ROS_DEBUG_STREAM("Minimum
