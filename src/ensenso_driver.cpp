@@ -271,3 +271,4 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("MinimumDisparity: "     << config.MinimumDisparity);
       ROS_DEBUG_STREAM("NumberOfDisparities: "  << config.NumberOfDisparities);
       ROS_DEBUG_STREAM("OptimizationProfile: "  << profile);
+      ROS_DEBUG_STREAM("Scaling: "              << config.
