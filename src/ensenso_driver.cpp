@@ -270,4 +270,4 @@ class EnsensoDriver
       ROS_DEBUG("Stereo Matching Parameters");
       ROS_DEBUG_STREAM("MinimumDisparity: "     << config.MinimumDisparity);
       ROS_DEBUG_STREAM("NumberOfDisparities: "  << config.NumberOfDisparities);
-      
+      ROS_DEBUG_STREAM("OptimizationProfile: "  << profile);
