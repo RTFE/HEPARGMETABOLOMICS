@@ -274,4 +274,5 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("Scaling: "              << config.Scaling);
       ROS_DEBUG("Advanced Matching Parameters");
       ROS_DEBUG_STREAM("DepthChangeCost: " << config.DepthChangeCost);
-      ROS_DEBUG_STREAM("DepthStepCost: " << config.DepthSte
+      ROS_DEBUG_STREAM("DepthStepCost: " << config.DepthStepCost);
+      ROS_DEBUG_STREAM("ShadowingThreshold: " << conf
