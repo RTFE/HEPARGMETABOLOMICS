@@ -277,4 +277,6 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("DepthStepCost: " << config.DepthStepCost);
       ROS_DEBUG_STREAM("ShadowingThreshold: " << config.ShadowingThreshold);
       ROS_DEBUG("Postprocessing Parameters");
-      ROS_DEBUG_STREAM("Find Pattern: "   << std
+      ROS_DEBUG_STREAM("Find Pattern: "   << std::boolalpha << config.FindPattern);
+      if (!config.FindPattern)
+   
