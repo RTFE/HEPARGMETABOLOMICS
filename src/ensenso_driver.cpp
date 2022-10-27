@@ -281,3 +281,5 @@ class EnsensoDriver
       if (!config.FindPattern)
       {
         ROS_WARN_STREAM("The calibration pattern will not be searched for, calibration will not work.");
+      }
+      ROS_DEBUG_STREAM("UniquenessRatio: " << c
