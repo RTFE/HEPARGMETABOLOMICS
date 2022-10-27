@@ -276,4 +276,5 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("DepthChangeCost: " << config.DepthChangeCost);
       ROS_DEBUG_STREAM("DepthStepCost: " << config.DepthStepCost);
       ROS_DEBUG_STREAM("ShadowingThreshold: " << config.ShadowingThreshold);
-      ROS_DEBUG("Postprocess
+      ROS_DEBUG("Postprocessing Parameters");
+      ROS_DEBUG_STREAM("Find Pattern: "   << std
