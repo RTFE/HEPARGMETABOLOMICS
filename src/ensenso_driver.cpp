@@ -280,4 +280,4 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("Find Pattern: "   << std::boolalpha << config.FindPattern);
       if (!config.FindPattern)
       {
-        ROS_WARN_STREAM("The calibration pattern will 
+        ROS_WARN_STREAM("The calibration pattern will not be searched for, calibration will not work.");
