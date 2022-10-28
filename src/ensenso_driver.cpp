@@ -282,4 +282,5 @@ class EnsensoDriver
       {
         ROS_WARN_STREAM("The calibration pattern will not be searched for, calibration will not work.");
       }
-      ROS_DEBUG_STREAM("UniquenessRatio: " << c
+      ROS_DEBUG_STREAM("UniquenessRatio: " << config.UniquenessRatio);
+      ROS_DEBUG_STREAM("MedianFilterR
