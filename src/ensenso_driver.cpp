@@ -285,4 +285,5 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("UniquenessRatio: " << config.UniquenessRatio);
       ROS_DEBUG_STREAM("MedianFilterRadius: "<< config.MedianFilterRadius);
       ROS_DEBUG_STREAM("SpeckleComponentThreshold: "<< config.SpeckleComponentThreshold);
-      ROS_DEBUG_STREAM("SpeckleRegionSize: "<< config.SpeckleRegionSi
+      ROS_DEBUG_STREAM("SpeckleRegionSize: "<< config.SpeckleRegionSize);
+      ROS_DEBUG_STREAM("FillBorderSpread: "<< config.FillB
