@@ -289,4 +289,4 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("FillBorderSpread: "<< config.FillBorderSpread);
       ROS_DEBUG_STREAM("FillRegionSize: " << config.FillRegionSize);
       ROS_DEBUG("Render Parameters");
-      ROS_
+      ROS_DEBUG_STREAM("SurfaceConnectivity: "   << std::boolalpha << 
