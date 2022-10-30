@@ -291,4 +291,4 @@ class EnsensoDriver
       ROS_DEBUG("Render Parameters");
       ROS_DEBUG_STREAM("SurfaceConnectivity: "   << std::boolalpha << config.SurfaceConnectivity);
       ROS_DEBUG_STREAM("NearPlane: "   << std::boolalpha << config.NearPlane);
-      ROS_
+      ROS_DEBUG_STREAM("FarPlane: "   << std::boolalpha << conf
