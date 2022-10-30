@@ -295,4 +295,5 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("UseOpenGL: "   << std::boolalpha << config.UseOpenGL);
       ROS_DEBUG("Stream Parameters");
       ROS_DEBUG_STREAM("Cloud: "   << std::boolalpha << config.Cloud);
-      ROS_DEBUG_STREAM("Images: "   << std::boolalpha << confi
+      ROS_DEBUG_STREAM("Images: "   << std::boolalpha << config.Images);
+      ROS_DEBUG_STREAM("Depth: " << std::bool
