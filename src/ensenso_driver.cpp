@@ -303,4 +303,6 @@ class EnsensoDriver
       #else
         ROS_DEBUG_STREAM("CUDA is not supported. Upgrade EnsensoSDK to Version >= 2.1.7 in order to use CUDA.");
       #endif
-     
+      ROS_DEBUG("---");
+
+      enable_cloud_ = conf
