@@ -307,4 +307,6 @@ class EnsensoDriver
 
       enable_cloud_ = config.Cloud;
       enable_images_ = config.Images;
-   
+      enable_depth_ = config.Depth;
+
+      //adverti
