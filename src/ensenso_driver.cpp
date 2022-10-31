@@ -296,4 +296,6 @@ class EnsensoDriver
       ROS_DEBUG("Stream Parameters");
       ROS_DEBUG_STREAM("Cloud: "   << std::boolalpha << config.Cloud);
       ROS_DEBUG_STREAM("Images: "   << std::boolalpha << config.Images);
-      ROS_DEBUG_STREAM("Depth: " << std::bool
+      ROS_DEBUG_STREAM("Depth: " << std::boolalpha << config.Depth);
+      ROS_DEBUG("CUDA Parameters");
+      
