@@ -309,4 +309,5 @@ class EnsensoDriver
       enable_images_ = config.Images;
       enable_depth_ = config.Depth;
 
-      //adverti
+      //advertise topics only when parameters are set accordingly
+      if (c
