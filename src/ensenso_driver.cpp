@@ -305,4 +305,6 @@ class EnsensoDriver
       #endif
       ROS_DEBUG("---");
 
-      enable_cloud_ = conf
+      enable_cloud_ = config.Cloud;
+      enable_images_ = config.Images;
+   
