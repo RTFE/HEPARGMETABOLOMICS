@@ -301,4 +301,6 @@ class EnsensoDriver
       #ifdef CUDA_IMPLEMENTED
         ROS_DEBUG_STREAM("Use CUDA: "   << std::boolalpha << config.EnableCUDA);
       #else
-        ROS_DEBUG_STREAM("CUDA is not supported. Upgrade
+        ROS_DEBUG_STREAM("CUDA is not supported. Upgrade EnsensoSDK to Version >= 2.1.7 in order to use CUDA.");
+      #endif
+     
