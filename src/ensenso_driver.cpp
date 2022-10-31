@@ -299,4 +299,4 @@ class EnsensoDriver
       ROS_DEBUG_STREAM("Depth: " << std::boolalpha << config.Depth);
       ROS_DEBUG("CUDA Parameters");
       #ifdef CUDA_IMPLEMENTED
-        ROS_DEBUG_STREAM("Us
+        ROS_DEBUG_STREAM("Use CUDA: "   << std::boolalpha << config.EnableCUDA
