@@ -310,4 +310,6 @@ class EnsensoDriver
       enable_depth_ = config.Depth;
 
       //advertise topics only when parameters are set accordingly
-      if (c
+      if (config.FindPattern && !find_pattern_)
+      {
+        pattern
