@@ -312,4 +312,4 @@ class EnsensoDriver
       //advertise topics only when parameters are set accordingly
       if (config.FindPattern && !find_pattern_)
       {
-        pattern
+        pattern_raw_pub_ = nh_.advertise<ensenso::RawStereoPattern> ("pattern/s
