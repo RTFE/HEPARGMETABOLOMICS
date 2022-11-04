@@ -313,4 +313,5 @@ class EnsensoDriver
       if (config.FindPattern && !find_pattern_)
       {
         pattern_raw_pub_ = nh_.advertise<ensenso::RawStereoPattern> ("pattern/stereo", 1, false);
-        pattern_pose_pub_ = nh_.advertise<geome
+        pattern_pose_pub_ = nh_.advertise<geometry_msgs::PoseStamped> ("pattern/pose", 1, false);
+        cal
