@@ -315,4 +315,4 @@ class EnsensoDriver
         pattern_raw_pub_ = nh_.advertise<ensenso::RawStereoPattern> ("pattern/stereo", 1, false);
         pattern_pose_pub_ = nh_.advertise<geometry_msgs::PoseStamped> ("pattern/pose", 1, false);
         calibrate_srv_ = nh_.advertiseService("calibrate_handeye", &EnsensoDriver::calibrateHandEyeCB, this);
-        pattern_srv_ = nh_.adverti
+        pattern_srv_ = nh_.advertiseService("estimate_pattern_pose", &EnsensoDriver::estimatePatternPoseCB
