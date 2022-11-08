@@ -319,4 +319,5 @@ class EnsensoDriver
         collect_srv_ = nh_.advertiseService("collect_pattern", &EnsensoDriver::collectPatternCB, this);
       }
       find_pattern_ = config.FindPattern;
-      // Ca
+      // Capture parameters
+      ensenso_ptr_->setAutoBlackLevel(confi
