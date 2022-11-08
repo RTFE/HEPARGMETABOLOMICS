@@ -316,4 +316,7 @@ class EnsensoDriver
         pattern_pose_pub_ = nh_.advertise<geometry_msgs::PoseStamped> ("pattern/pose", 1, false);
         calibrate_srv_ = nh_.advertiseService("calibrate_handeye", &EnsensoDriver::calibrateHandEyeCB, this);
         pattern_srv_ = nh_.advertiseService("estimate_pattern_pose", &EnsensoDriver::estimatePatternPoseCB, this);
-        collect_srv_ = nh_.advertiseService("collect_pattern", &EnsensoDriver::collectPatternC
+        collect_srv_ = nh_.advertiseService("collect_pattern", &EnsensoDriver::collectPatternCB, this);
+      }
+      find_pattern_ = config.FindPattern;
+      // Ca
