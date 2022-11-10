@@ -321,4 +321,5 @@ class EnsensoDriver
       find_pattern_ = config.FindPattern;
       // Capture parameters
       ensenso_ptr_->setAutoBlackLevel(config.AutoBlackLevel);
-      ensenso_ptr_->setAutoExposure(conf
+      ensenso_ptr_->setAutoExposure(config.AutoExposure);
+      ensenso_ptr_->setAutoGain(config.AutoGai
