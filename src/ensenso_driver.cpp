@@ -323,4 +323,6 @@ class EnsensoDriver
       ensenso_ptr_->setAutoBlackLevel(config.AutoBlackLevel);
       ensenso_ptr_->setAutoExposure(config.AutoExposure);
       ensenso_ptr_->setAutoGain(config.AutoGain);
-      ensenso_ptr_->setBlackLevelOffset(config.BlackL
+      ensenso_ptr_->setBlackLevelOffset(config.BlackLevelOffset);
+      ensenso_ptr_->setExposure(config.Exposure);
+      ensenso_
