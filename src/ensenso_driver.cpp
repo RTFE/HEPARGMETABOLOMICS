@@ -330,4 +330,5 @@ class EnsensoDriver
       ensenso_ptr_->setGainBoost(config.GainBoost);
       ensenso_ptr_->setHardwareGamma(config.HardwareGamma);
       ensenso_ptr_->setHdr(config.Hdr);
-     
+      ensenso_ptr_->setPixelClock(config.PixelClock);
+      ensenso_ptr_->set
