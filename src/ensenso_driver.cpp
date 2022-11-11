@@ -328,4 +328,6 @@ class EnsensoDriver
       ensenso_ptr_->setFrontLight(config.FrontLight);
       ensenso_ptr_->setGain(config.Gain);
       ensenso_ptr_->setGainBoost(config.GainBoost);
-      ensenso_ptr_->setHardwareGamma(config.Har
+      ensenso_ptr_->setHardwareGamma(config.HardwareGamma);
+      ensenso_ptr_->setHdr(config.Hdr);
+     
