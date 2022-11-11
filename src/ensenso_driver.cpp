@@ -332,4 +332,5 @@ class EnsensoDriver
       ensenso_ptr_->setHdr(config.Hdr);
       ensenso_ptr_->setPixelClock(config.PixelClock);
       ensenso_ptr_->setProjector(config.Projector);
-      ensenso_ptr_->setRGBTriggerD
+      ensenso_ptr_->setRGBTriggerDelay(config.RGBTriggerDelay);
+      ensenso_ptr_->setTarget
