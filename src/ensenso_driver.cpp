@@ -337,4 +337,6 @@ class EnsensoDriver
       ensenso_ptr_->setTriggerMode(trigger_mode);
       ensenso_ptr_->setUseDisparityMapAreaOfInterest(config.DisparityMapAOI);
       // Flexview and binning only work in 'Software' trigger mode and with the projector on
-      if (trigger_mod
+      if (trigger_mode.compare("Software") == 0 && config.Projector)
+      {
+        
