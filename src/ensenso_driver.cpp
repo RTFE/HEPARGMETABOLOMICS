@@ -339,4 +339,5 @@ class EnsensoDriver
       // Flexview and binning only work in 'Software' trigger mode and with the projector on
       if (trigger_mode.compare("Software") == 0 && config.Projector)
       {
-        
+        ensenso_ptr_->setBinning(config.Binning);
+      
