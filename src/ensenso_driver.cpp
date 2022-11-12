@@ -335,4 +335,5 @@ class EnsensoDriver
       ensenso_ptr_->setRGBTriggerDelay(config.RGBTriggerDelay);
       ensenso_ptr_->setTargetBrightness(config.TargetBrightness);
       ensenso_ptr_->setTriggerMode(trigger_mode);
-      ensenso_ptr_->setUseDisparityMapAreaOfInter
+      ensenso_ptr_->setUseDisparityMapAreaOfInterest(config.DisparityMapAOI);
+      // Flexview and binning only work 
