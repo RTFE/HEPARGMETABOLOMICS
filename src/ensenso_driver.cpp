@@ -340,4 +340,7 @@ class EnsensoDriver
       if (trigger_mode.compare("Software") == 0 && config.Projector)
       {
         ensenso_ptr_->setBinning(config.Binning);
-        ensenso_ptr_->setFlexView(config.FlexView, config.FlexViewIm
+        ensenso_ptr_->setFlexView(config.FlexView, config.FlexViewImages);
+      }
+      // Stereo parameters
+      ensenso_ptr_->setMin
