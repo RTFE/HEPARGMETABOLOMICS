@@ -343,4 +343,5 @@ class EnsensoDriver
         ensenso_ptr_->setFlexView(config.FlexView, config.FlexViewImages);
       }
       // Stereo parameters
-      ensenso_ptr_->setMin
+      ensenso_ptr_->setMinimumDisparity(config.MinimumDisparity);
+      ensenso_ptr_->setNumberOf
