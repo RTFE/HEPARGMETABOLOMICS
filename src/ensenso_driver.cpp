@@ -353,4 +353,5 @@ class EnsensoDriver
       //Postprocessing parameters
       ensenso_ptr_->setUniquenessRatio(config.UniquenessRatio);
       ensenso_ptr_->setMedianFilterRadius(config.MedianFilterRadius);
-      ensenso_ptr
+      ensenso_ptr_->setSpeckleComponentThreshold(config.SpeckleComponentThreshold);
+      e
