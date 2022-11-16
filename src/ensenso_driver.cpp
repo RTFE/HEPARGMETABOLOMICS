@@ -348,4 +348,5 @@ class EnsensoDriver
       ensenso_ptr_->setOptimizationProfile(profile);
       ensenso_ptr_->setScaling(config.Scaling);
       ensenso_ptr_->setDepthChangeCost(config.DepthChangeCost);
-      ensenso_ptr_->setDepthStepCost(config.DepthSt
+      ensenso_ptr_->setDepthStepCost(config.DepthStepCost);
+      ensenso_ptr_->setShadowingThreshold(config.ShadowingThresho
