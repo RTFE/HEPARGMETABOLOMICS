@@ -344,4 +344,5 @@ class EnsensoDriver
       }
       // Stereo parameters
       ensenso_ptr_->setMinimumDisparity(config.MinimumDisparity);
-      ensenso_ptr_->setNumberOf
+      ensenso_ptr_->setNumberOfDisparities(config.NumberOfDisparities);
+      ensenso_ptr_->setOpt
