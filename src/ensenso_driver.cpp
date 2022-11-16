@@ -346,4 +346,5 @@ class EnsensoDriver
       ensenso_ptr_->setMinimumDisparity(config.MinimumDisparity);
       ensenso_ptr_->setNumberOfDisparities(config.NumberOfDisparities);
       ensenso_ptr_->setOptimizationProfile(profile);
-      ensenso_ptr_->setScaling(co
+      ensenso_ptr_->setScaling(config.Scaling);
+      ensenso_ptr_->setDepthChangeCost(config.DepthChangeC
