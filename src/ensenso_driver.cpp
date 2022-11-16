@@ -351,4 +351,5 @@ class EnsensoDriver
       ensenso_ptr_->setDepthStepCost(config.DepthStepCost);
       ensenso_ptr_->setShadowingThreshold(config.ShadowingThreshold);
       //Postprocessing parameters
-      ensenso_ptr_-
+      ensenso_ptr_->setUniquenessRatio(config.UniquenessRatio);
+      ensenso_ptr_->setMedi
