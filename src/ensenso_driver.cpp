@@ -357,4 +357,7 @@ class EnsensoDriver
       ensenso_ptr_->setSpeckleRegionSize(config.SpeckleRegionSize);
       ensenso_ptr_->setFillBorderSpread(config.FillBorderSpread);
       ensenso_ptr_->setFillRegionSize(config.FillRegionSize);
-      ensenso_ptr_->setFindPattern(
+      ensenso_ptr_->setFindPattern(config.FindPattern);
+      //Render parameters
+      ensenso_ptr_->setSurfaceConnectivity(config.SurfaceConnectivity);
+      ens
