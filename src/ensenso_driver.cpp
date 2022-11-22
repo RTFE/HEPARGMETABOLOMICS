@@ -355,4 +355,5 @@ class EnsensoDriver
       ensenso_ptr_->setMedianFilterRadius(config.MedianFilterRadius);
       ensenso_ptr_->setSpeckleComponentThreshold(config.SpeckleComponentThreshold);
       ensenso_ptr_->setSpeckleRegionSize(config.SpeckleRegionSize);
-      ensenso_ptr_->setFillBorderSpread(config.FillBorderSp
+      ensenso_ptr_->setFillBorderSpread(config.FillBorderSpread);
+      ensenso_ptr_->setFillRegionSize(config.FillRegionS
