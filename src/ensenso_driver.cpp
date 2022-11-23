@@ -360,4 +360,5 @@ class EnsensoDriver
       ensenso_ptr_->setFindPattern(config.FindPattern);
       //Render parameters
       ensenso_ptr_->setSurfaceConnectivity(config.SurfaceConnectivity);
-      ens
+      ensenso_ptr_->setNearPlane(config.NearPlane);
+      ensenso_ptr_->setFarPlane(
