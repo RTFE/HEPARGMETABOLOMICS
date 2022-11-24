@@ -364,4 +364,6 @@ class EnsensoDriver
       ensenso_ptr_->setFarPlane(config.FarPlane);
       ensenso_ptr_->setUseOpenGL(config.UseOpenGL);
       //CUDA parameter
-      #ifdef CUDA_
+      #ifdef CUDA_IMPLEMENTED
+        ensenso_ptr_->setEnableCUDA(config.EnableCUDA);
+  
