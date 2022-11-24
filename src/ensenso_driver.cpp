@@ -366,4 +366,5 @@ class EnsensoDriver
       //CUDA parameter
       #ifdef CUDA_IMPLEMENTED
         ensenso_ptr_->setEnableCUDA(config.EnableCUDA);
-  
+      #endif
+      // Streaming parameters - only request rgb whe
