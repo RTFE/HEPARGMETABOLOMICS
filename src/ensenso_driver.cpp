@@ -368,4 +368,7 @@ class EnsensoDriver
         ensenso_ptr_->setEnableCUDA(config.EnableCUDA);
       #endif
       // Streaming parameters - only request rgb when available
-      if (trigger_mode_ != config.Trigge
+      if (trigger_mode_ != config.TriggerMode)
+      {
+        trigger_mode_ = config.TriggerMode;
+    
