@@ -362,4 +362,6 @@ class EnsensoDriver
       ensenso_ptr_->setSurfaceConnectivity(config.SurfaceConnectivity);
       ensenso_ptr_->setNearPlane(config.NearPlane);
       ensenso_ptr_->setFarPlane(config.FarPlane);
-      ensenso_ptr_->setUseOpenGL(config.U
+      ensenso_ptr_->setUseOpenGL(config.UseOpenGL);
+      //CUDA parameter
+      #ifdef CUDA_
