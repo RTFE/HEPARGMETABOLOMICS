@@ -361,4 +361,5 @@ class EnsensoDriver
       //Render parameters
       ensenso_ptr_->setSurfaceConnectivity(config.SurfaceConnectivity);
       ensenso_ptr_->setNearPlane(config.NearPlane);
-      ensenso_ptr_->setFarPlane(
+      ensenso_ptr_->setFarPlane(config.FarPlane);
+      ensenso_ptr_->setUseOpenGL(config.U
