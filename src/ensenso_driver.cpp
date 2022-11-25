@@ -379,4 +379,8 @@ class EnsensoDriver
       }
       //check if someone is subscribed and start!
       depthSubscribeCallback();
-      imagesSubscribeCallback
+      imagesSubscribeCallback();
+      cloudSubscribeCallback();
+    }
+
+    bool collectPatternCB
