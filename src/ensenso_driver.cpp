@@ -373,4 +373,6 @@ class EnsensoDriver
         trigger_mode_ = config.TriggerMode;
         if (ensenso_ptr_->isRunning())
         {
-          ensen
+          ensenso_ptr_->stop();
+          ensenso_ptr_->start();
+      
