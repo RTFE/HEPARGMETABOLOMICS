@@ -377,4 +377,6 @@ class EnsensoDriver
           ensenso_ptr_->start();
         }
       }
-      //check if someone is subscribed and star
+      //check if someone is subscribed and start!
+      depthSubscribeCallback();
+      imagesSubscribeCallback
