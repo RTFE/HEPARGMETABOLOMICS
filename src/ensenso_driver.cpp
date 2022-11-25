@@ -383,4 +383,4 @@ class EnsensoDriver
       cloudSubscribeCallback();
     }
 
-    bool collectPatternCB
+    bool collectPatternCB(ensenso::CollectPattern::Request& req, ensenso::CollectPatt
