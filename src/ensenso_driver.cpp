@@ -383,4 +383,6 @@ class EnsensoDriver
       cloudSubscribeCallback();
     }
 
-    bool collectPatternCB(ensenso::CollectPattern::Request& req, ensenso::CollectPatt
+    bool collectPatternCB(ensenso::CollectPattern::Request& req, ensenso::CollectPattern::Response &res)
+    {
+      bool was_running = ensenso_ptr_->isRunning();
