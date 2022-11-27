@@ -390,4 +390,5 @@ class EnsensoDriver
         ensenso_ptr_->stop();
       // Check consistency
       if (!req.decode && req.grid_spacing <= 0)
-  
+      {
+        ROS_WARN("grid_spacing not specify. Forgot to set the
