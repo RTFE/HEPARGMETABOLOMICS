@@ -393,4 +393,7 @@ class EnsensoDriver
       {
         ROS_WARN("grid_spacing not specify. Forgot to set the request.decode = True?");
         if (was_running)
-          en
+          ensenso_ptr_->start();
+        return true;
+      }
+      // Discar
