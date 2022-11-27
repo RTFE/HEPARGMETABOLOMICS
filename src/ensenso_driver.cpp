@@ -391,4 +391,6 @@ class EnsensoDriver
       // Check consistency
       if (!req.decode && req.grid_spacing <= 0)
       {
-        ROS_WARN("grid_spacing not specify. Forgot to set the
+        ROS_WARN("grid_spacing not specify. Forgot to set the request.decode = True?");
+        if (was_running)
+          en
