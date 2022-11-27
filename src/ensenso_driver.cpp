@@ -388,4 +388,6 @@ class EnsensoDriver
       bool was_running = ensenso_ptr_->isRunning();
       if (was_running)
         ensenso_ptr_->stop();
-      // Che
+      // Check consistency
+      if (!req.decode && req.grid_spacing <= 0)
+  
