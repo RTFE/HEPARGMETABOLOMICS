@@ -400,4 +400,6 @@ class EnsensoDriver
       if (req.clear_buffer)
         ensenso_ptr_->discardPatterns();
       // Set the grid spacing
-      if (re
+      if (req.decode)
+      {
+        res.grid_spacing = ensenso_ptr_->deco
