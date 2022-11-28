@@ -407,4 +407,6 @@ class EnsensoDriver
         if (res.grid_spacing <= 0)
         {
           ROS_WARN("Couldn't decode calibration pattern");
-          if (was_ru
+          if (was_running)
+            ensenso_ptr_->start();
+          re
