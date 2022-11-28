@@ -404,4 +404,6 @@ class EnsensoDriver
       {
         res.grid_spacing = ensenso_ptr_->decodePattern();
         // Check consistency
-        if (res.grid_spacing
+        if (res.grid_spacing <= 0)
+        {
+          ROS_WARN("Couldn't decode 
