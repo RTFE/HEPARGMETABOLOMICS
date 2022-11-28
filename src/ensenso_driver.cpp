@@ -413,4 +413,5 @@ class EnsensoDriver
         }
       }
       else
-        res.gri
+        res.grid_spacing = req.grid_spacing;
+      ensenso_ptr_->setG
