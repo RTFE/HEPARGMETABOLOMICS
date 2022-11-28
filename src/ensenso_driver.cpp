@@ -398,4 +398,6 @@ class EnsensoDriver
       }
       // Discard previously saved patterns
       if (req.clear_buffer)
-        e
+        ensenso_ptr_->discardPatterns();
+      // Set the grid spacing
+      if (re
