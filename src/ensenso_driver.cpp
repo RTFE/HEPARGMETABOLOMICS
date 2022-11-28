@@ -409,4 +409,8 @@ class EnsensoDriver
           ROS_WARN("Couldn't decode calibration pattern");
           if (was_running)
             ensenso_ptr_->start();
-          re
+          return true;
+        }
+      }
+      else
+        res.gri
