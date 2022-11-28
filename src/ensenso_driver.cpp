@@ -406,4 +406,5 @@ class EnsensoDriver
         // Check consistency
         if (res.grid_spacing <= 0)
         {
-          ROS_WARN("Couldn't decode 
+          ROS_WARN("Couldn't decode calibration pattern");
+          if (was_ru
