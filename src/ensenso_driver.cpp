@@ -396,4 +396,6 @@ class EnsensoDriver
           ensenso_ptr_->start();
         return true;
       }
-      // Discar
+      // Discard previously saved patterns
+      if (req.clear_buffer)
+        e
