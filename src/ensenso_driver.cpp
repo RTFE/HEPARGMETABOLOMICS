@@ -416,4 +416,5 @@ class EnsensoDriver
         res.grid_spacing = req.grid_spacing;
       ensenso_ptr_->setGridSpacing(res.grid_spacing);
       // Collect pattern
-      int prev_pattern_count = ensenso_ptr_->getPatternCount()
+      int prev_pattern_count = ensenso_ptr_->getPatternCount();
+      res.pattern_count = ensenso_ptr_->collectPattern(req.ad
