@@ -420,4 +420,8 @@ class EnsensoDriver
       res.pattern_count = ensenso_ptr_->collectPattern(req.add_to_buffer);
       res.success = (res.pattern_count == prev_pattern_count+1);
       if (was_running)
-        ensens
+        ensenso_ptr_->start();
+      return true;
+    }
+
+    boo
