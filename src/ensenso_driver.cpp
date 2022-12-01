@@ -436,4 +436,6 @@ class EnsensoDriver
         res.success = ensenso_ptr_->estimatePatternPose(pattern_pose, req.average);
         tf::poseEigenToMsg(pattern_pose, res.pose);
       }
-      if (
+      if (was_running)
+        ensenso_ptr_->start();
+      return t
