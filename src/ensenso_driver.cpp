@@ -434,4 +434,6 @@ class EnsensoDriver
       {
         Eigen::Affine3d pattern_pose;
         res.success = ensenso_ptr_->estimatePatternPose(pattern_pose, req.average);
-     
+        tf::poseEigenToMsg(pattern_pose, res.pose);
+      }
+      if (
