@@ -424,4 +424,5 @@ class EnsensoDriver
       return true;
     }
 
-    bool estimatePatternPoseCB(ensenso::EstimatePatternPose::R
+    bool estimatePatternPoseCB(ensenso::EstimatePatternPose::Request& req, ensenso::EstimatePatternPose::Response &res)
+    
