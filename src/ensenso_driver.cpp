@@ -429,4 +429,6 @@ class EnsensoDriver
       bool was_running = ensenso_ptr_->isRunning();
       if (was_running)
         ensenso_ptr_->stop();
-      res.success = ensenso_p
+      res.success = ensenso_ptr_->getPatternCount() > 0;
+      if (res.success)
+     
