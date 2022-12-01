@@ -427,4 +427,6 @@ class EnsensoDriver
     bool estimatePatternPoseCB(ensenso::EstimatePatternPose::Request& req, ensenso::EstimatePatternPose::Response &res)
     {
       bool was_running = ensenso_ptr_->isRunning();
-      if (wa
+      if (was_running)
+        ensenso_ptr_->stop();
+      res.success = ensenso_p
