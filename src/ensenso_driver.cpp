@@ -431,4 +431,6 @@ class EnsensoDriver
         ensenso_ptr_->stop();
       res.success = ensenso_ptr_->getPatternCount() > 0;
       if (res.success)
-     
+      {
+        Eigen::Affine3d pattern_pose;
+        res.success = ense
