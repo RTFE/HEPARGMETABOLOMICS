@@ -441,4 +441,7 @@ class EnsensoDriver
       return true;
     }
 
-    void cloudCallback( const boost::shared_pt
+    void cloudCallback( const boost::shared_ptr<PointCloudXYZ>& cloud)
+    {
+      // Point cloud
+      if (cloud_
