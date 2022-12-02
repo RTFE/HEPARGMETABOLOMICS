@@ -438,4 +438,7 @@ class EnsensoDriver
       }
       if (was_running)
         ensenso_ptr_->start();
-      return t
+      return true;
+    }
+
+    void cloudCallback( const boost::shared_pt
