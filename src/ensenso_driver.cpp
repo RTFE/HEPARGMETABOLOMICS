@@ -449,4 +449,6 @@ class EnsensoDriver
         ros::Time stamp;
         //stamp is the same for all images/cloud
         pcl_conversions::fromPCL(cloud->header.stamp, stamp);
-        cloud->header.frame_id = camera_fra
+        cloud->header.frame_id = camera_frame_id_;
+        sensor_msgs::PointCloud2 cloud_msg;
+       
