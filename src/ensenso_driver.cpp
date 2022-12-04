@@ -451,4 +451,5 @@ class EnsensoDriver
         pcl_conversions::fromPCL(cloud->header.stamp, stamp);
         cloud->header.frame_id = camera_frame_id_;
         sensor_msgs::PointCloud2 cloud_msg;
-       
+        cloud_msg.header.stamp = stamp;
+        pcl::toROSMsg(*cloud,
