@@ -457,4 +457,7 @@ class EnsensoDriver
       }
     }
 
-    void cloudRGBCallback( const boost::shared_ptr<PointCl
+    void cloudRGBCallback( const boost::shared_ptr<PointCloudXYZRGBA>& cloud)
+    {
+      // Point cloud
+      if (clou
