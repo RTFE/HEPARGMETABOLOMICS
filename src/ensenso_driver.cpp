@@ -454,4 +454,7 @@ class EnsensoDriver
         cloud_msg.header.stamp = stamp;
         pcl::toROSMsg(*cloud, cloud_msg);
         cloud_pub_.publish(cloud_msg);
-      
+      }
+    }
+
+    void cloudRGBCallback( const boost::shared_ptr<PointCl
