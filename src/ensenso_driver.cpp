@@ -463,4 +463,5 @@ class EnsensoDriver
       if (cloud_pub_.getNumSubscribers() > 0)
       {
         ros::Time stamp;
-    
+        //stamp is the same for all images/cloud
+        pcl
