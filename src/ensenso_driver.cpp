@@ -460,4 +460,7 @@ class EnsensoDriver
     void cloudRGBCallback( const boost::shared_ptr<PointCloudXYZRGBA>& cloud)
     {
       // Point cloud
-      if (clou
+      if (cloud_pub_.getNumSubscribers() > 0)
+      {
+        ros::Time stamp;
+    
