@@ -466,4 +466,5 @@ class EnsensoDriver
         //stamp is the same for all images/cloud
         pcl_conversions::fromPCL(cloud->header.stamp, stamp);
         cloud->header.frame_id = rgb_camera_frame_id_;
-        sensor
+        sensor_msgs::PointCloud2 cloud_msg;
+        cloud_msg.header.stam
