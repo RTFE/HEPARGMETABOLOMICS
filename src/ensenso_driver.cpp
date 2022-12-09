@@ -479,4 +479,5 @@ class EnsensoDriver
       //stamp is the same for all images
       pcl_conversions::fromPCL(rawimages->first.header.stamp, stamp);
       // Get cameras info
-      se
+      sensor_msgs::CameraInfo linfo, rinfo;
+      ensenso_ptr_->g
