@@ -476,4 +476,5 @@ class EnsensoDriver
     void imagesCallback( const boost::shared_ptr<PairOfImages>& rawimages, const boost::shared_ptr<PairOfImages>& rectifiedimages)
     {
       ros::Time stamp;
-      //stamp is the sam
+      //stamp is the same for all images
+      pcl_conversions::fromPCL(rawimages->firs
