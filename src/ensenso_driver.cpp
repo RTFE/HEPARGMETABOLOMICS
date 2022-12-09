@@ -473,4 +473,4 @@ class EnsensoDriver
       }
     }
 
-    void imagesCallback( const boost::shared_ptr<PairOfImages>& r
+    void imagesCallback( const boost::shared_ptr<PairOfImages>& rawimages, const boost::shared_ptr<PairOfImages>& rectifiedima
