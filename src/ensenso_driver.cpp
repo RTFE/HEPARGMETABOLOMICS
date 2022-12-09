@@ -469,4 +469,8 @@ class EnsensoDriver
         sensor_msgs::PointCloud2 cloud_msg;
         cloud_msg.header.stamp = stamp;
         pcl::toROSMsg(*cloud, cloud_msg);
- 
+        cloud_pub_.publish(cloud_msg);
+      }
+    }
+
+    void
