@@ -473,4 +473,4 @@ class EnsensoDriver
       }
     }
 
-    void
+    void imagesCallback( const boost::shared_ptr<PairOfImages>& r
