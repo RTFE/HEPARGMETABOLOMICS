@@ -477,4 +477,6 @@ class EnsensoDriver
     {
       ros::Time stamp;
       //stamp is the same for all images
-      pcl_conversions::fromPCL(rawimages->firs
+      pcl_conversions::fromPCL(rawimages->first.header.stamp, stamp);
+      // Get cameras info
+      se
