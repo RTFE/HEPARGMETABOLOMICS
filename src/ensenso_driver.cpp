@@ -480,4 +480,5 @@ class EnsensoDriver
       pcl_conversions::fromPCL(rawimages->first.header.stamp, stamp);
       // Get cameras info
       sensor_msgs::CameraInfo linfo, rinfo;
-      ensenso_ptr_->g
+      ensenso_ptr_->getCameraInfo("Left", linfo);
+      ensenso_ptr_->getCameraInfo
