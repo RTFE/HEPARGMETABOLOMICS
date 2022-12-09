@@ -473,4 +473,7 @@ class EnsensoDriver
       }
     }
 
-    void imagesCallback( const boost::shared_ptr<PairOfImages>& rawimages, const boost::shared_ptr<PairOfImages>& rectifiedima
+    void imagesCallback( const boost::shared_ptr<PairOfImages>& rawimages, const boost::shared_ptr<PairOfImages>& rectifiedimages)
+    {
+      ros::Time stamp;
+      //stamp is the sam
