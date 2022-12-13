@@ -488,4 +488,5 @@ class EnsensoDriver
       rinfo.header.frame_id = camera_frame_id_;
       // Images
       if (l_raw_pub_.getNumSubscribers() > 0)
-        l_raw_pub_.publish(*toImageMsg(rawima
+        l_raw_pub_.publish(*toImageMsg(rawimages->first, stamp, camera_frame_id_), linfo, stamp);
+      if 
