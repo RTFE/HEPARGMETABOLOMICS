@@ -482,4 +482,6 @@ class EnsensoDriver
       sensor_msgs::CameraInfo linfo, rinfo;
       ensenso_ptr_->getCameraInfo("Left", linfo);
       ensenso_ptr_->getCameraInfo("Right", rinfo);
-      linfo.header.stamp = stamp
+      linfo.header.stamp = stamp;
+      linfo.header.frame_id = camera_frame_id_;
+      rinfo.he
