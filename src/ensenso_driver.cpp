@@ -489,4 +489,5 @@ class EnsensoDriver
       // Images
       if (l_raw_pub_.getNumSubscribers() > 0)
         l_raw_pub_.publish(*toImageMsg(rawimages->first, stamp, camera_frame_id_), linfo, stamp);
-      if 
+      if (r_raw_pub_.getNumSubscribers() > 0)
+        r_raw_pub_.pu
