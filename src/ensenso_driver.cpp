@@ -494,4 +494,4 @@ class EnsensoDriver
       if (l_rectified_pub_.getNumSubscribers() > 0)
         l_rectified_pub_.publish(toImageMsg(rectifiedimages->first, stamp, camera_frame_id_));
       if (r_rectified_pub_.getNumSubscribers() > 0)
-        r_rect
+        r_rectified_pub_.publish(toImageMsg(rectifiedimages->secon
