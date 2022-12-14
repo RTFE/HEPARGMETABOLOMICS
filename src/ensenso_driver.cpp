@@ -495,4 +495,8 @@ class EnsensoDriver
         l_rectified_pub_.publish(toImageMsg(rectifiedimages->first, stamp, camera_frame_id_));
       if (r_rectified_pub_.getNumSubscribers() > 0)
         r_rectified_pub_.publish(toImageMsg(rectifiedimages->second, stamp, camera_frame_id_));
-      // Publish calibration pattern i
+      // Publish calibration pattern info (if any)
+      publishCalibrationPattern(stamp);
+    }
+
+    vo
