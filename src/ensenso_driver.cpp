@@ -500,4 +500,6 @@ class EnsensoDriver
     }
 
     void imagesRGBCallback( const boost::shared_ptr<PairOfImages>& rawimages, const boost::shared_ptr<PairOfImages>& rectifiedimages,
-                            const boost::share
+                            const boost::shared_ptr<PairOfImages>& rgbimages)
+    {
+      ros::Time stamp;
