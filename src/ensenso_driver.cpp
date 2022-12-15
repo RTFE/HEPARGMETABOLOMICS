@@ -503,3 +503,5 @@ class EnsensoDriver
                             const boost::shared_ptr<PairOfImages>& rgbimages)
     {
       ros::Time stamp;
+      //stamp is the same for all images/cloud
+      pcl_co
