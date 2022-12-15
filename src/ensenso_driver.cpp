@@ -499,4 +499,5 @@ class EnsensoDriver
       publishCalibrationPattern(stamp);
     }
 
-    void imagesRGBCallback( const boost::shared_ptr<PairOfImages>& rawimages, const boost::shared_ptr<PairOfImages>& rectifie
+    void imagesRGBCallback( const boost::shared_ptr<PairOfImages>& rawimages, const boost::shared_ptr<PairOfImages>& rectifiedimages,
+                            const boost::share
