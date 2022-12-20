@@ -513,4 +513,6 @@ class EnsensoDriver
       linfo.header.stamp = stamp;
       linfo.header.frame_id = camera_frame_id_;
       rinfo.header.stamp = stamp;
-      rinfo.header.frame_id
+      rinfo.header.frame_id = camera_frame_id_;
+      rgbinfo.header.stamp = stamp;
+     
