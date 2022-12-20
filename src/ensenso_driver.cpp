@@ -512,4 +512,5 @@ class EnsensoDriver
       ensenso_ptr_->getCameraInfo("RGB", rgbinfo);
       linfo.header.stamp = stamp;
       linfo.header.frame_id = camera_frame_id_;
-      rinfo.
+      rinfo.header.stamp = stamp;
+      rinfo.header.frame_id
