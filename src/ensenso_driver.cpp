@@ -516,4 +516,6 @@ class EnsensoDriver
       rinfo.header.frame_id = camera_frame_id_;
       rgbinfo.header.stamp = stamp;
       rgbinfo.header.frame_id = rgb_camera_frame_id_;
-    
+      // Images
+      if (l_raw_pub_.getNumSubscribers() > 0)
+        l_raw_pub_.publish(*toImageMsg(rawimages->first, stamp, camera_fr
