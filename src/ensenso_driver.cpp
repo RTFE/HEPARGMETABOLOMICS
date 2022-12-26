@@ -530,4 +530,7 @@ class EnsensoDriver
       if (rgb_rectified_pub_.getNumSubscribers() > 0)
         rgb_rectified_pub_.publish(toImageMsg(rgbimages->second, stamp, rgb_camera_frame_id_));
       // Publish calibration pattern info (if any)
-      publishCalibrationPattern(stam
+      publishCalibrationPattern(stamp);
+    }
+
+    void depthCallback( const boost::shared_ptr<pcl::P
