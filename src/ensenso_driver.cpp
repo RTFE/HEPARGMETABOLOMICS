@@ -533,4 +533,6 @@ class EnsensoDriver
       publishCalibrationPattern(stamp);
     }
 
-    void depthCallback( const boost::shared_ptr<pcl::P
+    void depthCallback( const boost::shared_ptr<pcl::PCLGenImage<float> >& depthimage)
+    {
+      if (depth_pub_.getNumSubsc
