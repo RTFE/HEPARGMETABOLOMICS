@@ -528,4 +528,5 @@ class EnsensoDriver
       if (rgb_raw_pub_.getNumSubscribers() > 0)
         rgb_raw_pub_.publish(*toImageMsg(rgbimages->first, stamp, rgb_camera_frame_id_), rgbinfo, stamp);
       if (rgb_rectified_pub_.getNumSubscribers() > 0)
-        rgb_rectified_pub_.publish(to
+        rgb_rectified_pub_.publish(toImageMsg(rgbimages->second, stamp, rgb_camera_frame_id_));
+      // Publ
