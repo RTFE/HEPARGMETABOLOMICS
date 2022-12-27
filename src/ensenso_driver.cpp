@@ -539,4 +539,6 @@ class EnsensoDriver
       {
         std::string frame_id = rgb_available_ ? rgb_camera_frame_id_ : camera_frame_id_;
 
-        
+        ros::Time stamp;
+        //stamp is the same for all images/cloud
+        p
