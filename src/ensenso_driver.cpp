@@ -535,4 +535,6 @@ class EnsensoDriver
 
     void depthCallback( const boost::shared_ptr<pcl::PCLGenImage<float> >& depthimage)
     {
-      if (depth_pub_.getNumSubsc
+      if (depth_pub_.getNumSubscribers() > 0)
+      {
+        std::string frame_id = rgb_avail
