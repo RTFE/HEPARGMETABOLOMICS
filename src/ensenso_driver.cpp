@@ -541,4 +541,6 @@ class EnsensoDriver
 
         ros::Time stamp;
         //stamp is the same for all images/cloud
-        pcl_conversions::fromPCL(depthimage->header.stamp, stamp)
+        pcl_conversions::fromPCL(depthimage->header.stamp, stamp);
+        sensor_msgs::CameraInfo dinfo;
+        ensens
