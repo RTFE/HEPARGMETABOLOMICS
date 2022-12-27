@@ -537,4 +537,6 @@ class EnsensoDriver
     {
       if (depth_pub_.getNumSubscribers() > 0)
       {
-        std::string frame_id = rgb_avail
+        std::string frame_id = rgb_available_ ? rgb_camera_frame_id_ : camera_frame_id_;
+
+        
