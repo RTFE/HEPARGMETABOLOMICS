@@ -543,4 +543,5 @@ class EnsensoDriver
         //stamp is the same for all images/cloud
         pcl_conversions::fromPCL(depthimage->header.stamp, stamp);
         sensor_msgs::CameraInfo dinfo;
-        ensens
+        ensenso_ptr_->getCameraInfo("Depth", dinfo);
+        dinfo.header
