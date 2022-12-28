@@ -544,4 +544,5 @@ class EnsensoDriver
         pcl_conversions::fromPCL(depthimage->header.stamp, stamp);
         sensor_msgs::CameraInfo dinfo;
         ensenso_ptr_->getCameraInfo("Depth", dinfo);
-        dinfo.header
+        dinfo.header.stamp = stamp;
+        dinfo.header.frame_id = frame_id;
