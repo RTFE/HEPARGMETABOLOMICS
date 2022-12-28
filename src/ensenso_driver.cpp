@@ -546,3 +546,4 @@ class EnsensoDriver
         ensenso_ptr_->getCameraInfo("Depth", dinfo);
         dinfo.header.stamp = stamp;
         dinfo.header.frame_id = frame_id;
+        depth_pub_.publish(*toImageMsg(*depthimage
