@@ -554,4 +554,7 @@ class EnsensoDriver
     {
       pcl::Transform ensenso_tf;
       if (!ensenso_ptr_->getTFLeftToRGB(ensenso_tf))
-  
+      {
+        return;
+      }
+      geometry_m
