@@ -553,4 +553,5 @@ class EnsensoDriver
     void publishTF()
     {
       pcl::Transform ensenso_tf;
+      if (!ensenso_ptr_->getTFLeftToRGB(ensenso_tf))
   
