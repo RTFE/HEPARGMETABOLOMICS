@@ -559,4 +559,5 @@ class EnsensoDriver
       }
       geometry_msgs::TransformStamped tf;
       tf.header.frame_id = camera_frame_id_;
-    
+      tf.header.stamp = ros::Time::now();
+      tf.c
