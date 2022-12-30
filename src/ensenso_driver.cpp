@@ -563,4 +563,6 @@ class EnsensoDriver
       tf.child_frame_id = rgb_camera_frame_id_;
       tf.transform.rotation.x = ensenso_tf.qx;
       tf.transform.rotation.y = ensenso_tf.qy;
-      tf.transform.rotation.z = ensenso_tf.
+      tf.transform.rotation.z = ensenso_tf.qz;
+      tf.transform.rotation.w = ensenso_tf.qw;
+     
