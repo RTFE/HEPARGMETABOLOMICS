@@ -561,4 +561,5 @@ class EnsensoDriver
       tf.header.frame_id = camera_frame_id_;
       tf.header.stamp = ros::Time::now();
       tf.child_frame_id = rgb_camera_frame_id_;
-      tf.tr
+      tf.transform.rotation.x = ensenso_tf.qx;
+      tf.transform.rotation.y
