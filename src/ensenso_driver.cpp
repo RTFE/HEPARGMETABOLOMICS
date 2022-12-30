@@ -566,4 +566,5 @@ class EnsensoDriver
       tf.transform.rotation.z = ensenso_tf.qz;
       tf.transform.rotation.w = ensenso_tf.qw;
       tf.transform.translation.x = ensenso_tf.tx;
-      tf.transform.translation
+      tf.transform.translation.y = ensenso_tf.ty;
+      tf.transform.translation.z = ense
