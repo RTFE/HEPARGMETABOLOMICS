@@ -571,4 +571,6 @@ class EnsensoDriver
       tf_br_.sendTransform(tf);
     }
 
-    void publi
+    void publishCalibrationPattern(const ros::Time &now)
+    {
+      int 
