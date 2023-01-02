@@ -574,4 +574,5 @@ class EnsensoDriver
     void publishCalibrationPattern(const ros::Time &now)
     {
       int pose_subs = pattern_pose_pub_.getNumSubscribers();
-      
+      int raw_subs = pattern_raw_pub_.getNumSubscribers();
+   
