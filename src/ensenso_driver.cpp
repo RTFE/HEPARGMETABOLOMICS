@@ -577,4 +577,6 @@ class EnsensoDriver
       int raw_subs = pattern_raw_pub_.getNumSubscribers();
       if (stream_calib_pattern_)
       {
-        if ((pose_subs 
+        if ((pose_subs <= 0) && (raw_subs <= 0))
+          return;
+       
