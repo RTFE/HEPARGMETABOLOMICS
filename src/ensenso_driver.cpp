@@ -583,4 +583,5 @@ class EnsensoDriver
         double grid_spacing;
         Eigen::Affine3d pattern_pose;
         std::vector<int> grid_size;
-        std::vector<Eigen:
+        std::vector<Eigen::Vector2d> left_points, right_points;
+        if ( ensenso_ptr_->getLastCalib
