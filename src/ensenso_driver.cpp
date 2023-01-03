@@ -584,4 +584,7 @@ class EnsensoDriver
         Eigen::Affine3d pattern_pose;
         std::vector<int> grid_size;
         std::vector<Eigen::Vector2d> left_points, right_points;
-        if ( ensenso_ptr_->getLastCalibrationPattern (grid_size, grid_spacing, left_points, right_points, p
+        if ( ensenso_ptr_->getLastCalibrationPattern (grid_size, grid_spacing, left_points, right_points, pattern_pose) )
+        {
+          if (raw_subs > 0)
+      
