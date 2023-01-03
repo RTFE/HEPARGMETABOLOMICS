@@ -579,4 +579,6 @@ class EnsensoDriver
       {
         if ((pose_subs <= 0) && (raw_subs <= 0))
           return;
-       
+        int num_points;
+        double grid_spacing;
+        Eigen::
