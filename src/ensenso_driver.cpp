@@ -582,4 +582,5 @@ class EnsensoDriver
         int num_points;
         double grid_spacing;
         Eigen::Affine3d pattern_pose;
-        std::vector<
+        std::vector<int> grid_size;
+        std::vector<Eigen:
