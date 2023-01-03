@@ -589,4 +589,5 @@ class EnsensoDriver
           if (raw_subs > 0)
           {
             // Populate RawStereoPattern msg
-   
+            ensenso::RawStereoPattern msg;
+            msg.heade
