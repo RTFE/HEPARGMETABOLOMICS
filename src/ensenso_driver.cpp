@@ -591,4 +591,6 @@ class EnsensoDriver
             // Populate RawStereoPattern msg
             ensenso::RawStereoPattern msg;
             msg.header.frame_id = camera_frame_id_;
-            msg.header.stam
+            msg.header.stamp = now;
+            msg.grid_spacing = grid_spacing;
+         
