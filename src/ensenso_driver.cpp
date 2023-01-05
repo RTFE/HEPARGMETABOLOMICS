@@ -593,4 +593,5 @@ class EnsensoDriver
             msg.header.frame_id = camera_frame_id_;
             msg.header.stamp = now;
             msg.grid_spacing = grid_spacing;
-         
+            msg.grid_size = grid_size;
+            num_points = grid_si
