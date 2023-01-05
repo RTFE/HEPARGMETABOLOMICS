@@ -594,4 +594,5 @@ class EnsensoDriver
             msg.header.stamp = now;
             msg.grid_spacing = grid_spacing;
             msg.grid_size = grid_size;
-            num_points = grid_si
+            num_points = grid_size[0]*grid_size[1];
+            msg.left_points.resize(num_p
