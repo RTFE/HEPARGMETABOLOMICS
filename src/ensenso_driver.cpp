@@ -600,4 +600,5 @@ class EnsensoDriver
             for (uint i = 0; i < left_points.size(); ++i)
             {
               msg.left_points[i].x = left_points[i][0];
-              msg.left_points[i].y = left_
+              msg.left_points[i].y = left_points[i][1];
+              msg.right_points[i].x = 
