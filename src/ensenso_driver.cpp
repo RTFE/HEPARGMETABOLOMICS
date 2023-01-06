@@ -609,4 +609,5 @@ class EnsensoDriver
           if (pose_subs > 0)
           {
             // Populate PoseStamped msg
-            geomet
+            geometry_msgs::PoseStamped pose_msg;
+            pose_ms
