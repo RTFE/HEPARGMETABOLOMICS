@@ -607,4 +607,6 @@ class EnsensoDriver
             pattern_raw_pub_.publish(msg);
           }
           if (pose_subs > 0)
- 
+          {
+            // Populate PoseStamped msg
+            geomet
