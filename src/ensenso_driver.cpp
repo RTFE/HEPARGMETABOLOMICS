@@ -596,4 +596,5 @@ class EnsensoDriver
             msg.grid_size = grid_size;
             num_points = grid_size[0]*grid_size[1];
             msg.left_points.resize(num_points);
-            msg.right_points.resize(num_points)
+            msg.right_points.resize(num_points);
+            for (uint i = 0; i < left_points.size(); ++
