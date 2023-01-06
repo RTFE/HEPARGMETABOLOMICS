@@ -604,4 +604,7 @@ class EnsensoDriver
               msg.right_points[i].x = left_points[i][0];
               msg.right_points[i].y = left_points[i][1];
             }
-            pattern_raw_pub_.publish(ms
+            pattern_raw_pub_.publish(msg);
+          }
+          if (pose_subs > 0)
+ 
