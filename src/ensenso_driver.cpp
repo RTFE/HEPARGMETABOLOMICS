@@ -601,4 +601,5 @@ class EnsensoDriver
             {
               msg.left_points[i].x = left_points[i][0];
               msg.left_points[i].y = left_points[i][1];
-              msg.right_points[i].x = 
+              msg.right_points[i].x = left_points[i][0];
+              msg.right_points[i].y = left_poin
