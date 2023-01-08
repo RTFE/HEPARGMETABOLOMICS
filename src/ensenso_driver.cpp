@@ -611,4 +611,5 @@ class EnsensoDriver
             // Populate PoseStamped msg
             geometry_msgs::PoseStamped pose_msg;
             pose_msg.header.frame_id = camera_frame_id_;
-            pose_msg.header.s
+            pose_msg.header.stamp = now;
+            tf::poseEigenToMsg(patter
