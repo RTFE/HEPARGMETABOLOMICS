@@ -613,4 +613,10 @@ class EnsensoDriver
             pose_msg.header.frame_id = camera_frame_id_;
             pose_msg.header.stamp = now;
             tf::poseEigenToMsg(pattern_pose, pose_msg.pose);
-            pattern_pose_pub_.publish(po
+            pattern_pose_pub_.publish(pose_msg);
+          }
+        }
+      }
+    }
+
+    tem
