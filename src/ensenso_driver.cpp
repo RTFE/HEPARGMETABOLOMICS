@@ -619,4 +619,5 @@ class EnsensoDriver
       }
     }
 
-    tem
+    template <typename T>
+    sensor_msgs::ImagePtr toImageMsg(
