@@ -610,4 +610,5 @@ class EnsensoDriver
           {
             // Populate PoseStamped msg
             geometry_msgs::PoseStamped pose_msg;
-            pose_ms
+            pose_msg.header.frame_id = camera_frame_id_;
+            pose_msg.header.s
