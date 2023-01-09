@@ -620,4 +620,4 @@ class EnsensoDriver
     }
 
     template <typename T>
-    sensor_msgs::ImagePtr toImageMsg(
+    sensor_msgs::ImagePtr toImageMsg(pcl::PCLGenImage<T>& pcl_image, ros::Time now, std::string frame
