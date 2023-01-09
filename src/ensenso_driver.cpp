@@ -623,4 +623,6 @@ class EnsensoDriver
     sensor_msgs::ImagePtr toImageMsg(pcl::PCLGenImage<T>& pcl_image, ros::Time now, std::string frame_id)
     {
       unsigned char *image_array = reinterpret_cast<unsigned char *>(&pcl_image.data[0]);
-     
+      int type(CV_8UC1);
+      std::string encoding("mono8");
+      s
