@@ -622,4 +622,5 @@ class EnsensoDriver
     template <typename T>
     sensor_msgs::ImagePtr toImageMsg(pcl::PCLGenImage<T>& pcl_image, ros::Time now, std::string frame_id)
     {
-      unsigned char *image_array = rei
+      unsigned char *image_array = reinterpret_cast<unsigned char *>(&pcl_image.data[0]);
+     
