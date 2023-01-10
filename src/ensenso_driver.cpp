@@ -632,4 +632,7 @@ class EnsensoDriver
       if (pcl_image.encoding == "CV_32FC1")
       {
         type = CV_32FC1;
-    
+        encoding = "32FC1";
+      }
+      //rgb images
+     
