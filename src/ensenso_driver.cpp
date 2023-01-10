@@ -635,4 +635,6 @@ class EnsensoDriver
         encoding = "32FC1";
       }
       //rgb images
-     
+      if (pcl_image.encoding == "CV_8UC3")
+      {
+        type = CV_8UC3;
