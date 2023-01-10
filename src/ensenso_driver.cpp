@@ -629,4 +629,7 @@ class EnsensoDriver
       header.stamp = now;
       header.frame_id = frame_id;
       //depth image
-      if (pcl_image.encoding 
+      if (pcl_image.encoding == "CV_32FC1")
+      {
+        type = CV_32FC1;
+    
