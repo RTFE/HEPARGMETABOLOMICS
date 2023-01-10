@@ -627,4 +627,6 @@ class EnsensoDriver
       std::string encoding("mono8");
       std_msgs::Header header;
       header.stamp = now;
-      header.frame_
+      header.frame_id = frame_id;
+      //depth image
+      if (pcl_image.encoding 
