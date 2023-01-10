@@ -638,3 +638,6 @@ class EnsensoDriver
       if (pcl_image.encoding == "CV_8UC3")
       {
         type = CV_8UC3;
+        encoding = "rgb8";
+      }
+      cv::Mat image_mat(pcl_i
