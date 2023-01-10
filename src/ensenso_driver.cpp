@@ -625,4 +625,6 @@ class EnsensoDriver
       unsigned char *image_array = reinterpret_cast<unsigned char *>(&pcl_image.data[0]);
       int type(CV_8UC1);
       std::string encoding("mono8");
-      s
+      std_msgs::Header header;
+      header.stamp = now;
+      header.frame_
