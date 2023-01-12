@@ -646,4 +646,5 @@ class EnsensoDriver
 
     void imagesSubscribeCallback ()
     {
-      bool need_images = ((
+      bool need_images = ((rgb_raw_pub_.getNumSubscribers() + rgb_raw_pub_.getNumSubscribers() +
+    
