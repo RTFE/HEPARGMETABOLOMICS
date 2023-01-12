@@ -640,4 +640,5 @@ class EnsensoDriver
         type = CV_8UC3;
         encoding = "rgb8";
       }
-      cv::Mat image_mat(pcl_i
+      cv::Mat image_mat(pcl_image.height, pcl_image.width, type, image_array);
+      return
