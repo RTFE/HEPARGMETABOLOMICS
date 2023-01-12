@@ -641,4 +641,7 @@ class EnsensoDriver
         encoding = "rgb8";
       }
       cv::Mat image_mat(pcl_image.height, pcl_image.width, type, image_array);
-      return
+      return cv_bridge::CvImage(header, encoding, image_mat).toImageMsg();
+    }
+
+    void images
