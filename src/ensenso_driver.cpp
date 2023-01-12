@@ -644,4 +644,6 @@ class EnsensoDriver
       return cv_bridge::CvImage(header, encoding, image_mat).toImageMsg();
     }
 
-    void images
+    void imagesSubscribeCallback ()
+    {
+      bool need_images = ((
