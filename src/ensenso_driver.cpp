@@ -653,4 +653,4 @@ class EnsensoDriver
 
       if (enable_images_ && need_images && !is_streaming_images_)
       {
-        if (rgb_avail
+        if (rgb_available_ && (rgb_raw_pub_.getNumSubscribers() + rgb_rec
