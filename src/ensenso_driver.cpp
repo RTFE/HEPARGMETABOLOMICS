@@ -649,4 +649,6 @@ class EnsensoDriver
       bool need_images = ((rgb_raw_pub_.getNumSubscribers() + rgb_raw_pub_.getNumSubscribers() +
                          rgb_rectified_pub_.getNumSubscribers() + l_raw_pub_.getNumSubscribers() +
                          r_raw_pub_.getNumSubscribers() + l_rectified_pub_.getNumSubscribers() +
-                         r_rectified_pub_.
+                         r_rectified_pub_.getNumSubscribers()) > 0);
+
+      if (enable_images_ && n
