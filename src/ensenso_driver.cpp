@@ -651,4 +651,6 @@ class EnsensoDriver
                          r_raw_pub_.getNumSubscribers() + l_rectified_pub_.getNumSubscribers() +
                          r_rectified_pub_.getNumSubscribers()) > 0);
 
-      if (enable_images_ && n
+      if (enable_images_ && need_images && !is_streaming_images_)
+      {
+        if (rgb_avail
