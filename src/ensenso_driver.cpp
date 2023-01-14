@@ -663,4 +663,5 @@ class EnsensoDriver
         }
         else
         {
-          boost::fu
+          boost::function<void(
+              const boost::shared_ptr<PairOfIma
