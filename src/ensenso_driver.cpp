@@ -657,4 +657,5 @@ class EnsensoDriver
         {
           boost::function<void(
               const boost::shared_ptr<PairOfImages>&,
-              const boost::shared_ptr<PairOfIm
+              const boost::shared_ptr<PairOfImages>&,
+              const boost::shared_ptr<PairOfImages>&
