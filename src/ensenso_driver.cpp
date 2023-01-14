@@ -658,4 +658,4 @@ class EnsensoDriver
           boost::function<void(
               const boost::shared_ptr<PairOfImages>&,
               const boost::shared_ptr<PairOfImages>&,
-              const boost::shared_ptr<PairOfImages>&
+              const boost::shared_ptr<PairOfImages>&)> f = boost::bind (&EnsensoDriver::imagesRGBCallback, t
