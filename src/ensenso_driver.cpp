@@ -655,4 +655,5 @@ class EnsensoDriver
       {
         if (rgb_available_ && (rgb_raw_pub_.getNumSubscribers() + rgb_rectified_pub_.getNumSubscribers()) > 0)
         {
-          boost::func
+          boost::function<void(
+              const boost::shared_ptr<PairOfImag
