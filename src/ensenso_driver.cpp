@@ -674,4 +674,5 @@ class EnsensoDriver
         }
         is_streaming_images_ = true;
       }
-      else if (( !enable_images_ |
+      else if (( !enable_images_ || !need_images ) && is_streaming_images_)
+      
