@@ -666,4 +666,6 @@ class EnsensoDriver
           boost::function<void(
               const boost::shared_ptr<PairOfImages>&,
               const boost::shared_ptr<PairOfImages>&)> f = boost::bind (&EnsensoDriver::imagesCallback, this, _1, _2);
-            image_connection_ = ensenso_ptr_->registe
+            image_connection_ = ensenso_ptr_->registerCallback(f);
+        }
+        if (!ensenso_ptr_->isRunnin
