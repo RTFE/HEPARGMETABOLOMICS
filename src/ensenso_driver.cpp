@@ -675,4 +675,6 @@ class EnsensoDriver
         is_streaming_images_ = true;
       }
       else if (( !enable_images_ || !need_images ) && is_streaming_images_)
-      
+      {
+        image_connection_.disconnect();
+        is_stream
