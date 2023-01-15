@@ -671,3 +671,7 @@ class EnsensoDriver
         if (!ensenso_ptr_->isRunning())
         {
           ensenso_ptr_->start();
+        }
+        is_streaming_images_ = true;
+      }
+      else if (( !enable_images_ |
