@@ -678,4 +678,9 @@ class EnsensoDriver
       {
         image_connection_.disconnect();
         is_streaming_images_ = false;
-        if (!is_streaming_cloud_ && !is_stream
+        if (!is_streaming_cloud_ && !is_streaming_depth_)
+        {
+          ensenso_ptr_->stop();
+        }
+      }
+
