@@ -694,4 +694,4 @@ class EnsensoDriver
         if(rgb_available_)
         {
           boost::function<void(
-            const boost::shared_ptr<PointCloudXYZRGBA>&
+            const boost::shared_ptr<PointCloudXYZRGBA>&)> f = boost::bind (&EnsensoDriver::cloudRGBCallback, this, _1);
