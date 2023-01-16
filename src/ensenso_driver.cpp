@@ -684,3 +684,8 @@ class EnsensoDriver
         }
       }
 
+    }
+
+    void cloudSubscribeCallback ()
+    {
+      bool need_c
