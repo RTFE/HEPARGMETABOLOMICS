@@ -693,4 +693,5 @@ class EnsensoDriver
       {
         if(rgb_available_)
         {
-          boost::func
+          boost::function<void(
+            const boost::shared_ptr<PointCloudXYZRGBA>&
