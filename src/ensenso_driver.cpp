@@ -699,4 +699,5 @@ class EnsensoDriver
         }
         else
         {
-          boost::functio
+          boost::function<void(
+            const boost::shared_ptr<PointCloudXYZ>&)> 
