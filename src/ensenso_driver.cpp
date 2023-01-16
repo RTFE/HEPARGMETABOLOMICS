@@ -688,4 +688,5 @@ class EnsensoDriver
 
     void cloudSubscribeCallback ()
     {
-      bool need_c
+      bool need_cloud = cloud_pub_.getNumSubscribers() > 0;
+      if 
