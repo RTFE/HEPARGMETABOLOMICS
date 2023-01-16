@@ -691,4 +691,6 @@ class EnsensoDriver
       bool need_cloud = cloud_pub_.getNumSubscribers() > 0;
       if (enable_cloud_ && need_cloud && !is_streaming_cloud_)
       {
- 
+        if(rgb_available_)
+        {
+          boost::func
