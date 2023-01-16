@@ -689,4 +689,6 @@ class EnsensoDriver
     void cloudSubscribeCallback ()
     {
       bool need_cloud = cloud_pub_.getNumSubscribers() > 0;
-      if 
+      if (enable_cloud_ && need_cloud && !is_streaming_cloud_)
+      {
+ 
