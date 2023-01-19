@@ -700,4 +700,4 @@ class EnsensoDriver
         else
         {
           boost::function<void(
-            const boost::shared_ptr<PointCloudXYZ>&)> 
+            const boost::shared_ptr<PointCloudXYZ>&)> f = boost::bind (&EnsensoDriver::cloudCallback, this, _1
