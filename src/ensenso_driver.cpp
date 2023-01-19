@@ -701,4 +701,6 @@ class EnsensoDriver
         {
           boost::function<void(
             const boost::shared_ptr<PointCloudXYZ>&)> f = boost::bind (&EnsensoDriver::cloudCallback, this, _1);
-          cloud_connection_ = ensenso_ptr_->regis
+          cloud_connection_ = ensenso_ptr_->registerCallback(f);
+        }
+        if (!ensenso_ptr_->isRunn
