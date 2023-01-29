@@ -707,4 +707,6 @@ class EnsensoDriver
         {
           ensenso_ptr_->start();
         }
- 
+        is_streaming_cloud_ = true;
+      }
+      else if ( (!
