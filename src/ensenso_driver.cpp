@@ -712,4 +712,5 @@ class EnsensoDriver
       else if ( (!enable_cloud_ || !need_cloud) && is_streaming_cloud_)
       {
         cloud_connection_.disconnect();
-    
+        is_streaming_cloud_ = false;
+        if (!is_streaming_dept
