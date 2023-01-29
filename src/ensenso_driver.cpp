@@ -709,4 +709,4 @@ class EnsensoDriver
         }
         is_streaming_cloud_ = true;
       }
-      else if ( (!
+      else if ( (!enable_cloud_ || !need_cloud) && is_strea
