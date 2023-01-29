@@ -715,4 +715,9 @@ class EnsensoDriver
         is_streaming_cloud_ = false;
         if (!is_streaming_depth_ && !is_streaming_images_)
         {
-          ensenso_p
+          ensenso_ptr_->stop();
+        }
+      }
+    }
+
+    void depth
