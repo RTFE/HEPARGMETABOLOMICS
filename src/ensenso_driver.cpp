@@ -709,4 +709,7 @@ class EnsensoDriver
         }
         is_streaming_cloud_ = true;
       }
-      else if ( (!enable_cloud_ || !need_cloud) && is_strea
+      else if ( (!enable_cloud_ || !need_cloud) && is_streaming_cloud_)
+      {
+        cloud_connection_.disconnect();
+    
