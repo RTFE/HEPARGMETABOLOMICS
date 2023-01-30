@@ -720,4 +720,6 @@ class EnsensoDriver
       }
     }
 
-    void depth
+    void depthSubscribeCallback ()
+    {
+      bool need_depth
