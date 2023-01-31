@@ -725,4 +725,5 @@ class EnsensoDriver
       bool need_depth = depth_pub_.getNumSubscribers() > 0;
       if (enable_depth_ && need_depth && !is_streaming_depth_)
       {
-    
+        boost::function<void(
+          const boost::shared_
