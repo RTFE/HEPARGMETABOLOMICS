@@ -730,4 +730,7 @@ class EnsensoDriver
         depth_connection_ = ensenso_ptr_->registerCallback(f);
         is_streaming_depth_ = true;
         if (!ensenso_ptr_->isRunning())
-     
+        {
+          ensenso_ptr_->start();
+        }
+    
