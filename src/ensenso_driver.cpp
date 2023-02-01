@@ -728,4 +728,6 @@ class EnsensoDriver
         boost::function<void(
           const boost::shared_ptr<pcl::PCLGenImage<float> >&)> f = boost::bind (&EnsensoDriver::depthCallback, this, _1);
         depth_connection_ = ensenso_ptr_->registerCallback(f);
-        is_streaming_depth_ =
+        is_streaming_depth_ = true;
+        if (!ensenso_ptr_->isRunning())
+     
