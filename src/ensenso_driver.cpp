@@ -737,4 +737,5 @@ class EnsensoDriver
       else if ((!enable_depth_ || !need_depth) && is_streaming_depth_)
       {
         depth_connection_.disconnect();
- 
+        is_streaming_depth_ = false;
+        if (!is_streaming_clo
