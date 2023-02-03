@@ -738,4 +738,6 @@ class EnsensoDriver
       {
         depth_connection_.disconnect();
         is_streaming_depth_ = false;
-        if (!is_streaming_clo
+        if (!is_streaming_cloud_ && !is_streaming_images_)
+        {
+          ensen
