@@ -734,4 +734,7 @@ class EnsensoDriver
           ensenso_ptr_->start();
         }
       }
-      else if ((!enable_depth_ || !need_depth) && is_
+      else if ((!enable_depth_ || !need_depth) && is_streaming_depth_)
+      {
+        depth_connection_.disconnect();
+ 
