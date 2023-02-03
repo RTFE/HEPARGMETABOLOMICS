@@ -740,4 +740,11 @@ class EnsensoDriver
         is_streaming_depth_ = false;
         if (!is_streaming_cloud_ && !is_streaming_images_)
         {
-          ensen
+          ensenso_ptr_->stop();
+        }
+      }
+    }
+};
+
+
+int main(int argc,
