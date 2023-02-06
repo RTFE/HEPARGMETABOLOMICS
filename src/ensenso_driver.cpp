@@ -747,4 +747,6 @@ class EnsensoDriver
 };
 
 
-int main(int argc,
+int main(int argc, char **argv)
+{
+  ros::init (argc, argv, "ensenso_driver");
