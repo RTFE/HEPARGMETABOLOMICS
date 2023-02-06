@@ -752,4 +752,6 @@ int main(int argc, char **argv)
   ros::init (argc, argv, "ensenso_driver");
   EnsensoDriver driver;
   ros::spin();
-  ros::shutdown(
+  ros::shutdown();
+  return 0;
+}
