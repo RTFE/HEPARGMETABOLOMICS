@@ -497,3 +497,68 @@ bool pcl::EnsensoGrabber::grabSingleCloud (pcl::PointCloud<pcl::PointXYZ> &cloud
 {
   if (!device_open_)
     return (false);
+
+  if (running_)
+    return (false);
+
+  try
+  {
+    NxLibCommand (cmdCapture).execute ();
+    // Stereo matching task
+    NxLibCommand (cmdComputeDisparityMap).execute ();
+    // Convert disparity map into XYZ data for each pixel
+    NxLibCommand (cmdComputePointMap).execute ();
+    // Get info about the computed point map and copy it into a std::vector
+    double timestamp;
+    std::vector<float> pointMap;
+    int width, height;
+    camera_[itmImages][itmRaw][itmLeft].getBinaryDataInfo (0, 0, 0, 0, 0, &timestamp);  // Get raw image timestamp
+    camera_[itmImages][itmPointMap].getBinaryDataInfo (&width, &height, 0, 0, 0, 0);
+    camera_[itmImages][itmPointMap].getBinaryData (pointMap, 0);
+    // Copy point cloud and convert in meters
+    cloud.header.stamp = getPCLStamp (timestamp);
+    cloud.resize (height * width);
+    cloud.width = width;
+    cloud.height = height;
+    cloud.is_dense = false;
+    // Copy data in point cloud (and convert milimeters in meters)
+    for (size_t i = 0; i < pointMap.size (); i += 3)
+    {
+      cloud.points[i / 3].x = pointMap[i] / 1000.0;
+      cloud.points[i / 3].y = pointMap[i + 1] / 1000.0;
+      cloud.points[i / 3].z = pointMap[i + 2] / 1000.0;
+    }
+    return (true);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "grabSingleCloud");
+    return (false);
+  }
+}
+
+bool pcl::EnsensoGrabber::isRunning () const
+{
+  return (running_);
+}
+
+bool pcl::EnsensoGrabber::isTcpPortOpen () const
+{
+  return (tcp_open_);
+}
+
+bool pcl::EnsensoGrabber::jsonToMatrix (const std::string json, Eigen::Affine3d &matrix) const
+{
+  try
+  {
+    NxLibCommand convert (cmdConvertTransformation);
+    convert.parameters ()[itmTransformation].setJson (json);
+    convert.execute ();
+    Eigen::Affine3d tmp (Eigen::Affine3d::Identity ());
+    // Rotation
+    tmp.linear ().col (0) = Eigen::Vector3d (convert.result ()[itmTransformation][0][0].asDouble (),
+                         convert.result ()[itmTransformation][0][1].asDouble (),
+                         convert.result ()[itmTransformation][0][2].asDouble ());
+    tmp.linear ().col (1) = Eigen::Vector3d (convert.result ()[itmTransformation][1][0].asDouble (),
+                         convert.result ()[itmTransformation][1][1].asDouble (),
+                         convert.result ()[itmTransformation][1][2].asDouble ());
