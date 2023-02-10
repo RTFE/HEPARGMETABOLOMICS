@@ -602,3 +602,74 @@ bool pcl::EnsensoGrabber::matrixToJson (const Eigen::Affine3d &matrix, std::stri
     convert.parameters ()[itmTransformation][3][0].set (matrix.translation ()[0]);
     convert.parameters ()[itmTransformation][3][1].set (matrix.translation ()[1]);
     convert.parameters ()[itmTransformation][3][2].set (matrix.translation ()[2]);
+    convert.parameters ()[itmTransformation][3][3].set (1.0);
+    convert.execute ();
+    json = convert.result ()[itmTransformation].asJson (pretty_format);
+    return (true);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "matrixToJson");
+    return (false);
+  }
+}
+
+bool pcl::EnsensoGrabber::openDevice (std::string serial)
+{
+  if (device_open_)
+    PCL_THROW_EXCEPTION (pcl::IOException, "Cannot open multiple devices!");
+  PCL_INFO ("Opening Ensenso stereo camera S/N: %s\n", serial.c_str());
+  try
+  {
+    // Create a pointer referencing the camera's tree item, for easier access:
+    camera_ = (*root_)[itmCameras][itmBySerialNo][serial];
+    if (!camera_.exists () || camera_[itmType] != valStereo)
+      PCL_THROW_EXCEPTION (pcl::IOException, "Please connect a single stereo camera to your computer!");
+    if (!(*root_)[itmCameras][itmBySerialNo][serial][itmStatus][itmAvailable].asBool())
+      PCL_THROW_EXCEPTION (pcl::IOException, "The device cannot be opened.");
+    NxLibCommand open (cmdOpen);
+    open.parameters ()[itmCameras] = camera_[itmSerialNumber].asString ();
+    open.execute ();
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "openDevice");
+    return (false);
+  }
+  device_open_ = true;
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::openMonoDevice (std::string serial)
+{
+  if (mono_device_open_)
+    PCL_THROW_EXCEPTION (pcl::IOException, "Cannot open multiple devices!");
+  PCL_INFO ("Opening Ensenso mono camera S/N: %s\n", serial.c_str());
+  try
+  {
+    // Create a pointer referencing the camera's tree item, for easier access:
+    monocam_ = (*root_)[itmCameras][itmBySerialNo][serial];
+    if (!monocam_.exists () || monocam_[itmType] != valMonocular)
+      PCL_THROW_EXCEPTION (pcl::IOException, "Please connect a single mono camera to your computer!");
+    if (!(*root_)[itmCameras][itmBySerialNo][serial][itmStatus][itmAvailable].asBool())
+      PCL_THROW_EXCEPTION (pcl::IOException, "The device cannot be opened.");
+    NxLibCommand open (cmdOpen);
+    open.parameters ()[itmCameras] = monocam_[itmSerialNumber].asString ();
+    open.execute ();
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "openMonoDevice");
+    return (false);
+  }
+  mono_device_open_ = true;
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::openTcpPort (const int port)
+{
+  try
+  {
+    nxLibOpenTcpPort (port);
+    tcp_open_ = true;
+  }
