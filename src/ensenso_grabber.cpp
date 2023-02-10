@@ -426,3 +426,74 @@ bool pcl::EnsensoGrabber::getTFLeftToRGB(Transform& tf) const
 bool pcl::EnsensoGrabber::getLastCalibrationPattern ( std::vector<int> &grid_size, double &grid_spacing,
                                                       std::vector<Eigen::Vector2d> &left_points,
                                                       std::vector<Eigen::Vector2d> &right_points,
+                                                      Eigen::Affine3d &pose) const
+{
+  // Lock
+  pattern_mutex_.lock ();
+  std::string stereo_pattern_json = last_stereo_pattern_;
+  pose = last_pattern_pose_;
+  pattern_mutex_.unlock ();
+  // Process
+  if ( stereo_pattern_json.empty() )
+    return false;
+  // Use NxLib JSON API to extract the Raw Stereo Pattern information
+  NxLibItem stereo_pattern ("/tmpStereoPattern");
+  stereo_pattern.setJson(stereo_pattern_json);
+  // Get pattern details
+  grid_size.resize(2);
+  grid_size[0] = stereo_pattern[itmPattern][itmGridSize][0].asInt();
+  grid_size[1] = stereo_pattern[itmPattern][itmGridSize][1].asInt();
+  grid_spacing = stereo_pattern[itmPattern][itmGridSpacing].asDouble();
+  int rows = grid_size[0];
+  int cols = grid_size[1];
+  left_points.resize(rows*cols);
+  right_points.resize(rows*cols);
+  for (uint i = 0; i < left_points.size(); ++i)
+  {
+    left_points[i][0] = stereo_pattern[itmPoints][0][i][0].asDouble();
+    left_points[i][1] = stereo_pattern[itmPoints][0][i][1].asDouble();
+    right_points[i][0] = stereo_pattern[itmPoints][1][i][0].asDouble();
+    right_points[i][1] = stereo_pattern[itmPoints][1][i][1].asDouble();
+  }
+  stereo_pattern.erase();
+  return true;
+}
+
+float pcl::EnsensoGrabber::getFramesPerSecond () const
+{
+  boost::mutex::scoped_lock lock (fps_mutex_);
+  return fps_;
+}
+
+std::string pcl::EnsensoGrabber::getName () const
+{
+  return ("EnsensoGrabber");
+}
+
+std::string pcl::EnsensoGrabber::getOpenCVType (const int channels,
+                        const int bpe,
+                        const bool isFlt)
+{
+  int bits = bpe * 8;
+  char type = isFlt ? 'F' : (bpe > 3 ? 'S' : 'U');
+  return (boost::str (boost::format ("CV_%i%cC%i") % bits % type % channels));
+}
+
+pcl::uint64_t pcl::EnsensoGrabber::getPCLStamp (const double ensenso_stamp)
+{
+#if defined _WIN32 || defined _WIN64
+  return (ensenso_stamp * 1000000.0);
+#else
+  return ( (ensenso_stamp - 11644473600.0) * 1000000.0);
+#endif
+}
+
+int pcl::EnsensoGrabber::getPatternCount () const
+{
+  return ( (*root_)[itmParameters][itmPatternCount].asInt ());
+}
+
+bool pcl::EnsensoGrabber::grabSingleCloud (pcl::PointCloud<pcl::PointXYZ> &cloud)
+{
+  if (!device_open_)
+    return (false);
