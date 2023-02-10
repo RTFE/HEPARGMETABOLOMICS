@@ -562,3 +562,43 @@ bool pcl::EnsensoGrabber::jsonToMatrix (const std::string json, Eigen::Affine3d 
     tmp.linear ().col (1) = Eigen::Vector3d (convert.result ()[itmTransformation][1][0].asDouble (),
                          convert.result ()[itmTransformation][1][1].asDouble (),
                          convert.result ()[itmTransformation][1][2].asDouble ());
+    tmp.linear ().col (2) = Eigen::Vector3d (convert.result ()[itmTransformation][2][0].asDouble (),
+                         convert.result ()[itmTransformation][2][1].asDouble (),
+                         convert.result ()[itmTransformation][2][2].asDouble ());
+    // Translation
+    tmp.translation () = Eigen::Vector3d (convert.result ()[itmTransformation][3][0].asDouble (),
+                        convert.result ()[itmTransformation][3][1].asDouble (),
+                        convert.result ()[itmTransformation][3][2].asDouble ());
+    matrix = tmp;
+    return (true);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "jsonToMatrix");
+    return (false);
+  }
+}
+
+bool pcl::EnsensoGrabber::matrixToJson (const Eigen::Affine3d &matrix, std::string &json,
+                                        const bool pretty_format) const
+{
+  try
+  {
+    NxLibCommand convert (cmdConvertTransformation);
+    // Rotation
+    convert.parameters ()[itmTransformation][0][0].set (matrix.linear ().col (0)[0]);
+    convert.parameters ()[itmTransformation][0][1].set (matrix.linear ().col (0)[1]);
+    convert.parameters ()[itmTransformation][0][2].set (matrix.linear ().col (0)[2]);
+    convert.parameters ()[itmTransformation][0][3].set (0.0);
+    convert.parameters ()[itmTransformation][1][0].set (matrix.linear ().col (1)[0]);
+    convert.parameters ()[itmTransformation][1][1].set (matrix.linear ().col (1)[1]);
+    convert.parameters ()[itmTransformation][1][2].set (matrix.linear ().col (1)[2]);
+    convert.parameters ()[itmTransformation][1][3].set (0.0);
+    convert.parameters ()[itmTransformation][2][0].set (matrix.linear ().col (2)[0]);
+    convert.parameters ()[itmTransformation][2][1].set (matrix.linear ().col (2)[1]);
+    convert.parameters ()[itmTransformation][2][2].set (matrix.linear ().col (2)[2]);
+    convert.parameters ()[itmTransformation][2][3].set (0.0);
+    // Translation
+    convert.parameters ()[itmTransformation][3][0].set (matrix.translation ()[0]);
+    convert.parameters ()[itmTransformation][3][1].set (matrix.translation ()[1]);
+    convert.parameters ()[itmTransformation][3][2].set (matrix.translation ()[2]);
