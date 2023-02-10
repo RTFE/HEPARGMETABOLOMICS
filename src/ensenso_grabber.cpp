@@ -366,3 +366,63 @@ bool pcl::EnsensoGrabber::getCameraInfo(std::string cam, sensor_msgs::CameraInfo
     //third row
     cam_info.P[8] = 0.0;
     cam_info.P[9] = 0.0;
+    cam_info.P[10] = 1.0;
+    cam_info.P[11] = 0.0;
+    if (cam == "Right")
+    {
+      double B = camera[itmCalibration][itmStereo][itmBaseline].asDouble() / 1000.0;
+      double fx = cam_info.P[0];
+      cam_info.P[3] = (-fx * B);
+    }
+    return true;
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "getCameraInfo");
+    return false;
+  }
+}
+
+bool pcl::EnsensoGrabber::getTFLeftToRGB(Transform& tf) const
+{
+  if (!mono_device_open_)
+  {
+    return (false);
+  }
+  //get Translation between left camera and RGB frame
+  try {
+    NxLibCommand convert(cmdConvertTransformation, "convert");
+    convert.parameters()[itmTransformation].setJson(monocam_[itmLink].asJson());
+    convert.execute();
+    Eigen::Affine3d transform;
+    for (int i = 0; i < 4 ; ++i)
+    {
+      for (int j = 0; j < 4 ; ++j)
+      {
+        transform(j,i) = convert.result()[itmTransformation][i][j].asDouble();
+      }
+    }
+    Eigen::Affine3d inv_transform = transform.inverse();
+    Eigen::Quaterniond q(inv_transform.rotation()); //from stereo to rgb
+    q.normalize();
+    tf.qx = q.x();
+    tf.qy = q.y();
+    tf.qz = q.z();
+    tf.qw = q.w();
+    tf.tx = inv_transform.translation().x() / 1000.0;
+    tf.ty = inv_transform.translation().y() / 1000.0;
+    tf.tz = inv_transform.translation().z() / 1000.0;
+    return (true);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setUseRGB");
+    return (false);
+  }
+  return (false);
+}
+
+
+bool pcl::EnsensoGrabber::getLastCalibrationPattern ( std::vector<int> &grid_size, double &grid_spacing,
+                                                      std::vector<Eigen::Vector2d> &left_points,
+                                                      std::vector<Eigen::Vector2d> &right_points,
