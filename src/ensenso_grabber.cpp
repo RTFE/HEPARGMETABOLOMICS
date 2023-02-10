@@ -99,3 +99,66 @@ bool pcl::EnsensoGrabber::calibrateHandEye (const std::vector<Eigen::Affine3d, E
     Eigen::Affine3d eigen_pose;
     // Feed robot transformations
     PCL_DEBUG("Populating robot poses\n");
+    std::vector<std::string> json_poses;
+    json_poses.resize (robot_poses.size ());
+    for (uint i = 0; i < robot_poses.size(); ++i)
+    {
+      eigen_pose = robot_poses[i];
+      eigen_pose.translation () *= 1000.0; // meters -> millimeters
+      matrixToJson(eigen_pose, json_poses[i]);
+    }
+    PCL_DEBUG("Executing...\n");
+    // Convert camera seed to Json
+    std::string json_camera_seed, json_pattern_seed;
+    PCL_DEBUG("Populating seeds\n");
+    eigen_pose = camera_seed;
+    eigen_pose.translation () *= 1000.0; // meters -> millimeters
+    matrixToJson(eigen_pose, json_camera_seed);
+    PCL_DEBUG("camera_seed:\n %s\n", json_camera_seed.c_str());
+    // Convert pattern seed to Json
+    eigen_pose = pattern_seed;
+    eigen_pose.translation () *= 1000.0; // meters -> millimeters
+    matrixToJson(pattern_seed, json_pattern_seed);
+    PCL_DEBUG("pattern_seed:\n %s\n", json_pattern_seed.c_str());
+    // Populate command parameters
+    // It's very important to write the parameters in alphabetical order and at the same time!
+    calibrate.parameters ()[itmLink].setJson(json_camera_seed, false);
+    calibrate.parameters ()[itmPatternPose].setJson(json_pattern_seed, false);
+    calibrate.parameters ()[itmSetup] = setup;
+    calibrate.parameters ()[itmTarget] = target;
+    for (uint i = 0; i < json_poses.size(); ++i)
+      calibrate.parameters ()[itmTransformations][i].setJson(json_poses[i], false);
+    // Execute the command
+    calibrate.execute ();  // It might take some minutes
+    if (calibrate.successful())
+    {
+      // It's very important to read the parameters in alphabetical order and at the same time!
+      iterations = calibrate.result()[itmIterations].asInt();
+      std::string json_camera_pose = calibrate.result()[itmLink].asJson (true);
+      std::string json_pattern_pose = calibrate.result()[itmPatternPose].asJson (true);
+      reprojection_error = calibrate.result()[itmReprojectionError].asDouble();
+      // Estimated camera pose
+      jsonToMatrix(json_camera_pose, estimated_camera_pose);
+      estimated_camera_pose.translation () /= 1000.0; // millimeters -> meters
+      // Estimated pattern pose
+      jsonToMatrix(json_pattern_pose, estimated_pattern_pose);
+      estimated_pattern_pose.translation () /= 1000.0; // millimeters -> meters
+      PCL_DEBUG("Result:\n %s\n", json_camera_pose.c_str());
+      return (true);
+    }
+    else
+      return (false);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "calibrateHandEye");
+    return (false);
+  }
+}
+
+bool pcl::EnsensoGrabber::closeDevices ()
+{
+  if (!device_open_ && !mono_device_open_)
+    return (false);
+
+  stop ();
