@@ -306,3 +306,63 @@ bool pcl::EnsensoGrabber::getCameraInfo(std::string cam, sensor_msgs::CameraInfo
       cam  = use_rgb_ ? "RGB" : "Left";
     }
     NxLibItem camera = (cam == "RGB" ) ? monocam_ : camera_;
+    NxLibItem camera_mat = (cam == "RGB") ? monocam_[itmCalibration][itmCamera] : camera_[itmCalibration][itmDynamic][itmStereo][cam][itmCamera];
+    NxLibItem camera_dist = (cam == "RGB") ? monocam_[itmCalibration][itmDistortion] : camera_[itmCalibration][itmMonocular][cam][itmDistortion];
+
+    cam_info.width = camera[itmSensor][itmSize][0].asInt();
+    cam_info.height = camera[itmSensor][itmSize][1].asInt();
+    cam_info.distortion_model = "plumb_bob";
+    // Distorsion factors (as in ROS CameraInfo Documentation, [K1, K2, T1, T2, K3])
+
+    cam_info.D.resize(5);
+    if (depth)
+    {
+      for(std::size_t i = 0; i < cam_info.D.size(); ++i)
+      {
+          cam_info.D[i] = 0;
+      }
+    }
+    else
+    {
+      cam_info.D[0] = camera_dist[0].asDouble();
+      cam_info.D[1] = camera_dist[1].asDouble();
+      cam_info.D[2] = camera_dist[5].asDouble();
+      cam_info.D[3] = camera_dist[6].asDouble();
+      cam_info.D[4] = camera_dist[2].asDouble();
+    }
+
+    // K and R matrices
+    for(std::size_t i = 0; i < 3; ++i)
+    {
+      for(std::size_t j = 0; j < 3; ++j)
+      {
+        if (cam != "RGB")
+        {
+          cam_info.R[3*i+j] = camera[itmCalibration][itmDynamic][itmStereo][cam][itmRotation][j][i].asDouble();
+          cam_info.K[3*i+j] = camera_[itmCalibration][itmMonocular][cam][itmCamera][j][i].asDouble();
+        }
+        else
+        {
+          cam_info.K[3*i+j] = camera_mat[j][i].asDouble();
+        }
+      }
+    }
+    if (cam == "RGB")
+    {
+      cam_info.R[0] = 1.0;
+      cam_info.R[4] = 1.0;
+      cam_info.R[8] = 1.0;
+    }
+    //first row
+    cam_info.P[0] = camera_mat[0][0].asDouble();
+    cam_info.P[1] = camera_mat[1][0].asDouble();
+    cam_info.P[2] = camera_mat[2][0].asDouble();
+    cam_info.P[3] = 0.0;
+    //second row
+    cam_info.P[4] = camera_mat[0][1].asDouble();
+    cam_info.P[5] = camera_mat[1][1].asDouble();
+    cam_info.P[6] = camera_mat[2][1].asDouble();
+    cam_info.P[7] = 0.0;
+    //third row
+    cam_info.P[8] = 0.0;
+    cam_info.P[9] = 0.0;
