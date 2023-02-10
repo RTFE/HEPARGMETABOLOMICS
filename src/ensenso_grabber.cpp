@@ -224,3 +224,85 @@ double pcl::EnsensoGrabber::decodePattern () const
     NxLibCommand collect_pattern (cmdCollectPattern);
     collect_pattern.parameters ()[itmBuffer].set (false);
     collect_pattern.parameters ()[itmDecodeData].set (true);
+    collect_pattern.execute ();
+    grid_spacing = collect_pattern.result()[itmGridSpacing].asDouble();
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "decodePattern");
+    return (-1.0);
+  }
+  return grid_spacing;
+}
+
+bool pcl::EnsensoGrabber::discardPatterns () const
+{
+  try
+  {
+    NxLibCommand (cmdDiscardPatterns).execute ();
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "discardPatterns");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::estimatePatternPose (Eigen::Affine3d &pose, const bool average) const
+{
+  try
+  {
+    NxLibCommand estimate_pattern_pose (cmdEstimatePatternPose);
+    estimate_pattern_pose.parameters ()[itmAverage].set (average);
+    estimate_pattern_pose.execute ();
+    NxLibItem tf = estimate_pattern_pose.result ()[itmPatternPose];
+    // Convert tf into a matrix
+    if (!jsonToMatrix (tf.asJson (), pose))
+      return (false);
+    pose.translation () /= 1000.0;  // Convert translation in meters (Ensenso API returns milimeters)
+    return (true);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "estimateCalibrationPatternPoses");
+    return (false);
+  }
+}
+
+int pcl::EnsensoGrabber::enumDevices () const
+{
+  int camera_count = 0;
+  try
+  {
+    NxLibItem cams = NxLibItem ("/Cameras/BySerialNo");
+    camera_count = cams.count ();
+    // Print information for all cameras in the tree
+    PCL_INFO ("Number of connected cameras: %d\n", camera_count);
+    PCL_INFO ("Serial No    Model   Status\n");
+    for (int n = 0; n < cams.count (); ++n)
+    {
+      PCL_INFO ("%s   %s   %s\n", cams[n][itmSerialNumber].asString ().c_str (),
+            cams[n][itmModelName].asString ().c_str (),
+            cams[n][itmStatus].asString ().c_str ());
+    }
+    PCL_INFO ("\n");
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "enumDevices");
+  }
+  return (camera_count);
+}
+
+bool pcl::EnsensoGrabber::getCameraInfo(std::string cam, sensor_msgs::CameraInfo &cam_info) const
+{
+  try
+  {
+    bool depth = false;
+    if (cam == "Depth")
+    {
+      depth = true;
+      cam  = use_rgb_ ? "RGB" : "Left";
+    }
+    NxLibItem camera = (cam == "RGB" ) ? monocam_ : camera_;
