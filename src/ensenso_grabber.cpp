@@ -162,3 +162,65 @@ bool pcl::EnsensoGrabber::closeDevices ()
     return (false);
 
   stop ();
+  PCL_INFO ("Closing Ensenso cameras\n");
+
+  try
+  {
+    NxLibCommand (cmdClose).execute ();
+    device_open_ = false;
+    mono_device_open_ = false;
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "closeDevice");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::closeTcpPort ()
+{
+  try
+  {
+    nxLibCloseTcpPort ();
+    tcp_open_ = false;
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "closeTcpPort");
+    return (false);
+  }
+  return (true);
+}
+
+int pcl::EnsensoGrabber::collectPattern (const bool buffer) const
+{
+  if (!device_open_ || running_)
+    return (-1);
+  try
+  {
+    NxLibCommand (cmdCapture).execute ();
+    NxLibCommand collect_pattern (cmdCollectPattern);
+    collect_pattern.parameters ()[itmBuffer].set (buffer);
+    collect_pattern.parameters ()[itmDecodeData].set (false);
+    collect_pattern.execute ();
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "collectPattern");
+    return getPatternCount();
+  }
+  return getPatternCount();
+}
+
+double pcl::EnsensoGrabber::decodePattern () const
+{
+  double grid_spacing = -1.0;
+  if (!device_open_ || running_)
+    return (-1.0);
+  try
+  {
+    NxLibCommand (cmdCapture).execute ();
+    NxLibCommand collect_pattern (cmdCollectPattern);
+    collect_pattern.parameters ()[itmBuffer].set (false);
+    collect_pattern.parameters ()[itmDecodeData].set (true);
