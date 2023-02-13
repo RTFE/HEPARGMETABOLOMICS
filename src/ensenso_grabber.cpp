@@ -1136,3 +1136,49 @@ bool pcl::EnsensoGrabber::setBinning (const int binning) const
 bool pcl::EnsensoGrabber::setBlackLevelOffset (const float offset) const
 {
   if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmBlackLevelOffset].set (offset);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setBlackLevelOffset");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setExposure (const float exposure) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmExposure].set (exposure);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setExposure");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setFlexView (const bool enable, const int imagepairs) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    if (enable && 2 <= imagepairs && imagepairs <= 8)
+      camera_[itmParameters][itmCapture][itmFlexView].set (imagepairs);
+    else
+      camera_[itmParameters][itmCapture][itmFlexView].set (false);
+  }
+  catch (NxLibException &ex)
+  {
+    // TODO: Handle better setFlexView exceptions
+    //~ ensensoExceptionHandling (ex, "setFlexView");
+    return (false);
+  }
