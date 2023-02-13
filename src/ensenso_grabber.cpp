@@ -785,3 +785,67 @@ void pcl::EnsensoGrabber::processGrabbing ()
             }
           }
           if (find_pattern_ && collected_pattern)
+          {
+            if (use_rgb_ && need_images_rgb)
+            {
+              getImage(monocam_[itmImages][itmWithOverlay], images_rgb->first);
+              getImage(monocam_[itmImages][itmRectified], images_rgb->second);
+            }
+            //images with overlay
+            getImage(camera_[itmImages][itmWithOverlay][itmLeft], images_raw->first);
+            getImage(camera_[itmImages][itmWithOverlay][itmRight], images_raw->second);
+          }
+          else
+          {
+            if (use_rgb_ && need_images_rgb)
+            {
+              //get RGB raw and rect image
+                getImage(monocam_[itmImages][itmRaw], images_rgb->first);
+                getImage(monocam_[itmImages][itmRectified], images_rgb->second);
+            }
+            // get left / right raw images
+              getImage(camera_[itmImages][itmRaw][itmLeft], images_raw->first);
+              getImage(camera_[itmImages][itmRaw][itmRight], images_raw->second);
+          }
+          //get rectified images
+          getImage(camera_[itmImages][itmRectified][itmLeft], images_rect->first);
+          getImage(camera_[itmImages][itmRectified][itmRight], images_rect->second);
+        }
+
+        // Publish signals
+        if (need_cloud)
+        {
+          point_cloud_signal_->operator () (cloud);
+        }
+        if (need_cloud_rgb)
+        {
+          point_cloud_rgb_signal_->operator () (rgb_cloud);
+        }
+        if (need_images)
+        {
+          images_signal_->operator () (images_raw, images_rect);
+        }
+        if (need_images_rgb)
+        {
+          images_rgb_signal_->operator () (images_raw, images_rect, images_rgb);
+        }
+        if (need_depth)
+        {
+          image_depth_signal_->operator () (depth_image);
+        }
+
+      }
+      continue_grabbing = running_;
+    }
+    catch (NxLibException &ex)
+    {
+      NxLibItem result = NxLibItem()[itmExecute][itmResult];
+      if (ex.getErrorCode() == NxLibExecutionFailed && result[itmErrorSymbol].asString() == "CUDA")
+      {
+        PCL_WARN("Encountered error due to use of CUDA. Disabling CUDA support.\n");
+        setEnableCUDA(false);
+        ensensoExceptionHandling (ex, "processGrabbing");
+        continue;
+      }
+      ensensoExceptionHandling (ex, "processGrabbing");
+    }
