@@ -727,3 +727,61 @@ void pcl::EnsensoGrabber::processGrabbing ()
         // Gather point cloud
         if (need_cloud || need_cloud_rgb || need_depth)
         {
+          // Stereo matching task
+          NxLibCommand (cmdComputeDisparityMap).execute ();
+          rectified = true;
+          // Convert disparity map into XYZ data for each pixel
+          if (use_rgb_ && mono_device_open_)
+          {
+            getDepthDataRGB(rgb_cloud, depth_image);
+
+          }
+          else
+          {
+            getDepthData(cloud, depth_image);
+          }
+        }
+        // Gather images
+        pattern_mutex_.lock ();
+        last_stereo_pattern_ = std::string("");
+        pattern_mutex_.unlock ();
+        if (need_images || need_images_rgb)
+        {
+          if (!rectified)
+          {
+            NxLibCommand rectify_images (cmdRectifyImages);
+            rectify_images.execute ();
+          }
+          bool collected_pattern = false;
+          // Try to collect calibration pattern and overlay it to the raw image
+          // If store_calibration_pattern_ is true, it estimates the pattern pose and store it at last_stereo_pattern_
+          if (store_calibration_pattern_)
+            discardPatterns();
+          if(find_pattern_)
+          {
+            try
+            {
+              NxLibCommand collect_pattern (cmdCollectPattern);
+              collect_pattern.parameters ()[itmBuffer].set (store_calibration_pattern_);
+              collect_pattern.parameters ()[itmDecodeData].set (true);
+              collect_pattern.execute ();
+              if (store_calibration_pattern_)
+              {
+                // estimatePatternPose() takes ages, so, we use the raw data
+                // Raw stereo pattern info
+                NxLibCommand get_pattern_buffers (cmdGetPatternBuffers);
+                get_pattern_buffers.execute ();
+                pattern_mutex_.lock ();
+                last_stereo_pattern_ = get_pattern_buffers.result()[itmStereo][0].asJson (true);
+                // Pattern pose
+                estimatePatternPose (last_pattern_pose_, false);
+                pattern_mutex_.unlock ();
+              }
+              collected_pattern = true;
+            }
+            catch (const NxLibException &ex)
+            {
+              // if failed to collect the pattern will read the RAW images anyway.
+            }
+          }
+          if (find_pattern_ && collected_pattern)
