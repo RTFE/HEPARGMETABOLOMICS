@@ -673,3 +673,57 @@ bool pcl::EnsensoGrabber::openTcpPort (const int port)
     nxLibOpenTcpPort (port);
     tcp_open_ = true;
   }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "openTcpPort");
+    return (false);
+  }
+  return (true);
+}
+
+void pcl::EnsensoGrabber::processGrabbing ()
+{
+  bool continue_grabbing = running_;
+  if (use_rgb_)
+  {
+    getTFLeftToRGB(tf_left_to_rgb_);
+  }
+  while (continue_grabbing)
+  {
+    try
+    {
+      // Publish cloud / images
+      bool need_cloud = num_slots<sig_cb_ensenso_point_cloud> () > 0;
+      bool need_cloud_rgb = num_slots<sig_cb_ensenso_point_cloud_rgb> () > 0;
+      bool need_images = num_slots<sig_cb_ensenso_images> () > 0;
+      bool need_images_rgb = num_slots<sig_cb_ensenso_images_rgb> () > 0;
+      bool need_depth = num_slots<sig_cb_ensenso_image_depth> () > 0;
+
+      if (need_cloud || need_cloud_rgb || need_images || need_images_rgb || need_depth)
+      {
+        pcl::PointCloud<pcl::PointXYZRGBA>::Ptr rgb_cloud (new pcl::PointCloud<pcl::PointXYZRGBA>);
+        pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
+
+        boost::shared_ptr<PairOfImages> images_raw (new PairOfImages);
+        boost::shared_ptr<PairOfImages> images_rect (new PairOfImages);
+        boost::shared_ptr<PairOfImages> images_rgb (new PairOfImages);
+        boost::shared_ptr<pcl::PCLGenImage<float> > depth_image (new pcl::PCLGenImage<float>);
+        // Update FPS
+        static double last = pcl::getTime ();
+        double now = pcl::getTime ();
+        fps_mutex_.lock ();
+        fps_ = float( 1.0 / (now - last) );
+        fps_mutex_.unlock ();
+        last = now;
+
+        triggerCameras();
+
+        if (!running_) {
+            return;
+        }
+        //get timestamp of aquired image
+        camera_[itmImages][itmRaw][itmLeft].getBinaryDataInfo (0, 0, 0, 0, 0, &timestamp_);
+        bool rectified = false;
+        // Gather point cloud
+        if (need_cloud || need_cloud_rgb || need_depth)
+        {
