@@ -900,3 +900,66 @@ void pcl::EnsensoGrabber::getDepthDataRGB(pcl::PointCloud<pcl::PointXYZRGBA>::Pt
     }
   }
   if (get_cloud) {
+    // transform to rgb_optical_frame
+    Eigen::Quaternionf q(tf_left_to_rgb_.qw, tf_left_to_rgb_.qx, tf_left_to_rgb_.qy, tf_left_to_rgb_.qz);
+    Eigen::Transform<float, 3, Eigen::Affine> transform;
+    transform = Eigen::Translation3f(tf_left_to_rgb_.tx, tf_left_to_rgb_.ty, tf_left_to_rgb_.tz);
+    transform.rotate(q);
+    pcl::PointCloud<pcl::PointXYZRGBA>::Ptr transformed_cloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGBA> >();
+    pcl::transformPointCloud(*cloud, *transformed_cloud, transform.inverse());
+    cloud = transformed_cloud;
+  }
+  if (get_cloud)
+  {
+    for (size_t i = 0; i < rgb_data.size (); i += 4)
+    {
+      cloud->points[i / 4].r = rgb_data[i];
+      cloud->points[i / 4].g = rgb_data[i + 1];
+      cloud->points[i / 4].b = rgb_data[i + 2];
+      cloud->points[i / 4].a = rgb_data[i + 3];
+    }
+  }
+}
+
+void pcl::EnsensoGrabber::getDepthData(const pcl::PointCloud<pcl::PointXYZ>::Ptr& cloud, const pcl::PCLGenImage<float>::Ptr& depth_image)
+{
+  NxLibCommand (cmdComputePointMap).execute ();
+  int width, height;
+  std::vector<float> point_map;
+  camera_[itmImages][itmPointMap].getBinaryDataInfo (&width, &height, 0, 0, 0, 0);
+  camera_[itmImages][itmPointMap].getBinaryData (point_map, 0);
+
+  bool get_cloud = (num_slots<sig_cb_ensenso_point_cloud> () > 0);
+  bool get_depth = (num_slots<sig_cb_ensenso_image_depth> () > 0);
+    // Copy point f and convert in meters
+  if (get_cloud)
+  {
+    cloud->header.stamp = getPCLStamp (timestamp_);
+    cloud->points.resize (height * width);
+    cloud->width = width;
+    cloud->height = height;
+    cloud->is_dense = false;
+  }
+  //copy depth info to image
+  if (get_depth)
+  {
+    depth_image->header.stamp = getPCLStamp (timestamp_);
+    depth_image->width = width;
+    depth_image->height = height;
+    depth_image->data.resize (width * height);
+    depth_image->encoding = "CV_32FC1";
+  }
+  for (size_t i = 0; i < point_map.size (); i += 3)
+  {
+    if (get_depth)
+    {
+      depth_image->data[i / 3] = point_map[i + 2] / 1000.0;
+    }
+    if (get_cloud)
+    {
+      cloud->points[i / 3].x = point_map[i] / 1000.0;
+      cloud->points[i / 3].y = point_map[i + 1] / 1000.0;
+      cloud->points[i / 3].z = point_map[i + 2] / 1000.0;
+    }
+  }
+}
