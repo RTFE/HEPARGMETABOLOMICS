@@ -849,3 +849,54 @@ void pcl::EnsensoGrabber::processGrabbing ()
       }
       ensensoExceptionHandling (ex, "processGrabbing");
     }
+  }
+}
+
+void pcl::EnsensoGrabber::getDepthDataRGB(pcl::PointCloud<pcl::PointXYZRGBA>::Ptr& cloud, const pcl::PCLGenImage<float>::Ptr& depth_image)
+{
+  NxLibCommand renderPM (cmdRenderPointMap);
+  renderPM.parameters()[itmCamera].set(monocam_[itmSerialNumber].asString());
+  renderPM.parameters()[itmNear].set(near_plane_);
+  renderPM.parameters()[itmFar].set(far_plane_);
+  renderPM.execute ();
+
+  int width, height;
+  std::vector<float> point_map;
+  std::vector<char> rgb_data;
+  (*root_)[itmImages][itmRenderPointMap].getBinaryDataInfo (&width, &height, 0, 0, 0, 0);
+  (*root_)[itmImages][itmRenderPointMap].getBinaryData (point_map, 0);
+  (*root_)[itmImages][itmRenderPointMapTexture].getBinaryDataInfo (&width, &height, 0, 0, 0, 0);
+  (*root_)[itmImages][itmRenderPointMapTexture].getBinaryData (rgb_data, 0);
+  bool get_cloud = (num_slots<sig_cb_ensenso_point_cloud_rgb> () > 0);
+  bool get_depth = (num_slots<sig_cb_ensenso_image_depth> () > 0);
+  // Copy point f and convert in meters
+  if (get_cloud)
+  {
+    cloud->header.stamp = getPCLStamp (timestamp_);
+    cloud->points.resize (height * width);
+    cloud->width = width;
+    cloud->height = height;
+    cloud->is_dense = false;
+  }//copy depth info to image
+  if (get_depth)
+  {
+    depth_image->header.stamp = getPCLStamp (timestamp_);
+    depth_image->width = width;
+    depth_image->height = height;
+    depth_image->data.resize (width * height);
+    depth_image->encoding = "CV_32FC1";
+  }
+  for (size_t i = 0; i < point_map.size (); i += 3)
+  {
+    if (get_depth)
+    {
+      depth_image->data[i / 3] = point_map[i + 2] / 1000.0;
+    }
+    if (get_cloud)
+    {
+      cloud->points[i / 3].x = point_map[i] / 1000.0;
+      cloud->points[i / 3].y = point_map[i + 1] / 1000.0;
+      cloud->points[i / 3].z = point_map[i + 2] / 1000.0;
+    }
+  }
+  if (get_cloud) {
