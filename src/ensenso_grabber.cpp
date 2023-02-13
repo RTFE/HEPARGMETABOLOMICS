@@ -1081,3 +1081,58 @@ bool pcl::EnsensoGrabber::setAutoBlackLevel (const bool enable) const
     ensensoExceptionHandling (ex, "setAutoBlackLevel");
     return (false);
   }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setAutoExposure (const bool enable) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmAutoExposure].set (enable);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setAutoExposure");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setAutoGain (const bool enable) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmAutoGain].set (enable);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setAutoGain");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setBinning (const int binning) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmBinning].set (binning);
+  }
+  catch (NxLibException &ex)
+  {
+    // TODO: Handle better setBinning exceptions
+    //~ ensensoExceptionHandling (ex, "setBinning");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setBlackLevelOffset (const float offset) const
+{
+  if (!device_open_)
