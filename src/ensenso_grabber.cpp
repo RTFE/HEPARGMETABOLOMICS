@@ -963,3 +963,62 @@ void pcl::EnsensoGrabber::getDepthData(const pcl::PointCloud<pcl::PointXYZ>::Ptr
     }
   }
 }
+
+
+void pcl::EnsensoGrabber::triggerCameras()
+{
+  NxLibCommand (cmdTrigger).execute();
+  NxLibCommand retrieve (cmdRetrieve);
+  while (running_)
+  {
+    try {
+        retrieve.parameters()[itmTimeout] = 1000;   // to wait copy image
+        retrieve.execute();
+        bool retrievedIR = retrieve.result()[camera_[itmSerialNumber].asString().c_str()][itmRetrieved].asBool();
+        bool retrievedRGB = use_rgb_ ? retrieve.result()[monocam_[itmSerialNumber].asString().c_str()][itmRetrieved].asBool() : true;
+        if (retrievedIR && retrievedRGB)
+        {
+          break;
+        }
+    }
+    catch (const NxLibException &ex) {
+        // To ignore timeout exception and others
+    }
+  }
+}
+
+void pcl::EnsensoGrabber::getImage(const NxLibItem& image_node, pcl::PCLGenImage<pcl::uint8_t>& image_out)
+{
+  int width, height, channels, bpe;
+  bool isFlt;
+  image_node.getBinaryDataInfo (&width, &height, &channels, &bpe, &isFlt, 0);
+  image_out.header.stamp = getPCLStamp (timestamp_);
+  image_out.width = width;
+  image_out.height = height;
+  image_out.data.resize (width * height * sizeof(float));
+  image_out.encoding = getOpenCVType (channels, bpe, isFlt);
+  image_node.getBinaryData (image_out.data.data (), image_out.data.size (), 0, 0);
+}
+
+void pcl::EnsensoGrabber::storeCalibrationPattern (const bool enable)
+{
+  store_calibration_pattern_ = enable;
+  if (enable)
+    PCL_WARN ("Storing calibration pattern. This will clean the pattern buffer continuously\n");
+}
+
+bool pcl::EnsensoGrabber::restoreDefaultConfiguration () const
+{
+  bool result = true;
+  result &= setAutoBlackLevel();
+  result &= setAutoExposure();
+  result &= setAutoGain();
+  result &= setBinning();
+  result &= setBlackLevelOffset();
+  result &= setExposure();
+  result &= setFlexView();
+  result &= setFrontLight();
+  result &= setGain();
+  result &= setGainBoost();
+  result &= setHardwareGamma();
+  result &= setHdr();
