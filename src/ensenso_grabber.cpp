@@ -1022,3 +1022,62 @@ bool pcl::EnsensoGrabber::restoreDefaultConfiguration () const
   result &= setGainBoost();
   result &= setHardwareGamma();
   result &= setHdr();
+  result &= setMinimumDisparity();
+  result &= setNumberOfDisparities();
+  result &= setOptimizationProfile();
+  result &= setPixelClock();
+  result &= setProjector();
+  result &= setScaling();
+  result &= setTargetBrightness();
+  result &= setTriggerMode();
+  result &= setUseDisparityMapAreaOfInterest();
+  result &= setRGBTriggerDelay();
+  result &= setEnableCUDA();
+  return result;
+}
+
+bool pcl::EnsensoGrabber::setEnableCUDA (const bool enable) const
+{
+  #ifdef CUDA_IMPLEMENTED
+    try
+    {
+      if ((*root_)[itmParameters][itmCUDA][itmAvailable].asBool())
+      {
+        (*root_)[itmParameters][itmCUDA][itmEnabled].set (enable);
+      }
+      else
+      {
+        PCL_WARN("CUDA is not supported on this machine.");
+      }
+    }
+    catch (NxLibException &ex)
+    {
+      ensensoExceptionHandling (ex, "setEnableCUDA");
+      return (false);
+    }
+  #else
+    PCL_WARN("CUDA is not supported. Upgrade EnsensoSDK to Version >= 2.1.7 in order to use CUDA.");
+  #endif
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setFindPattern (const bool enable)
+{
+  find_pattern_ = enable;
+  return (true);
+}
+
+
+bool pcl::EnsensoGrabber::setAutoBlackLevel (const bool enable) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmAutoBlackLevel].set (enable);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setAutoBlackLevel");
+    return (false);
+  }
