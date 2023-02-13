@@ -1182,3 +1182,66 @@ bool pcl::EnsensoGrabber::setFlexView (const bool enable, const int imagepairs) 
     //~ ensensoExceptionHandling (ex, "setFlexView");
     return (false);
   }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setFrontLight (const bool enable) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmFrontLight].set (enable);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setFrontLight");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setGain (const float gain) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmGain].set (gain);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setGain");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setGainBoost (const bool enable) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmGainBoost].set (enable);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setGainBoost");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setGridSpacing (const double grid_spacing) const
+{
+  try
+  {
+    (*root_)[itmParameters][itmPattern][itmGridSpacing].set (grid_spacing);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setGridSpacing");
+    return (false);
+  }
+  return (true);
