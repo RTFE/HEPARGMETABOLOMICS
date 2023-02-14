@@ -1310,3 +1310,61 @@ bool pcl::EnsensoGrabber::setNumberOfDisparities (const int number) const
   }
   return (true);
 }
+
+bool pcl::EnsensoGrabber::setOptimizationProfile (const std::string profile) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmDisparityMap][itmStereoMatching][itmOptimizationProfile].set (profile);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setOptimizationProfile");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setPixelClock (const int pixel_clock) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmPixelClock].set (pixel_clock);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setPixelClock");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setProjector (const bool enable) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmProjector].set (enable);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setProjector");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setTargetBrightness (const int target) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmTargetBrightness].set (target);
+  }
+  catch (NxLibException &ex)
