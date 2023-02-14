@@ -1245,3 +1245,68 @@ bool pcl::EnsensoGrabber::setGridSpacing (const double grid_spacing) const
     return (false);
   }
   return (true);
+}
+
+bool pcl::EnsensoGrabber::setHardwareGamma (const bool enable) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmHardwareGamma].set (enable);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setHardwareGamma");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setHdr (const bool enable) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmHdr].set (enable);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setHdr");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setMinimumDisparity (const int disparity) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmDisparityMap][itmStereoMatching][itmMinimumDisparity].set (disparity);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setMinimumDisparity");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setNumberOfDisparities (const int number) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmDisparityMap][itmStereoMatching][itmNumberOfDisparities].set (number);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "NumberOfDisparities");
+    return (false);
+  }
+  return (true);
+}
