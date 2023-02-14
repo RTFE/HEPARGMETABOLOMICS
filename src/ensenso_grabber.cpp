@@ -1368,3 +1368,65 @@ bool pcl::EnsensoGrabber::setTargetBrightness (const int target) const
     camera_[itmParameters][itmCapture][itmTargetBrightness].set (target);
   }
   catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setTargetBrightness");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setScaling (const float scaling) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmDisparityMap][itmScaling].set (scaling);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setScaling");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setTriggerMode (const std::string mode) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmTriggerMode].set (mode);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setTriggerMode");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setRGBTriggerDelay (const float delay) const
+{
+  if (!use_rgb_)
+  {
+    return (true);
+  }
+  if (!mono_device_open_)
+  {
+    return (false);
+  }
+  try {
+    monocam_[itmParameters][itmCapture][itmTriggerDelay] = delay;
+  }
+  catch (NxLibException &ex) {
+    ensensoExceptionHandling (ex, "setRGBTriggerDelay");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setUseDisparityMapAreaOfInterest (const bool enable) const
+{
+if (!device_open_)
