@@ -1430,3 +1430,59 @@ bool pcl::EnsensoGrabber::setRGBTriggerDelay (const float delay) const
 bool pcl::EnsensoGrabber::setUseDisparityMapAreaOfInterest (const bool enable) const
 {
 if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmCapture][itmUseDisparityMapAreaOfInterest].set (enable);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setUseDisparityMapAreaOfInterest");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setUseOpenGL (const bool enable) const
+{
+if (!device_open_)
+    return (false);
+  try
+  {
+    (*root_)[itmParameters][itmRenderPointMap][itmUseOpenGL].set (enable);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setUseOpenGL");
+    return (false);
+  }
+  return (true);
+}
+
+
+bool pcl::EnsensoGrabber::setUseRGB (const bool enable)
+{
+  use_rgb_ = enable;
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setDepthChangeCost(const int changecost) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmDisparityMap][itmStereoMatching][itmDepthChangeCost].set (changecost);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setDepthChangeCost");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setDepthStepCost(const int stepcost) const
+{
+  if (!device_open_)
+    return (false);
