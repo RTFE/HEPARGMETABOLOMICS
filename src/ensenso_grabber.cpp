@@ -1486,3 +1486,60 @@ bool pcl::EnsensoGrabber::setDepthStepCost(const int stepcost) const
 {
   if (!device_open_)
     return (false);
+  try
+  {
+    camera_[itmParameters][itmDisparityMap][itmStereoMatching][itmDepthStepCost].set (stepcost);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setDepthStepCost");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setShadowingThreshold(const int shadowingthreshold) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmDisparityMap][itmStereoMatching][itmShadowingThreshold].set (shadowingthreshold);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setShadowingThreshold");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setUniquenessRatio(const int ratio) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmDisparityMap][itmPostProcessing][itmUniquenessRatio].set (ratio);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setUniquenessRatio");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setMedianFilterRadius(const int radius) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmDisparityMap][itmPostProcessing][itmMedianFilterRadius].set (radius);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setMedianFilterRadius");
+    return (false);
+  }
