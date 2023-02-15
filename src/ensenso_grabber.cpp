@@ -1652,3 +1652,10 @@ void pcl::EnsensoGrabber::start ()
 }
 
 void pcl::EnsensoGrabber::stop ()
+{
+  if (running_)
+  {
+    running_ = false;  // Stop processGrabbing () callback
+    grabber_thread_.join ();
+  }
+}
