@@ -1603,3 +1603,52 @@ bool pcl::EnsensoGrabber::setFillRegionSize(const int regionsize) const
     camera_[itmParameters][itmDisparityMap][itmPostProcessing][itmFilling][itmRegionSize].set (regionsize);
   }
   catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setRegionSize");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setSurfaceConnectivity(const int threshold) const
+{
+  if (!device_open_)
+    return (false);
+  try
+  {
+    camera_[itmParameters][itmDisparityMap][itmPostProcessing][itmFilling][itmRegionSize].set (threshold);
+  }
+  catch (NxLibException &ex)
+  {
+    ensensoExceptionHandling (ex, "setSurfaceConnectivity");
+    return (false);
+  }
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setNearPlane(const int near)
+{
+  near_plane_ = near;
+  return (true);
+}
+
+bool pcl::EnsensoGrabber::setFarPlane(const int far)
+{
+  far_plane_ = far;
+  return (true);
+}
+
+void pcl::EnsensoGrabber::start ()
+{
+  if (isRunning ())
+    return;
+  if (!device_open_)
+    openDevice (0);
+  if(use_rgb_ && !mono_device_open_)
+    openMonoDevice (0);
+  fps_ = 0.0;
+  running_ = true;
+  grabber_thread_ = boost::thread (&pcl::EnsensoGrabber::processGrabbing, this);
+}
+
+void pcl::EnsensoGrabber::stop ()
