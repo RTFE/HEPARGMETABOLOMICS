@@ -1,3 +1,6 @@
 geometry_msgs/PoseArray   robot_poses
 geometry_msgs/Pose        camera_seed
-geometry_msgs/Pose        pattern_se
+geometry_msgs/Pose        pattern_seed
+string                    setup
+--- 
+bool                      
