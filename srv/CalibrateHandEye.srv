@@ -3,4 +3,6 @@ geometry_msgs/Pose        camera_seed
 geometry_msgs/Pose        pattern_seed
 string                    setup
 --- 
-bool                      
+bool                      success
+geometry_msgs/Pose        estimated_camera_pose
+ge
