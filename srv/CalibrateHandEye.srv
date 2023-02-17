@@ -1,2 +1,3 @@
 geometry_msgs/PoseArray   robot_poses
-geometry_
+geometry_msgs/Pose        camera_seed
+geometry_msgs/Pose        pattern_se
