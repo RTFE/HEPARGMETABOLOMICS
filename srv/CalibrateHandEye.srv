@@ -5,4 +5,5 @@ string                    setup
 --- 
 bool                      success
 geometry_msgs/Pose        estimated_camera_pose
-ge
+geometry_msgs/Pose        estimated_pattern_pose
+int32           
