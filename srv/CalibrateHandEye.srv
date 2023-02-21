@@ -7,4 +7,4 @@ bool                      success
 geometry_msgs/Pose        estimated_camera_pose
 geometry_msgs/Pose        estimated_pattern_pose
 int32                     iterations
-float64                   r
+float64                   reprojection_error
