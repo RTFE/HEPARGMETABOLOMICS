@@ -1,1 +1,3 @@
-bool                add_to_buff
+bool                add_to_buffer
+bool                clear_buffer
+bool                decode
