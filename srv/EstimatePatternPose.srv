@@ -1,3 +1,4 @@
 bool                average
 --- 
-bo
+bool                success
+geometry_msgs/Pose  pose
