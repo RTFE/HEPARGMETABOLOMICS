@@ -5,4 +5,4 @@ float32             grid_spacing
 --- 
 bool                success
 int32               pattern_count
-floa
+float32             grid_spacing
